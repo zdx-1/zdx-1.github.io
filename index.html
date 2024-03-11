@@ -1,42 +1,156 @@
-<!DOCTYPE html><html lang="zh-CN" theme-mode="dark"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Zdx-1</title><link rel="icon" type="image/x-icon" href="/favicon.ico"><link rel="preload" as="font" crossorigin="anonymous" href="/font/Bender.ttf"><link rel="preload" as="font" crossorigin="anonymous" href="/font/BenderLight.ttf"><link rel="preload" as="font" crossorigin="anonymous" href="/font/JetBrainsMono-Regular.woff2"><link rel="stylesheet" href="/css/arknights.css"><style>@font-face {
-  font-family: Bender;
-  src: local('Bender'), url("/font/Bender.ttf"), url("/font/Bender.otf");
-}
-@font-face {
-  font-family: BenderLight;
-  src: local('BenderLight'), url("/font/BenderLight.ttf");
-}
-@font-face {
-  font-family: 'JetBrains Mono';
-  src: local('JetBrains Mono'), url('/font/JetBrainsMono-Regular.woff2') format('woff2');
-}
-</style><script>var config = {"root":"/","search":{"preload":false,"activeHolder":"键入以继续","blurHolder":"数据检索","noResult":"无 $0 相关数据"},"code":{"codeInfo":"$0 - $1 行","copy":"复制"}}</script><link type="text/css" rel="stylesheet" href="/lib/encrypt/hbe.style.css"><link type="text/css" rel="stylesheet" href="//unpkg.com/lightgallery@2.7.1/css/lightgallery.css"><link type="text/css" rel="stylesheet" href="//unpkg.com/lightgallery@2.7.1/css/lg-zoom.css"><link type="text/css" rel="stylesheet" href="//unpkg.com/lightgallery@2.7.1/css/lg-thumbnail.css"><link type="text/css" rel="stylesheet" href="/lib/fontawesome/css/all.min.css"><script>if (window.localStorage.getItem('theme-mode') === 'light')
- document.documentElement.setAttribute('theme-mode', 'light')
-if (window.localStorage.getItem('theme-mode') === 'dark')
- document.documentElement.setAttribute('theme-mode', 'dark')</script><style>:root {
- --dark-background: url('https://ak.hypergryph.com/assets/index/images/ak/pc/bk.jpg');
- --light-background: url('/img/bk.jpg');
- --theme-encrypt-confirm: '确认'
-}</style><script defer src="/js/arknights.js"></script><script defer src="/js/search.js"></script><script defer type="module">import mermaid from '//unpkg.com/mermaid@10.5.0/dist/mermaid.esm.mjs';
-window.mermaid = mermaid;
-code.paintMermaid();
-</script><script async src="//unpkg.com/lightgallery@2.7.1/lightgallery.min.js"></script><script async src="//unpkg.com/lightgallery@2.7.1/plugins/zoom/lg-zoom.min.js"></script><script async src="//unpkg.com/lightgallery@2.7.1/plugins/thumbnail/lg-thumbnail.min.js"></script><script async src="/lib/encrypt/hbe.js"></script><script async src="/js/pjax.js"></script><script class="pjax-js">reset= () => {document.querySelector('.lg-container')?.remove()
-lightGallery(document.getElementById('post-bg'), {
-  plugins: [lgZoom,lgThumbnail],
-  selector: '.item-img'})}</script><script>window.addEventListener("load",() => {pjax = new Pjax({
- cacheBust: false,
- selectors: ['title','article','#aside-block','.pjax-js','data-pjax','.busuanzi'],
- switches: {'article': Pjax.switches.sideBySide},
- switchesOptions: {
-   'article': {
-     classNames: {
-       remove: "pjax-out",
-       add: "pjax-in"
-     }
-   }
- }
-});
-document.addEventListener("pjax:complete", reset);reset()})</script><meta name="generator" content="Hexo 7.1.1"><style>mjx-container[jax="SVG"] {
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>Zdx-1</title><meta name="author" content="Dexin Zhang"><meta name="copyright" content="Dexin Zhang"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="learning and sharing">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Zdx-1">
+<meta property="og:url" content="http://zdx-1.github.io/index.html">
+<meta property="og:site_name" content="Zdx-1">
+<meta property="og:description" content="learning and sharing">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://i.loli.net/2021/02/24/5O1day2nriDzjSu.png">
+<meta property="article:author" content="Dexin Zhang">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://i.loli.net/2021/02/24/5O1day2nriDzjSu.png"><link rel="shortcut icon" href="/img/favicon.png"><link rel="canonical" href="http://zdx-1.github.io/index.html"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css?v=4.13.0"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.5.1/css/all.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0.33/dist/fancybox/fancybox.min.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = {
+  root: '/',
+  algolia: undefined,
+  localSearch: undefined,
+  translate: undefined,
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlight.js","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  dateSuffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  infinitegrid: {
+    js: 'https://cdn.jsdelivr.net/npm/@egjs/infinitegrid@4.11.1/dist/infinitegrid.min.js',
+    buttonText: '加载更多'
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isAnchor: false,
+  percent: {
+    toc: true,
+    rightside: false,
+  },
+  autoDarkmode: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: 'Zdx-1',
+  isPost: false,
+  isHome: true,
+  isHighlightShrink: false,
+  isToc: false,
+  postUpdate: '2024-03-11 17:42:09'
+}</script><script>(win=>{
+      win.saveToLocal = {
+        set: (key, value, ttl) => {
+          if (ttl === 0) return
+          const now = Date.now()
+          const expiry = now + ttl * 86400000
+          const item = {
+            value,
+            expiry
+          }
+          localStorage.setItem(key, JSON.stringify(item))
+        },
+      
+        get: key => {
+          const itemStr = localStorage.getItem(key)
+      
+          if (!itemStr) {
+            return undefined
+          }
+          const item = JSON.parse(itemStr)
+          const now = Date.now()
+      
+          if (now > item.expiry) {
+            localStorage.removeItem(key)
+            return undefined
+          }
+          return item.value
+        }
+      }
+    
+      win.getScript = (url, attr = {}) => new Promise((resolve, reject) => {
+        const script = document.createElement('script')
+        script.src = url
+        script.async = true
+        script.onerror = reject
+        script.onload = script.onreadystatechange = function() {
+          const loadState = this.readyState
+          if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+          script.onload = script.onreadystatechange = null
+          resolve()
+        }
+
+        Object.keys(attr).forEach(key => {
+          script.setAttribute(key, attr[key])
+        })
+
+        document.head.appendChild(script)
+      })
+    
+      win.getCSS = (url, id = false) => new Promise((resolve, reject) => {
+        const link = document.createElement('link')
+        link.rel = 'stylesheet'
+        link.href = url
+        if (id) link.id = id
+        link.onerror = reject
+        link.onload = link.onreadystatechange = function() {
+          const loadState = this.readyState
+          if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+          link.onload = link.onreadystatechange = null
+          resolve()
+        }
+        document.head.appendChild(link)
+      })
+    
+      win.activateDarkMode = () => {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = () => {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+        if (t === 'dark') activateDarkMode()
+        else if (t === 'light') activateLightMode()
+      
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+      const detectApple = () => {
+        if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+          document.documentElement.classList.add('apple')
+        }
+      }
+      detectApple()
+    })(window)</script><meta name="generator" content="Hexo 7.1.1"><style>mjx-container[jax="SVG"] {
   direction: ltr;
 }
 
@@ -149,4 +263,190 @@ mjx-container[display="true"] + br {
   display: none;
 }
 </style><link rel="alternate" href="/atom.xml" title="Zdx-1" type="application/atom+xml">
-</head><body><div class="loading" style="opacity: 0;"><div class="loadingBar left"></div><div class="loadingBar right"></div></div><main><header class="closed"><div class="navBtn"><i class="navBtnIcon"><span class="navBtnIconBar"></span><span class="navBtnIconBar"></span><span class="navBtnIconBar"></span></i></div><nav><div class="navItem" id="search-header"><span class="navItemTitle"><input autocomplete="off" autocorrect="off" autocapitalize="none" placeholder="数据检索" spellcheck="false" maxlength="50" type="text" id="search-input"></span></div><div class="navItem" id="search-holder"></div><div class="search-popup" tabindex="0"><div id="search-result"></div></div><ol class="navContent"><li class="navItem"><a class="navBlock" href="/"><span class="navItemTitle">Home</span></a></li><li class="navItem" matchdata="categories,tags"><a class="navBlock" href="/archives/"><span class="navItemTitle">Archives</span></a></li></ol></nav></header><article><div class="posts"><a class="recent-post" href="/2024/03/11/%E6%9E%9A%E4%B8%BE%E6%B3%95%E4%B8%8E%E5%B0%BA%E5%8F%96%E6%B3%95/"><object><div class="recent-info"><span class="categories"><object><a href="/categories/%E8%93%9D%E6%A1%A5%E6%9D%AFNote/">蓝桥杯Note</a></object></span><span class="tags"><object><a href="/tags/%E8%93%9D%E6%A1%A5%E6%9D%AF%E5%A4%87%E8%B5%9B/">蓝桥杯备赛</a></object></span><time datetime="2024-03-11T08:00:12.000Z">2024-03-11</time></div><h1 class="recent-title">枚举法与尺取法</h1><div class="recent-excerpt"></div><span class="read-more">阅读文章 +</span></object></a><a class="recent-post" href="/2024/03/10/%E6%90%9C%E7%B4%A2%E7%AE%97%E6%B3%95/"><object><div class="recent-info"><span class="categories"><object><a href="/categories/%E8%93%9D%E6%A1%A5%E6%9D%AFNote/">蓝桥杯Note</a></object></span><span class="tags"><object><a href="/tags/%E8%93%9D%E6%A1%A5%E6%9D%AF%E5%A4%87%E8%B5%9B/">蓝桥杯备赛</a></object></span><time datetime="2024-03-10T08:42:50.000Z">2024-03-10</time></div><h1 class="recent-title">搜索算法</h1><div class="recent-excerpt"></div><span class="read-more">阅读文章 +</span></object></a><a class="recent-post" href="/2024/03/10/%E9%80%92%E6%8E%A8%E6%B3%95%E4%B8%8E%E9%80%92%E5%BD%92%E6%B3%95/"><object><div class="recent-info"><span class="categories"><object><a href="/categories/%E8%93%9D%E6%A1%A5%E6%9D%AFNote/">蓝桥杯Note</a></object></span><span class="tags"><object><a href="/tags/%E8%93%9D%E6%A1%A5%E6%9D%AF%E5%A4%87%E8%B5%9B/">蓝桥杯备赛</a></object></span><time datetime="2024-03-10T08:34:00.000Z">2024-03-10</time></div><h1 class="recent-title">递推法与递归法</h1><div class="recent-excerpt"></div><span class="read-more">阅读文章 +</span></object></a><a class="recent-post" href="/2024/03/10/%E6%89%8B%E7%AE%97%E4%B8%8E%E6%80%9D%E7%BB%B4%E9%A2%98/"><object><div class="recent-info"><span class="categories"><object><a href="/categories/%E8%93%9D%E6%A1%A5%E6%9D%AFNote/">蓝桥杯Note</a></object></span><span class="tags"><object><a href="/tags/%E8%93%9D%E6%A1%A5%E6%9D%AF%E5%A4%87%E8%B5%9B/">蓝桥杯备赛</a></object></span><time datetime="2024-03-10T08:02:14.000Z">2024-03-10</time></div><h1 class="recent-title">手算与思维题</h1><div class="recent-excerpt"></div><span class="read-more">阅读文章 +</span></object></a><a class="recent-post" href="/2024/03/10/%E6%B4%9B%E8%B0%B7P1160-%E9%98%9F%E5%88%97%E5%AE%89%E6%8E%92/"><object><div class="recent-info"><span class="categories"><object><a href="/categories/%E5%88%B7%E9%A2%98/">刷题</a></object></span><span class="tags"><object><a href="/tags/%E6%B4%9B%E8%B0%B7/">洛谷</a></object><object><a href="/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/">数据结构</a></object></span><time datetime="2024-03-10T07:54:18.000Z">2024-03-10</time></div><h1 class="recent-title">洛谷P1160 队列安排</h1><div class="recent-excerpt"></div><span class="read-more">阅读文章 +</span></object></a><a class="recent-post" href="/2024/03/10/%E6%B4%9B%E8%B0%B7P5732-%E3%80%90%E6%B7%B1%E5%9F%BA5-%E4%B9%A07%E3%80%91%E6%9D%A8%E8%BE%89%E4%B8%89%E8%A7%92/"><object><div class="recent-info"><span class="categories"><object><a href="/categories/%E5%88%B7%E9%A2%98/">刷题</a></object></span><span class="tags"><object><a href="/tags/%E6%B4%9B%E8%B0%B7/">洛谷</a></object><object><a href="/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/">数据结构</a></object></span><time datetime="2024-03-10T07:52:03.000Z">2024-03-10</time></div><h1 class="recent-title">洛谷P5732 【深基5.习7】杨辉三角</h1><div class="recent-excerpt"></div><span class="read-more">阅读文章 +</span></object></a><a class="recent-post" href="/2024/03/10/hexo%E5%AD%98%E5%9C%A8%E9%97%AE%E9%A2%98%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88/"><object><div class="recent-info"><span class="categories"><object><a href="/categories/Hexo/">Hexo</a></object></span><span class="tags"><object><a href="/tags/hexo%E4%BD%BF%E7%94%A8/">hexo使用</a></object></span><time datetime="2024-03-10T01:49:03.000Z">2024-03-10</time></div><h1 class="recent-title">hexo存在问题解决方案</h1><div class="recent-excerpt"></div><span class="read-more">阅读文章 +</span></object></a><a class="recent-post" href="/2024/03/10/%E6%B4%9B%E8%B0%B7P1047-NOIP2005-%E6%99%AE%E5%8F%8A%E7%BB%84-%E6%A0%A1%E9%97%A8%E5%A4%96%E7%9A%84%E6%A0%91/"><object><div class="recent-info"><span class="categories"><object><a href="/categories/%E5%88%B7%E9%A2%98/">刷题</a></object></span><span class="tags"><object><a href="/tags/%E6%B4%9B%E8%B0%B7/">洛谷</a></object><object><a href="/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/">数据结构</a></object></span><time datetime="2024-03-10T01:45:13.000Z">2024-03-10</time></div><h1 class="recent-title">洛谷P1047 [NOIP2005 普及组] 校门外的树</h1><div class="recent-excerpt"></div><span class="read-more">阅读文章 +</span></object></a><a class="recent-post" href="/2024/03/09/%E6%B4%9B%E8%B0%B7P1996-%E7%BA%A6%E7%91%9F%E5%A4%AB%E9%97%AE%E9%A2%98/"><object><div class="recent-info"><span class="categories"><object><a href="/categories/%E5%88%B7%E9%A2%98/">刷题</a></object></span><span class="tags"><object><a href="/tags/%E6%B4%9B%E8%B0%B7/">洛谷</a></object><object><a href="/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/">数据结构</a></object></span><time datetime="2024-03-09T14:42:10.000Z">2024-03-09</time></div><h1 class="recent-title">洛谷P1996 约瑟夫问题</h1><div class="recent-excerpt"></div><span class="read-more">阅读文章 +</span></object></a><a class="recent-post" href="/2024/03/09/%E8%93%9D%E6%A1%A517002/"><object><div class="recent-info"><span class="categories"><object><a href="/categories/%E5%88%B7%E9%A2%98/">刷题</a></object></span><span class="tags"><object><a href="/tags/%E8%93%9D%E6%A1%A5%E6%9D%AF%E6%A8%A1%E6%8B%9F%E8%B5%9B/">蓝桥杯模拟赛</a></object></span><time datetime="2024-03-09T14:16:41.000Z">2024-03-09</time></div><h1 class="recent-title">蓝桥17002</h1><div class="recent-excerpt"></div><span class="read-more">阅读文章 +</span></object></a></div><div id="paginator"><span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" href="/page/2/">Next</a></div><div class="bottom-btn"><div><a class="i-top" id="to-top" onClick="scrolls.scrolltop();" title="回到顶部" style="opacity: 0; display: none;">∧ </a><a class="i-color" id="color-mode" onClick="colorMode.change()" title="切换主题"></a></div></div></article><aside><div id="about"><a href="/" id="logo"><img src="https://ak.hypergryph.com/assets/index/images/ak/pc/faction/1.png" alt="Logo"></a><h1 id="Dr"><a href="/">Dexin Zhang</a></h1><div id="description"><p>learning and sharing</p></div></div><div id="aside-block"><section id="total"><a id="total-archives" href="/archives"><span class="total-title">文章 总数:</span><span class="total-number">16</span></a><div id="total-tags"><span class="total-title">标签:</span><span class="total-number">5</span></div><div id="total-categories"><span class="total-title">分类:</span><span class="total-number">3</span></div></section></div><footer><nobr>构建自 <a target="_blank" rel="noopener" href="http://hexo.io">Hexo</a></nobr><wbr><nobr> 使用主题 <a target="_blank" rel="noopener" href="https://github.com/Yue-plus/hexo-theme-arknights">Arknights</a></nobr><wbr><nobr> 主题作者 <a target="_blank" rel="noopener" href="https://github.com/Yue-plus">Yue_plus</a></nobr></footer></aside></main><canvas id="canvas-dust"></canvas></body></html>
+</head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="https://i.loli.net/2021/02/24/5O1day2nriDzjSu.png" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">18</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">5</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">3</div></a></div><hr class="custom-hr"/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> Home</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> Archives</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> Tags</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> Categories</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> About</span></a></div></div></div></div><div class="page" id="body-wrap"><header class="full_page" id="page-header"><nav id="nav"><span id="blog-info"><a href="/" title="Zdx-1"><span class="site-name">Zdx-1</span></a></span><div id="menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> Home</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> Archives</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> Tags</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> Categories</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> About</span></a></div></div><div id="toggle-menu"><a class="site-page" href="javascript:void(0);"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="site-info"><h1 id="site-title">Zdx-1</h1><div id="site_social_icons"><a class="social-icon" href="https://github.com/zdx-1" target="_blank" title="Github"><i class="fab fa-github" style="color: #24292e;"></i></a><a class="social-icon" href="mailto:19546328912@163.com" target="_blank" title="Email"><i class="fas fa-envelope" style="color: #4a7dbe;"></i></a></div></div><div id="scroll-down"><i class="fas fa-angle-down scroll-down-effects"></i></div></header><main class="layout" id="content-inner"><div class="recent-posts" id="recent-posts"><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/2024/03/11/%E5%B7%AE%E5%88%86%E4%B8%8E%E5%89%8D%E7%BC%80%E5%92%8C/" title="差分与前缀和">差分与前缀和</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2024-03-11T08:45:34.000Z" title="发表于 2024-03-11 16:45:34">2024-03-11</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/%E8%93%9D%E6%A1%A5%E6%9D%AFNote/">蓝桥杯Note</a></span></div><div class="content">差分与前缀和差分与前缀和是一对互逆的操作，常常用于处理区间问题，差分法是解决区间加减问题，前缀和是解决区间求和问题的常用办法。
+知识点
+差分算法
+前缀和算法
+
+差分法差分法的应用主要是用于处理区间问题。当某一个数组要在很多不确定的区间，加上相同的一个数。我们如果每个都进行加法操作的话，那么复杂度  是平方阶的，非常消耗时间。
+如果我们采用差分法，将数组拆分，构造出一个新的拆分数组，通过对数组区间的端点进行加减操作，最后将数组和并就能完成原来的操作。
+这样处理后，时间复杂度降低为 ，虽然感觉操作变得更加复杂了，但是只用对边界操作确实比操作一整个区间的方法要优秀的多。
+听到这里也是吊足了胃口，那到底怎么对区间操作呢，请大家跟随我的讲解，慢慢理解。
+差分法的特点：
+
+将对于区间的加减操作转化为对于端点的操作；
+时间复杂度为 ；
+用于维护区间的增减但不能维护乘除；
+差分后的序列比原来的数组序列多一个数。
+
+差分算法解题的基本思路：
+
+设定 ；
+对于第 2 项到第 n 项，利用差分式 ；
+对于区间端点进行加减操作；
+进行差分还原（即前缀和）；
+注意，这里从 1 开始。如果从 0 开始，还需讨论  ...</div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/2024/03/11/%E5%B7%A5%E5%85%B7%E5%87%BD%E6%95%B0%E6%A8%A1%E6%9D%BF/" title="工具函数模板">工具函数模板</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2024-03-11T08:37:11.000Z" title="发表于 2024-03-11 16:37:11">2024-03-11</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/%E8%93%9D%E6%A1%A5%E6%9D%AFNote/">蓝桥杯Note</a></span></div><div class="content">内置模板我们前面讲了很多数据结构相关的知识，本节课程，我们主要讲解怎么不自己定义，而是使用我们所使用的编程语言中，已经定义好的数据结构。
+之前我们在栈那一节已经讲过栈的内置数据结构的使用，我们本章就不再进行讲解，我们这节课仍然采用那种方式进行讲解。
+知识点
+迭代器讲解
+线性表的使用
+队列的使用
+集合（set）的使用
+映射（map）的使用
+
+迭代器（Iterator）首先，明确一点迭代器是 C++ 的知识，并不适用于 Java 和 Python 这两种语言，但是下面讲容器就要用到这一点，所以我们必须要提前讲一下。迭代器的知识点很复杂，了解即可，当然有余力可以深究，了解就能做题，实现方式看容器讲解。
+对于数组我们可以采用指针进行访问，但是对于其他的存储空间连续的数据结构或者说是存储单元我们就需要找到另一种方式来替代指针的行为作用，从而达到对于非数组的数据结构的访问和遍历，于是我们定义了一种新的变量叫做迭代器。
+定义：
+迭代器是一种检查容器内元素并遍历元素的数据类型。
+迭代器提供对一个容器中的对象的访问方法，并且定义了容器中对象的范围。
+迭代器和指针的区别：
+容器和string有迭代器类型同 ...</div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/2024/03/11/%E6%9E%9A%E4%B8%BE%E6%B3%95%E4%B8%8E%E5%B0%BA%E5%8F%96%E6%B3%95/" title="枚举法与尺取法">枚举法与尺取法</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2024-03-11T08:00:12.000Z" title="发表于 2024-03-11 16:00:12">2024-03-11</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/%E8%93%9D%E6%A1%A5%E6%9D%AFNote/">蓝桥杯Note</a></span></div><div class="content">在之前的课程中，我们深入讨论了打表法与模拟法的暴力解法。提到暴力，我们通常会首先想到枚举。然而，枚举实际上是一门技术，要确保能够穷尽所有可能的情况并不容易。因此，在本节课中，我们将详细介绍枚举法的技巧，以确保能够完整地列举出所有情况，不漏一种。
+知识点
+枚举法
+简单型枚举
+组合型枚举
+排列型枚举
+指数型枚举
+
+
+尺取算法
+
+枚举法枚举算法的思想：
+枚举算法的核心思想是将问题的所有可能成为答案的解一一列举，然后根据问题给定的条件判断这些解是否合适。对于符合条件的解，保留；反之则舍弃。
+枚举算法解题的基本思路：
+
+确定枚举解的范围和判断条件： 在开始解题之前，需要明确枚举的解范围，并定义问题的判断条件。
+选取合适的枚举方法： 选择适当的枚举方式进行逐一枚举，确保覆盖所有可能的解。避免遗漏任何真正的解，同时注意防止重复。
+使用判断条件检验解： 在枚举过程中，应用事先确定的判断条件验证每个解的合法性，保留符合要求的解。
+
+枚举算法的一般步骤：
+
+确定范围和枚举方式： 根据题目确定枚举的范围，并选择合适的枚举方式。确保不遗漏任何真正的解，同时避免重复。
+优化解空间： 查看是否存在优化的可能性，以 ...</div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/2024/03/10/%E6%90%9C%E7%B4%A2%E7%AE%97%E6%B3%95/" title="搜索算法">搜索算法</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2024-03-10T08:42:50.000Z" title="发表于 2024-03-10 16:42:50">2024-03-10</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/%E8%93%9D%E6%A1%A5%E6%9D%AFNote/">蓝桥杯Note</a></span></div><div class="content">深度优先搜索Depth First Search 即 DFS，意为深度优先搜索，是所有的搜索手段之一。它是从某个状态开始，不断进行状态转移，直到不能转移后，向后回退，一直到遍历完所有的状态。
+本章题目难度较大，请大家仔细研读讲解和代码。
+知识点1.DFS 算法设计原理与实现方法 2.经典题型精讲
+深度优先搜索基本概念作为搜索算法的一种，DFS 主要是用于解决 NP 完全问题。但是，深度优先搜索算法的时间复杂度较高，深度优先搜索是  的阶乘级算法，它的效率非常低，在数据规模变大时，此算法就难以解决当前的问题了。
+所以搜索算法使用于状态节点较小规模的问题。
+DFS 的设计步骤按照定义设计：
+
+确定该题目的状态（包括边界）
+
+找到状态转移方式
+
+找到问题的出口，计数或者某个状态
+
+设计搜索
+
+
+伪代码：
+1234567891011121314151617181920212223242526int check(参数){    if(满足条件)        return 1;    return 0;}bool pd(参数){    相应操作}void dfs(int step){       ...</div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/2024/03/10/%E9%80%92%E6%8E%A8%E6%B3%95%E4%B8%8E%E9%80%92%E5%BD%92%E6%B3%95/" title="递推法与递归法">递推法与递归法</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2024-03-10T08:34:00.000Z" title="发表于 2024-03-10 16:34:00">2024-03-10</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/%E8%93%9D%E6%A1%A5%E6%9D%AFNote/">蓝桥杯Note</a></span></div><div class="content">[TOC]
+递推法与递归法递推法：
+递推法是一种在数学和其他领域广泛应用的重要方法，它在计算机科学中被用作一种关键的数值求解算法。
+知识点：
+
+递推算法
+递归算法
+
+递推算法的特点递推法的核心在于找到递推关系式。这种方法可以将复杂的计算过程转化为简单的重复步骤，充分利用计算机在运行程序时的时间局部性和空间局部性。
+递推算法的思想：
+
+首先找到各个相邻数据项之间的递推关系；
+递推关系避开了求通项公式的麻烦，尤其是对于那些难以或无法求解通项公式的题目；
+将复杂问题分解为若干步骤的简单运算；
+一般来说，递推算法可以视为一种特殊的迭代算法。
+
+递推算法解题的基本思路：
+
+将复杂计算转换为简单重复运算；
+通过找到递推关系式进行简化运算；
+利用计算机的特性，减少运行时间。
+
+递推算法的一般步骤：
+
+根据题目确定数据项，并找到符合要求的递推关系式；
+根据递推关系式设计递推程序；
+根据题目找到递推的终点；
+单次查询可以不进行存储，多次查询都要进行存储；
+按要求输出答案即可。
+
+递归算法：
+递归算法是一种自顶向下的算法，它通过不断地直接或间接调用自身的函数，通过每次改变变量完成多个过程的重复计算，直到到 ...</div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/2024/03/10/%E6%89%8B%E7%AE%97%E4%B8%8E%E6%80%9D%E7%BB%B4%E9%A2%98/" title="手算与思维题">手算与思维题</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2024-03-10T08:02:14.000Z" title="发表于 2024-03-10 16:02:14">2024-03-10</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/%E8%93%9D%E6%A1%A5%E6%9D%AFNote/">蓝桥杯Note</a></span></div><div class="content">手算与思维题课程伊始，我们先要讲一下蓝桥杯相关的注意事项。
+比赛流程赛程：
+省赛
+决赛
+
+省赛一等奖参加决赛
+比赛时长  小时
+竞赛形式：
+个人赛，一人一机，全程机考
+答题过程中无法访问互联网
+不允许携带任何电子、纸质资料
+
+参赛选手机器环境
+X86 兼容机器，内存不小于 1G，硬盘不小于 60G 操作系统：Windows7、Windows8 或 Windows10。
+C/C++ 开发环境：Dev-cpp 5.4.0 C/C++ API 帮助文档
+Java 开发环境：JDK 1.8 Eclipse-java-2020-06 API 帮助文档
+Python 环境：Python 3.8.6 IDLE（Python 自带编辑器）
+
+题型
+结果填空 把答案直接通过网页提交，不要书写多余的内容。填空题每题  分。
+
+程序设计 每道题目多个测试数据， 是弱测试数据，其他是强测试数据。 题量大、时间紧张，难题往往不会做或来不及用高效算法编码，此时可以用暴力方法编程得  的分数。 程序设计题每题  分。
+
+
+评分方式评分：全部使用机器自动评分
+对于结果填空题，题目保证只有唯一解，选手的结果只有和解完全 ...</div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/2024/03/10/%E6%B4%9B%E8%B0%B7P1160-%E9%98%9F%E5%88%97%E5%AE%89%E6%8E%92/" title="洛谷P1160 队列安排">洛谷P1160 队列安排</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2024-03-10T07:54:18.000Z" title="发表于 2024-03-10 15:54:18">2024-03-10</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/%E5%88%B7%E9%A2%98/">刷题</a></span></div><div class="content">队列安排题目描述一个学校里老师要将班上  个同学排成一列，同学被编号为 ，他采取如下的方法：
+
+先将  号同学安排进队列，这时队列中只有他一个人；
+
+ 号同学依次入列，编号为  的同学入列方式为：老师指定编号为  的同学站在编号为  中某位同学（即之前已经入列的同学）的左边或右边；
+
+从队列中去掉  个同学，其他同学位置顺序不变。
+
+
+在所有同学按照上述方法队列排列完毕后，老师想知道从左到右所有同学的编号。
+输入格式第一行一个整数 ，表示了有  个同学。
+第  行，第  行包含两个整数 ，其中  为小于  的正整数， 为  或者 。若  为 ，则表示将  号同学插入到  号同学的左边， 为  则表示插入到右边。
+第  行为一个整数 ，表示去掉的同学数目。
+接下来  行，每行一个正整数 ，表示将  号同学从队列中移去，如果  号同学已经不在队列中则忽略这一条指令。
+输出格式一行，包含最多  个空格隔开的整数，表示了队列从左到右所有同学的编号。
+样例 #1样例输入 #1123456741 02 11 0233
+
+样例输出 #112 4 1
+
+提示【样例解释】
+将同学  插入至同学  左边， ...</div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/2024/03/10/%E6%B4%9B%E8%B0%B7P5732-%E3%80%90%E6%B7%B1%E5%9F%BA5-%E4%B9%A07%E3%80%91%E6%9D%A8%E8%BE%89%E4%B8%89%E8%A7%92/" title="洛谷P5732 【深基5.习7】杨辉三角">洛谷P5732 【深基5.习7】杨辉三角</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2024-03-10T07:52:03.000Z" title="发表于 2024-03-10 15:52:03">2024-03-10</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/%E5%88%B7%E9%A2%98/">刷题</a></span></div><div class="content">【深基5.习7】杨辉三角题目描述给出 ，输出杨辉三角的前  行。
+如果你不知道什么是杨辉三角，可以观察样例找找规律。
+输入格式输出格式样例 #1样例输入 #116
+
+样例输出 #112345611 11 2 11 3 3 11 4 6 4 11 5 10 10 5 1
+
+</div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/2024/03/10/hexo%E5%AD%98%E5%9C%A8%E9%97%AE%E9%A2%98%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88/" title="hexo存在问题解决方案">hexo存在问题解决方案</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2024-03-10T01:49:03.000Z" title="发表于 2024-03-10 09:49:03">2024-03-10</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/Hexo/">Hexo</a></span></div><div class="content">HEXO插件缺失问题Hexo更改主题后启动服务器，界面显如下字符:1extends includes/layout.pug block content include includes/recent-posts.pug include includes/partial
+
+解决方案:执行如下命令123456#下载对应的插件驱动npm install --save hexo-renderer-jade hexo-generator-feed hexo-generator-sitemap hexo-browsersync hexo-generator-archive#清除缓存hexo clean#生成静态文件即可hexo g
+
+HEXO公式无法正常显示更换Hexo的markdown渲染引擎先后执行下面的两条命令，第一条表示将默认的渲染引擎hexo-renderer-marked卸载，第二条命令是安装hexo-renderer-kramed渲染引擎，此渲染引擎修改了hexo-renderer-marked渲染引擎的一些bug。
+12npm uninstall hexo-renderer-mar ...</div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/2024/03/10/%E6%B4%9B%E8%B0%B7P1047-NOIP2005-%E6%99%AE%E5%8F%8A%E7%BB%84-%E6%A0%A1%E9%97%A8%E5%A4%96%E7%9A%84%E6%A0%91/" title="洛谷P1047 [NOIP2005 普及组] 校门外的树">洛谷P1047 [NOIP2005 普及组] 校门外的树</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2024-03-10T01:45:13.000Z" title="发表于 2024-03-10 09:45:13">2024-03-10</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/%E5%88%B7%E9%A2%98/">刷题</a></span></div><div class="content">[NOIP2005 普及组] 校门外的树题目描述某校大门外长度为  的马路上有一排树，每两棵相邻的树之间的间隔都是  米。我们可以把马路看成一个数轴，马路的一端在数轴  的位置，另一端在  的位置；数轴上的每个整数点，即 ，都种有一棵树。
+由于马路上有一些区域要用来建地铁。这些区域用它们在数轴上的起始点和终止点表示。已知任一区域的起始点和终止点的坐标都是整数，区域之间可能有重合的部分。现在要把这些区域中的树（包括区域端点处的两棵树）移走。你的任务是计算将这些树都移走后，马路上还有多少棵树。
+输入格式第一行有两个整数，分别表示马路的长度  和区域的数目 。
+接下来  行，每行两个整数 ，表示一个区域的起始点和终止点的坐标。
+输出格式输出一行一个整数，表示将这些树都移走后，马路上剩余的树木数量。
+样例 #1样例输入 #11234500 3150 300100 200470 471
+
+样例输出 #11298
+
+提示【数据范围】
+
+对于  的数据，保证区域之间没有重合的部分。
+对于  的数据，保证 ，，。
+
+【题目来源】
+NOIP 2005 普及组第二题
+</div></div></div><nav id="pagination"><div class="pagination"><span class="page-number current">1</span><a class="page-number" href="/page/2/#content-inner">2</a><a class="extend next" rel="next" href="/page/2/#content-inner"><i class="fas fa-chevron-right fa-fw"></i></a></div></nav></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="https://i.loli.net/2021/02/24/5O1day2nriDzjSu.png" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">Dexin Zhang</div><div class="author-info__description">learning and sharing</div></div><div class="card-info-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">18</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">5</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">3</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/zdx-1"><i class="fab fa-github"></i><span>Follow Me</span></a><div class="card-info-social-icons is-center"><a class="social-icon" href="https://github.com/zdx-1" target="_blank" title="Github"><i class="fab fa-github" style="color: #24292e;"></i></a><a class="social-icon" href="mailto:19546328912@163.com" target="_blank" title="Email"><i class="fas fa-envelope" style="color: #4a7dbe;"></i></a></div></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content">用于交流学习</div></div><div class="sticky_layout"><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2024/03/11/%E5%B7%AE%E5%88%86%E4%B8%8E%E5%89%8D%E7%BC%80%E5%92%8C/" title="差分与前缀和">差分与前缀和</a><time datetime="2024-03-11T08:45:34.000Z" title="发表于 2024-03-11 16:45:34">2024-03-11</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2024/03/11/%E5%B7%A5%E5%85%B7%E5%87%BD%E6%95%B0%E6%A8%A1%E6%9D%BF/" title="工具函数模板">工具函数模板</a><time datetime="2024-03-11T08:37:11.000Z" title="发表于 2024-03-11 16:37:11">2024-03-11</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2024/03/11/%E6%9E%9A%E4%B8%BE%E6%B3%95%E4%B8%8E%E5%B0%BA%E5%8F%96%E6%B3%95/" title="枚举法与尺取法">枚举法与尺取法</a><time datetime="2024-03-11T08:00:12.000Z" title="发表于 2024-03-11 16:00:12">2024-03-11</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2024/03/10/%E6%90%9C%E7%B4%A2%E7%AE%97%E6%B3%95/" title="搜索算法">搜索算法</a><time datetime="2024-03-10T08:42:50.000Z" title="发表于 2024-03-10 16:42:50">2024-03-10</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2024/03/10/%E9%80%92%E6%8E%A8%E6%B3%95%E4%B8%8E%E9%80%92%E5%BD%92%E6%B3%95/" title="递推法与递归法">递推法与递归法</a><time datetime="2024-03-10T08:34:00.000Z" title="发表于 2024-03-10 16:34:00">2024-03-10</time></div></div></div></div><div class="card-widget card-categories"><div class="item-headline">
+            <i class="fas fa-folder-open"></i>
+            <span>分类</span>
+            
+            </div>
+            <ul class="card-category-list" id="aside-cat-list">
+            <li class="card-category-list-item "><a class="card-category-list-link" href="/categories/Hexo/"><span class="card-category-list-name">Hexo</span><span class="card-category-list-count">3</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/%E5%88%B7%E9%A2%98/"><span class="card-category-list-name">刷题</span><span class="card-category-list-count">9</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/%E8%93%9D%E6%A1%A5%E6%9D%AFNote/"><span class="card-category-list-name">蓝桥杯Note</span><span class="card-category-list-count">6</span></a></li>
+            </ul></div><div class="card-widget card-tags"><div class="item-headline"><i class="fas fa-tags"></i><span>标签</span></div><div class="card-tag-cloud"><a href="/tags/hexo%E4%BD%BF%E7%94%A8/" style="font-size: 1.1em; color: #999">hexo使用</a> <a href="/tags/%E8%93%9D%E6%A1%A5%E6%9D%AF%E5%A4%87%E8%B5%9B/" style="font-size: 1.5em; color: #99a9bf">蓝桥杯备赛</a> <a href="/tags/%E6%B4%9B%E8%B0%B7/" style="font-size: 1.23em; color: #999ea6">洛谷</a> <a href="/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/" style="font-size: 1.23em; color: #999ea6">数据结构</a> <a href="/tags/%E8%93%9D%E6%A1%A5%E6%9D%AF%E6%A8%A1%E6%8B%9F%E8%B5%9B/" style="font-size: 1.37em; color: #99a4b2">蓝桥杯模拟赛</a></div></div><div class="card-widget card-archives"><div class="item-headline"><i class="fas fa-archive"></i><span>归档</span></div><ul class="card-archive-list"><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2024/03/"><span class="card-archive-list-date">三月 2024</span><span class="card-archive-list-count">18</span></a></li></ul></div><div class="card-widget card-webinfo"><div class="item-headline"><i class="fas fa-chart-line"></i><span>网站资讯</span></div><div class="webinfo"><div class="webinfo-item"><div class="item-name">文章数目 :</div><div class="item-count">18</div></div><div class="webinfo-item"><div class="item-name">本站访客数 :</div><div class="item-count" id="busuanzi_value_site_uv"><i class="fa-solid fa-spinner fa-spin"></i></div></div><div class="webinfo-item"><div class="item-name">本站总访问量 :</div><div class="item-count" id="busuanzi_value_site_pv"><i class="fa-solid fa-spinner fa-spin"></i></div></div><div class="webinfo-item"><div class="item-name">最后更新时间 :</div><div class="item-count" id="last-push-date" data-lastPushDate="2024-03-11T09:42:09.111Z"><i class="fa-solid fa-spinner fa-spin"></i></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2020 - 2024 By Dexin Zhang</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside-config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button id="go-up" type="button" title="回到顶部"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js?v=4.13.0"></script><script src="/js/main.js?v=4.13.0"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0.33/dist/fancybox/fancybox.umd.min.js"></script><script src="https://cdn.jsdelivr.net/npm/instant.page@5.2.0/instantpage.min.js" type="module"></script><div class="js-pjax"></div><canvas class="fireworks" mobile="false"></canvas><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1.1.3/dist/fireworks.min.js"></script><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div></body></html>
