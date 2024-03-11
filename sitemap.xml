@@ -2,6 +2,15 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://zdx-1.github.io/2024/03/11/%E6%9E%9A%E4%B8%BE%E6%B3%95%E4%B8%8E%E5%B0%BA%E5%8F%96%E6%B3%95/</loc>
+    
+    <lastmod>2024-03-11</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>http://zdx-1.github.io/2024/03/10/%E6%90%9C%E7%B4%A2%E7%AE%97%E6%B3%95/</loc>
     
     <lastmod>2024-03-10</lastmod>
@@ -193,7 +202,7 @@
 
   <url>
     <loc>http://zdx-1.github.io/</loc>
-    <lastmod>2024-03-10</lastmod>
+    <lastmod>2024-03-11</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
   </url>
@@ -201,35 +210,35 @@
   
   <url>
     <loc>http://zdx-1.github.io/tags/hexo%E4%BD%BF%E7%94%A8/</loc>
-    <lastmod>2024-03-10</lastmod>
+    <lastmod>2024-03-11</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>http://zdx-1.github.io/tags/%E8%93%9D%E6%A1%A5%E6%9D%AF%E5%A4%87%E8%B5%9B/</loc>
-    <lastmod>2024-03-10</lastmod>
+    <lastmod>2024-03-11</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>http://zdx-1.github.io/tags/%E6%B4%9B%E8%B0%B7/</loc>
-    <lastmod>2024-03-10</lastmod>
+    <lastmod>2024-03-11</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>http://zdx-1.github.io/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/</loc>
-    <lastmod>2024-03-10</lastmod>
+    <lastmod>2024-03-11</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>http://zdx-1.github.io/tags/%E8%93%9D%E6%A1%A5%E6%9D%AF%E6%A8%A1%E6%8B%9F%E8%B5%9B/</loc>
-    <lastmod>2024-03-10</lastmod>
+    <lastmod>2024-03-11</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
@@ -238,21 +247,21 @@
   
   <url>
     <loc>http://zdx-1.github.io/categories/Hexo/</loc>
-    <lastmod>2024-03-10</lastmod>
+    <lastmod>2024-03-11</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>http://zdx-1.github.io/categories/%E8%93%9D%E6%A1%A5%E6%9D%AFNote/</loc>
-    <lastmod>2024-03-10</lastmod>
+    <lastmod>2024-03-11</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>http://zdx-1.github.io/categories/%E5%88%B7%E9%A2%98/</loc>
-    <lastmod>2024-03-10</lastmod>
+    <lastmod>2024-03-11</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
