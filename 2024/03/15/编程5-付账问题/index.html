@@ -25,7 +25,7 @@
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="http://zdx-1.github.io/img/%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87_20231016025055.jpg">
 <meta property="article:published_time" content="2024-03-15T09:18:50.000Z">
-<meta property="article:modified_time" content="2024-03-15T10:51:24.141Z">
+<meta property="article:modified_time" content="2024-03-16T02:27:18.694Z">
 <meta property="article:author" content="Dexin Zhang">
 <meta property="article:tag" content="手算与思维题">
 <meta property="article:tag" content="蓝桥杯">
@@ -343,7 +343,7 @@ mjx-container[display="true"] + br {
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          357 字
+          420 字
         
       </span>
     
@@ -354,7 +354,7 @@ mjx-container[display="true"] + br {
         
         
         
-          3 分钟
+          4 分钟
         
       </span>
     
@@ -404,7 +404,7 @@ mjx-container[display="true"] + br {
               <p id="updated-time" class="note note-info" style="">
                 
                   
-                    本文最后更新于 2024年3月15日 晚上
+                    本文最后更新于 2024年3月16日 上午
                   
                 
               </p>
@@ -462,6 +462,8 @@ mjx-container[display="true"] + br {
 <td>256M</td>
 </tr>
 </tbody></table>
+<h3 id="解题思路"><a href="#解题思路" class="headerlink" title="解题思路"></a>解题思路</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-keyword">from</span> math <span class="hljs-keyword">import</span> *<br>n, s = <span class="hljs-built_in">map</span>(<span class="hljs-built_in">int</span>,<span class="hljs-built_in">input</span>().split())<br>a = <span class="hljs-built_in">list</span>(<span class="hljs-built_in">map</span>(<span class="hljs-built_in">int</span>,<span class="hljs-built_in">input</span>().split()))<br>a.sort()<br>avg = s/n<br><span class="hljs-built_in">sum</span> = <span class="hljs-number">0</span><br><span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> <span class="hljs-built_in">range</span>(n):<br>     <span class="hljs-keyword">if</span> a[i]*(n-i) &lt; s:<br>          <span class="hljs-built_in">sum</span> += <span class="hljs-built_in">pow</span>(a[i]-avg,<span class="hljs-number">2</span>)<br>          s -= a[i]<br>     <span class="hljs-keyword">else</span>:<br>          cur_avg = s/(n-i);      <span class="hljs-comment">#更新平均出钱数</span><br>          <span class="hljs-built_in">sum</span> += <span class="hljs-built_in">pow</span>(cur_avg-avg,<span class="hljs-number">2</span>)*(n-i)<br>          <span class="hljs-keyword">break</span><br><span class="hljs-built_in">print</span>(<span class="hljs-string">"{:.4f}"</span>.<span class="hljs-built_in">format</span>(sqrt(<span class="hljs-built_in">sum</span>/(n))))<br></code></pre></td></tr></table></figure>
+
 
                 
               </div>
