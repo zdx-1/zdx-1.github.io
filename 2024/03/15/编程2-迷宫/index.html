@@ -25,7 +25,7 @@
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="http://zdx-1.github.io/images/%E7%BC%96%E7%A8%8B2-%E8%BF%B7%E5%AE%AB/uid1580206-20210317-1615963493412.png">
 <meta property="article:published_time" content="2024-03-15T09:13:46.000Z">
-<meta property="article:modified_time" content="2024-03-15T09:15:21.727Z">
+<meta property="article:modified_time" content="2024-03-16T00:54:19.793Z">
 <meta property="article:author" content="Dexin Zhang">
 <meta property="article:tag" content="手算与思维题">
 <meta property="article:tag" content="蓝桥杯">
@@ -74,7 +74,7 @@
   <script id="fluid-configs">
     var Fluid = window.Fluid || {};
     Fluid.ctx = Object.assign({}, Fluid.ctx)
-    var CONFIG = {"hostname":"zdx-1.github.io","root":"/","version":"1.9.7","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":true,"follow_dnt":true,"baidu":null,"google":{"measurement_id":null},"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false}},"search_path":"/local-search.xml","include_content_in_search":true};
+    var CONFIG = {"hostname":"zdx-1.github.io","root":"/","version":"1.9.7","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"follow_dnt":true,"baidu":null,"google":{"measurement_id":null},"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false}},"search_path":"/local-search.xml","include_content_in_search":true};
 
     if (CONFIG.web_analytics.follow_dnt) {
       var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
@@ -84,33 +84,6 @@
   <script  src="/js/utils.js" ></script>
   <script  src="/js/color-schema.js" ></script>
   
-
-  
-
-  
-    <!-- Google tag (gtag.js) -->
-    <script async>
-      if (!Fluid.ctx.dnt) {
-        Fluid.utils.createScript("https://www.googletagmanager.com/gtag/js?id=", function() {
-          window.dataLayer = window.dataLayer || [];
-          function gtag() {
-            dataLayer.push(arguments);
-          }
-          gtag('js', new Date());
-          gtag('config', '');
-        });
-      }
-    </script>
-  
-
-  
-
-  
-
-  
-
-  
-
 
 
   
@@ -370,7 +343,7 @@ mjx-container[display="true"] + br {
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          298 字
+          746 字
         
       </span>
     
@@ -381,7 +354,7 @@ mjx-container[display="true"] + br {
         
         
         
-          3 分钟
+          7 分钟
         
       </span>
     
@@ -431,7 +404,7 @@ mjx-container[display="true"] + br {
               <p id="updated-time" class="note note-info" style="">
                 
                   
-                    本文最后更新于 2024年3月15日 下午
+                    本文最后更新于 2024年3月16日 早上
                   
                 
               </p>
@@ -486,6 +459,13 @@ mjx-container[display="true"] + br {
 <td>128M</td>
 </tr>
 </tbody></table>
+<h3 id="解题思路"><a href="#解题思路" class="headerlink" title="解题思路"></a>解题思路</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-built_in">str</span>=<span class="hljs-string">'UDDLUULRULUURLLLRRRURRUURLDLRDRUDDDDUUUUURUDLLRRUUDURLRLDLRLULLURLLRDURDLULLRDDDUUDDUDUDLLULRDLUURRR'</span><br><span class="hljs-built_in">sum</span>=<span class="hljs-number">0</span> <span class="hljs-comment">#计算有几个人出来</span><br><span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> <span class="hljs-built_in">range</span>(<span class="hljs-number">100</span>):<br>  a=i//<span class="hljs-number">10</span> <span class="hljs-comment">#一个点的坐标（a，b）</span><br>  b=i%<span class="hljs-number">10</span><br>  c = [{a:b}] <span class="hljs-comment">#用于存放经过的点，若重复经过，说明走不出去了</span><br>  <span class="hljs-keyword">while</span>(<span class="hljs-number">1</span>):<br>    <span class="hljs-keyword">if</span>(<span class="hljs-built_in">str</span>[a*<span class="hljs-number">10</span>+b]==<span class="hljs-string">'U'</span>):<br>      a=a-<span class="hljs-number">1</span><br>    <span class="hljs-keyword">elif</span> (<span class="hljs-built_in">str</span>[a*<span class="hljs-number">10</span>+b]==<span class="hljs-string">'D'</span>):<br>      a=a+<span class="hljs-number">1</span><br>    <span class="hljs-keyword">elif</span> (<span class="hljs-built_in">str</span>[a*<span class="hljs-number">10</span>+b]==<span class="hljs-string">'L'</span>):<br>      b=b-<span class="hljs-number">1</span><br>    <span class="hljs-keyword">else</span>:<br>      b=b+<span class="hljs-number">1</span><br>    <span class="hljs-keyword">if</span>({a:b} <span class="hljs-keyword">in</span> c):<br>      <span class="hljs-keyword">break</span><br>    <span class="hljs-keyword">if</span>({a:b} <span class="hljs-keyword">not</span> <span class="hljs-keyword">in</span> c):<br>      c.append({a:b})<br>    <span class="hljs-keyword">if</span>(a&lt;<span class="hljs-number">0</span> <span class="hljs-keyword">or</span> a&gt;<span class="hljs-number">9</span> <span class="hljs-keyword">or</span> b&lt;<span class="hljs-number">0</span> <span class="hljs-keyword">or</span> b&gt;<span class="hljs-number">9</span>):<br>      <span class="hljs-built_in">sum</span>+=<span class="hljs-number">1</span><br>      <span class="hljs-keyword">break</span><br><span class="hljs-built_in">print</span>(<span class="hljs-built_in">sum</span>)<br></code></pre></td></tr></table></figure>
+
+<p>DFS解法：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-keyword">def</span> <span class="hljs-title function_">dfs</span>(<span class="hljs-params">x,y</span>):<br>  <span class="hljs-keyword">if</span> <span class="hljs-number">0</span>&lt;=x&lt;<span class="hljs-number">10</span> <span class="hljs-keyword">and</span> <span class="hljs-number">0</span>&lt;=y&lt;<span class="hljs-number">10</span>: <br>    <span class="hljs-keyword">if</span> v[x][y] == <span class="hljs-number">0</span>:<br>      v[x][y] = <span class="hljs-number">1</span>   <span class="hljs-comment">#打上标识，证明此处已走过</span><br>      <span class="hljs-keyword">if</span> <span class="hljs-built_in">map</span>[x][y] == <span class="hljs-string">'U'</span>:<br>        flag = dfs(x-<span class="hljs-number">1</span>,y)<br>      <span class="hljs-keyword">elif</span> <span class="hljs-built_in">map</span>[x][y] == <span class="hljs-string">'D'</span>:<br>        flag = dfs(x+<span class="hljs-number">1</span>,y)<br>      <span class="hljs-keyword">elif</span> <span class="hljs-built_in">map</span>[x][y] == <span class="hljs-string">'L'</span>:<br>        flag = dfs(x,y-<span class="hljs-number">1</span>)<br>      <span class="hljs-keyword">elif</span> <span class="hljs-built_in">map</span>[x][y] == <span class="hljs-string">'R'</span>:<br>        flag = dfs(x,y+<span class="hljs-number">1</span>)<br>      v[x][y] = <span class="hljs-number">0</span>  <span class="hljs-comment">#按层返回，清除标识</span><br>      <span class="hljs-keyword">return</span> flag  <br>    <span class="hljs-keyword">else</span>:  <span class="hljs-comment">#如果回到已经走过的地方，说明发生循环，直接返回0标识走不出去</span><br>      <span class="hljs-keyword">return</span> <span class="hljs-number">0</span><br>  <span class="hljs-keyword">else</span>:      <span class="hljs-comment">#超限说明走出去了  返回1</span><br>    <span class="hljs-keyword">return</span> <span class="hljs-number">1</span><br><br>n = <span class="hljs-number">0</span><br><span class="hljs-built_in">map</span> = [<span class="hljs-built_in">list</span>(<span class="hljs-built_in">input</span>()) <span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> <span class="hljs-built_in">range</span>(<span class="hljs-number">10</span>)] <span class="hljs-comment">#读入迷宫</span><br>v = [[<span class="hljs-number">0</span>]*<span class="hljs-number">10</span> <span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> <span class="hljs-built_in">range</span>(<span class="hljs-number">10</span>)]  <span class="hljs-comment">#列表v用来标识该点是否重复经过，避免循环</span><br><span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> <span class="hljs-built_in">range</span>(<span class="hljs-number">10</span>):<br>  <span class="hljs-keyword">for</span> j <span class="hljs-keyword">in</span> <span class="hljs-built_in">range</span>(<span class="hljs-number">10</span>):<br>    n += dfs(i,j)   <span class="hljs-comment">#对每一个人进行走出迷宫的模拟，n记录最后能走出的人的总数</span><br><span class="hljs-built_in">print</span>(n)<br></code></pre></td></tr></table></figure>
+
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-comment">#深度dfs递归</span><br><span class="hljs-built_in">map</span> = [<span class="hljs-string">'UDDLUULRUL'</span>,<br>       <span class="hljs-string">'UURLLLRRRU'</span>,<br>       <span class="hljs-string">'RRUURLDLRD'</span>,<br>       <span class="hljs-string">'RUDDDDUUUU'</span>,<br>       <span class="hljs-string">'URUDLLRRUU'</span>,<br>       <span class="hljs-string">'DURLRLDLRL'</span>,<br>       <span class="hljs-string">'ULLURLLRDU'</span>,<br>       <span class="hljs-string">'RDLULLRDDD'</span>,<br>       <span class="hljs-string">'UUDDUDUDLL'</span>,<br>       <span class="hljs-string">'ULRDLUURRR'</span>]<span class="hljs-comment">#这里字符串元素要用单引号括起，用双引号，后面会提示数组越界</span><br>count = <span class="hljs-number">0</span><br>tablist = [[<span class="hljs-number">0</span>] * <span class="hljs-number">10</span> <span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> <span class="hljs-built_in">range</span>(<span class="hljs-number">10</span>)]<br><br><br><span class="hljs-keyword">def</span> <span class="hljs-title function_">find</span>(<span class="hljs-params">x, y</span>):<br>    <span class="hljs-keyword">if</span> x &lt; <span class="hljs-number">0</span> <span class="hljs-keyword">or</span> x &gt; <span class="hljs-number">9</span> <span class="hljs-keyword">or</span> y &lt; <span class="hljs-number">0</span> <span class="hljs-keyword">or</span> y &gt; <span class="hljs-number">9</span>:  <span class="hljs-comment"># 走出迷宫</span><br>        <span class="hljs-keyword">global</span> count<br>        count += <span class="hljs-number">1</span><br>        <span class="hljs-keyword">return</span> <span class="hljs-literal">True</span><br><br>    <span class="hljs-keyword">if</span> tablist[x][y] == <span class="hljs-number">1</span>:  <span class="hljs-comment"># 已走过</span><br>        <span class="hljs-keyword">return</span> <span class="hljs-literal">False</span><br><br>    tablist[x][y] = <span class="hljs-number">1</span>  <span class="hljs-comment"># 若之前没走过，则标记走过</span><br><br>    <span class="hljs-keyword">if</span> <span class="hljs-built_in">map</span>[x][y] == <span class="hljs-string">"U"</span>:<br>        find(x - <span class="hljs-number">1</span>, y)<span class="hljs-comment">#递归</span><br>    <span class="hljs-keyword">elif</span> <span class="hljs-built_in">map</span>[x][y] == <span class="hljs-string">"D"</span>:<br>        find(x + <span class="hljs-number">1</span>, y)<br>    <span class="hljs-keyword">elif</span> <span class="hljs-built_in">map</span>[x][y] == <span class="hljs-string">"L"</span>:<br>        find(x, y - <span class="hljs-number">1</span>)<br>    <span class="hljs-keyword">elif</span> <span class="hljs-built_in">map</span>[x][y] == <span class="hljs-string">"R"</span>:<br>        find(x, y + <span class="hljs-number">1</span>)<br>    <span class="hljs-keyword">return</span> <span class="hljs-literal">False</span><br><br><br><span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> <span class="hljs-built_in">list</span>(<span class="hljs-built_in">range</span>(<span class="hljs-number">10</span>)):<br>    <span class="hljs-keyword">for</span> j <span class="hljs-keyword">in</span> <span class="hljs-built_in">list</span>(<span class="hljs-built_in">range</span>(<span class="hljs-number">10</span>)):<br>        tablist = [[<span class="hljs-number">0</span>] * <span class="hljs-number">10</span> <span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> <span class="hljs-built_in">range</span>(<span class="hljs-number">10</span>)]<span class="hljs-comment">#遍历每个坐标起点开始前都先清零</span><br>        find(i, j)<br><br><span class="hljs-built_in">print</span>(count)<br></code></pre></td></tr></table></figure>
+
 
                 
               </div>
