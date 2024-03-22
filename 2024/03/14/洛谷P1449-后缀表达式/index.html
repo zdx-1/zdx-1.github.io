@@ -1,90 +1,39 @@
 <!DOCTYPE html>
-<html>
+<html lang="zh-CN">
+
 
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, user-scalable=no">
+  <title>
+    洛谷P1449 后缀表达式 | Zdx-1
+  </title>
+  <meta name="description" content="learning and sharing">
+  
+  <meta name="keywords" content="
+  数据结构,洛谷
+  ">
+  
+  <meta name="author" content="Dexin Zhang">
 
-    
-    <title>洛谷P1449 后缀表达式 | Zdx-1</title>
+  <meta http-equiv="Cache-Control" content="no-transform"/>
+  <meta http-equiv="Cache-Control" content="no-siteapp">
+  <meta name="theme-color" content="#1e2327">
+  <link rel="apple-touch-icon" href="https://github.githubassets.com/apple-touch-icon.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="https://github.githubassets.com/apple-touch-icon-180x180.png">
 
-    <meta name="description" content="learning and sharing">
-    <meta name="keywords" content="">
+  <link rel="icon" type="image/x-icon" href="https://github.githubassets.com/favicon.ico">
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="stylesheet"
+        href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  
 
-    
+  
 
-    <meta property="og:locale" content="zh-CN" />
-    <meta property="og:type" content="article" />
-    <meta property="og:title" content= "洛谷P1449 后缀表达式 | Zdx-1"  />
-    <meta property="og:description" content= "learning and sharing" />
-    <meta property="og:url" content="http://zdx-1.github.io/2024/03/14/%E6%B4%9B%E8%B0%B7P1449-%E5%90%8E%E7%BC%80%E8%A1%A8%E8%BE%BE%E5%BC%8F/index.html" />
-    <meta property="og:site_name" content="" />
-    <meta property="article:author" content="Dexin Zhang" />
-    <meta property="article:publisher" content="" />
-    <meta property="og:description" content="learning and sharing" />
-    <meta name="twitter:title" content="洛谷P1449 后缀表达式 | Zdx-1"/>
-    <meta name="twitter:description" content="learning and sharing"/>
-    <script type="application/ld+json">
-        {
-            "description": "learning and sharing",
-            "author": { "@type": "Person", "name": "Dexin Zhang" },
-            "@type": "BlogPosting",
-            "url": "http://zdx-1.github.io/2024/03/14/%E6%B4%9B%E8%B0%B7P1449-%E5%90%8E%E7%BC%80%E8%A1%A8%E8%BE%BE%E5%BC%8F/index.html",
-            "publisher": {
-            "@type": "Organization",
-            "logo": {
-                "@type": "ImageObject",
-                "url": "http://zdx-1.github.ioundefined"
-            },
-            "name": "Dexin Zhang"
-            },
-            "headline": "洛谷P1449 后缀表达式 | Zdx-1",
-            "datePublished": "2024-03-14T08:37:10.000Z",
-            "mainEntityOfPage": {
-                "@type": "WebPage",
-                "@id": "http://zdx-1.github.io/2024/03/14/%E6%B4%9B%E8%B0%B7P1449-%E5%90%8E%E7%BC%80%E8%A1%A8%E8%BE%BE%E5%BC%8F/index.html"
-            },
-            "@context": "http://schema.org"
-        }
-    </script>
-
-
-
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-<link rel="stylesheet" href="/dist/build.css?v=1654266144177.css">
-
-
-    
-<link rel="stylesheet" href="/dist/custom.css?v=1654266144177.css">
-
-
-    <script>
-        window.isPost = true
-        window.aomori = {
-            
-            
-            
-        }
-        window.aomori_logo_typed_animated = false
-        window.aomori_search_algolia = false
-
-    </script>
-
+  <script src="//cdnjs.cloudflare.com/ajax/libs/vue/1.0.25-csp/vue.min.js"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/moment.js/2.11.2/moment.min.js"></script>
 <meta name="generator" content="Hexo 7.1.1"><link rel="alternate" href="/atom.xml" title="Zdx-1" type="application/atom+xml">
 <style>mjx-container[jax="SVG"] {
   direction: ltr;
@@ -200,104 +149,111 @@ mjx-container[display="true"] + br {
 }
 </style></head>
 
-<body>
+<body id="replica-app">
 
-    <div class="container">
-    <header class="header">
-        <div class="header-type">
-            
-            <div class="header-type-inner">
-                
-                    <a class="header-type-title" href="/">Zdx-1</a>
-                
-    
-                
-            </div>
-        </div>
-        <div class="header-menu">
-            <div class="header-menu-inner">
-                
-            </div>
-            <div class="header-menu-social">
-                
-            </div>
-        </div>
+<nav class="navbar-wrapper">
+  <div class="navbar">
+    <div class="container clearfix">
+      <a href="/" class="navbar-logo"><i class="fa fa-github"></i></a>
 
-        <div class="header-menu-mobile">
-            <div class="header-menu-mobile-inner" id="mobile-menu-open">
-                <i class="icon icon-menu"></i>
-            </div>
+      <div class="navbar-search float-left desktop-only">
+        <div class="navbar-search-form">
+          <label for="gsc-i-id1">This website</label>
+          <div id="google-search">
+            <gcse:search></gcse:search>
+          </div>
         </div>
-    </header>
+      </div>
 
-    <div class="header-menu-mobile-menu">
-        <div class="header-menu-mobile-menu-bg"></div>
-        <div class="header-menu-mobile-menu-wrap">
-            <div class="header-menu-mobile-menu-inner">
-                <div class="header-menu-mobile-menu-close" id="mobile-menu-close">
-                    <i class="icon icon-cross"></i>
-                </div>
-                <div class="header-menu-mobile-menu-list">
-                    
-                </div>
-            </div>
-        </div>
+      <ul class="navbar-nav float-left">
+        
+        <li><a href="/">Archives</a></li>
+        
+        
+        <li><a href="/">Categories</a></li>
+        
+        
+        <li><a href="/">Tags</a></li>
+        
+        
+        <li class="desktop-only"><a href="/atom.xml" target="_blank">RSS</a></li>
+        
+      </ul>
+
+      <ul class="navbar-nav user-nav float-right desktop-only">
+        <li class="user-nav-notification">
+          <a><span class="user-nav-unread"></span><i class="fa fa-bell"></i></a>
+        </li>
+        <li>
+          <a><i class="fa fa-plus"></i> <i class="fa fa-caret-down"></i></a>
+        </li>
+        <li class="user-nav-logo">
+          <a><img src="https://octodex.github.com/images/baracktocat.jpg"> <i class="fa fa-caret-down"></i></i></a>
+        </li>
+      </ul>
     </div>
+  </div>
+</nav>
 
-</div>
+<div class="main-container">
+  <header class="header-wrapper desktop-only">
+  <div class="container header-site-detail">
+    <ul class="header-toolbar">
+      <li class="clearfix">
+        <a href="/" class="header-toolbar-left"><i
+                  class="fa fa-file-text"></i> Posts </a>
+        <a href="/"
+           class="header-toolbar-right"> 89 </a>
+      </li>
+      <li>
+        <a href="/" class="header-toolbar-left"><i
+                  class="fa fa-tags"></i> Tags </a>
+        <a href="/"
+           class="header-toolbar-right"> 22 </a>
+      </li>
+      <li>
+        <a href="/" class="header-toolbar-left"><i
+                  class="fa fa-folder-open"></i> Categories </a>
+        <a href="/"
+           class="header-toolbar-right"> 7 </a>
+      </li>
+    </ul>
+    <h2 class="header-title">
+      <i class="fa fa-book text-muted"></i>
+      <a href="/">Zdx-1</a>
+      
+      
+    </h2>
+  </div>
 
-    <div class="container">
-        <div class="main">
-            <section class="inner">
-                <section class="inner-main">
-                    <div class="post">
-    <article id="post-clu22c3n4001mggus09whd2er" class="article article-type-post" itemscope
-    itemprop="blogPost">
+  <div class="container">
+    <div class="header-tab-wrapper clearfix">
+      <span class="header-tab header-tab-selected"><i class="fa fa-thumbs-o-up"></i> Like</span>
+      <span class="header-tab"><i class="fa fa-share-alt"></i> Share</span>
+      <span class="header-tab"><i class="fa fa-comments-o"></i> Discussion</span>
+      <span class="header-tab"><i class="fa fa-bookmark-o"></i> Bookmark </span>
+      <span class="header-tab"><i class="fa fa-smile-o"></i> Smile <i class="fa fa-caret-down"></i></span>
+    </div>
+  </div>
+</header>
 
-    <div class="article-inner">
 
-        
-          
-        
-        
-        
+<div class="post-container container">
+  <h3>
+    <i class="fa fa-user-o"></i>
+    Dexin Zhang
 
-        
-        <header class="article-header">
-            
-  
-    <h1 class="article-title" itemprop="name">
-      洛谷P1449 后缀表达式
-    </h1>
-  
+    <span class="post-date float-right" title="{{moment(1710405430000).format('MMM DD, YYYY, h:mm:ss A')}}">
+      
+          <i class="fa fa-pencil-square-o"></i>
+      
+      {{moment(1710405430000).fromNow()}}
+    </span>
+  </h3>
 
-        </header>
-        
-
-        <div class="article-more-info article-more-info-post hairline">
-
-            <div class="article-date">
-  <time datetime="2024-03-14T08:37:10.000Z" itemprop="datePublished">2024-03-14</time>
-</div>
-
-            
-            <div class="article-category">
-                <a class="article-category-link" href="/categories/%E5%88%B7%E9%A2%98/">刷题</a>
-            </div>
-            
-
-            
-            <div class="article-tag">
-                <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/" rel="tag">数据结构</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E6%B4%9B%E8%B0%B7/" rel="tag">洛谷</a></li></ul>
-            </div>
-            
-
-            
-
-        </div>
-
-        <div class="article-entry post-inner-html hairline" itemprop="articleBody">
-            <h1 id="后缀表达式"><a href="#后缀表达式" class="headerlink" title="后缀表达式"></a>后缀表达式</h1><h2 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h2><p>所谓后缀表达式是指这样的一个表达式：式中不再引用括号，运算符号放在两个运算对象之后，所有计算按运算符号出现的顺序，严格地由左而右新进行（不用考虑运算符的优先级）。</p>
+  <article class="post-content">
+    <h1>洛谷P1449 后缀表达式</h1>
+    <h1 id="后缀表达式"><a href="#后缀表达式" class="headerlink" title="后缀表达式"></a>后缀表达式</h1><h2 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h2><p>所谓后缀表达式是指这样的一个表达式：式中不再引用括号，运算符号放在两个运算对象之后，所有计算按运算符号出现的顺序，严格地由左而右新进行（不用考虑运算符的优先级）。</p>
 <p>本题中运算符仅包含 <mjx-container class="MathJax" jax="SVG"><svg style="vertical-align: -0.188ex;" xmlns="http://www.w3.org/2000/svg" width="4.751ex" height="1.758ex" role="img" focusable="false" viewBox="0 -694 2100 777"><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)"><g data-mml-node="math"><g data-mml-node="mtext"><path data-c="2B" d="M147 271Q138 271 122 271T98 270Q68 270 53 277T38 306T53 335T98 342Q105 342 121 342T147 341H227V423L228 505Q241 531 262 531Q268 531 273 530T282 525T287 519T293 511L297 505V341H377H430Q457 341 467 338T483 321Q487 313 487 306Q487 295 480 286T463 273Q457 271 377 271H297V107Q281 81 262 81Q250 81 242 87T230 100L228 107L227 189V271H147Z"></path><path data-c="2D" d="M57 306Q57 333 86 341H438Q468 332 468 306T438 271H86Q57 280 57 306Z" transform="translate(525,0)"></path><path data-c="2A" d="M222 487Q224 501 235 510T262 520Q279 520 289 510T302 487Q302 458 301 429Q301 421 301 413T301 398T300 386T300 377V374Q300 373 301 373Q304 373 353 403T416 434Q432 434 444 423T456 393Q456 389 456 386T454 379T451 373T448 368T442 363T436 358T427 353T417 348T405 342T391 334Q345 309 339 305L388 279Q400 273 412 266T432 255T441 250Q456 238 456 218Q456 200 445 189T417 177Q403 177 354 207T301 238Q300 238 300 237V234Q300 231 300 226T300 214T301 199T301 182Q302 153 302 124Q300 109 289 100T262 90T235 100T222 124Q222 153 223 182Q223 190 223 198T223 213T224 225T224 234V237Q224 238 223 238Q220 238 171 208T108 177Q92 177 80 188T68 218Q68 237 79 246T134 277Q180 303 185 306L136 332Q124 338 112 345T92 356T83 361Q68 373 68 393Q68 411 79 422T107 434Q121 434 170 404T223 373Q224 373 224 374V377Q224 380 224 385T224 397T223 412T223 429Q222 458 222 487Z" transform="translate(1050,0)"></path><path data-c="2F" d="M94 -83Q78 -83 68 -73T58 -48Q58 -44 60 -36Q62 -31 227 314T399 673Q410 694 431 694Q445 694 455 684T466 659Q466 656 464 648Q463 643 298 298T125 -62Q114 -83 94 -83Z" transform="translate(1575,0)"></path></g></g></g></svg></mjx-container>。保证对于 <mjx-container class="MathJax" jax="SVG"><svg style="vertical-align: -0.188ex;" xmlns="http://www.w3.org/2000/svg" width="1.188ex" height="1.758ex" role="img" focusable="false" viewBox="0 -694 525 777"><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)"><g data-mml-node="math"><g data-mml-node="mtext"><path data-c="2F" d="M94 -83Q78 -83 68 -73T58 -48Q58 -44 60 -36Q62 -31 227 314T399 673Q410 694 431 694Q445 694 455 684T466 659Q466 656 464 648Q463 643 298 298T125 -62Q114 -83 94 -83Z"></path></g></g></g></svg></mjx-container> 运算除数不为 0。特别地，其中 <mjx-container class="MathJax" jax="SVG"><svg style="vertical-align: -0.188ex;" xmlns="http://www.w3.org/2000/svg" width="1.188ex" height="1.758ex" role="img" focusable="false" viewBox="0 -694 525 777"><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)"><g data-mml-node="math"><g data-mml-node="mtext"><path data-c="2F" d="M94 -83Q78 -83 68 -73T58 -48Q58 -44 60 -36Q62 -31 227 314T399 673Q410 694 431 694Q445 694 455 684T466 659Q466 656 464 648Q463 643 298 298T125 -62Q114 -83 94 -83Z"></path></g></g></g></svg></mjx-container> 运算的结果需要<strong>向 0 取整</strong>（即与 C++ <code>/</code> 运算的规则一致）。</p>
 <p>如：<mjx-container class="MathJax" jax="SVG"><svg style="vertical-align: -0.186ex;" xmlns="http://www.w3.org/2000/svg" width="10.69ex" height="1.756ex" role="img" focusable="false" viewBox="0 -694 4725 776"><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)"><g data-mml-node="math"><g data-mml-node="mtext"><path data-c="1D7F9" d="M260 546Q233 546 211 541T180 531T171 524L174 514Q177 505 177 497Q177 476 162 461T125 446Q106 446 90 459T73 504Q76 540 98 565T150 601T203 616T239 621Q241 622 265 622Q322 620 362 602T420 558T444 513T451 478Q451 386 369 329L375 326Q381 323 386 320T401 311T419 298T436 283T452 263T466 240T475 212T479 180Q479 99 416 44T259 -11T105 28T44 130Q44 154 59 168T95 183Q117 183 132 169T148 131Q148 119 139 101Q175 65 260 65Q316 65 355 97T395 179Q395 211 375 240Q336 292 253 292H234H215Q194 292 185 299T175 330Q175 350 184 359Q192 368 238 370T309 384Q336 398 351 423T367 474Q367 496 350 513Q321 546 260 546Z"></path><path data-c="2A" d="M222 487Q224 501 235 510T262 520Q279 520 289 510T302 487Q302 458 301 429Q301 421 301 413T301 398T300 386T300 377V374Q300 373 301 373Q304 373 353 403T416 434Q432 434 444 423T456 393Q456 389 456 386T454 379T451 373T448 368T442 363T436 358T427 353T417 348T405 342T391 334Q345 309 339 305L388 279Q400 273 412 266T432 255T441 250Q456 238 456 218Q456 200 445 189T417 177Q403 177 354 207T301 238Q300 238 300 237V234Q300 231 300 226T300 214T301 199T301 182Q302 153 302 124Q300 109 289 100T262 90T235 100T222 124Q222 153 223 182Q223 190 223 198T223 213T224 225T224 234V237Q224 238 223 238Q220 238 171 208T108 177Q92 177 80 188T68 218Q68 237 79 246T134 277Q180 303 185 306L136 332Q124 338 112 345T92 356T83 361Q68 373 68 393Q68 411 79 422T107 434Q121 434 170 404T223 373Q224 373 224 374V377Q224 380 224 385T224 397T223 412T223 429Q222 458 222 487Z" transform="translate(525,0)"></path><path data-c="28" d="M437 -53Q437 -82 399 -82H394Q377 -82 342 -55Q259 7 213 102T166 306Q166 412 211 507T342 667Q377 694 393 694H399Q437 694 437 665Q437 654 426 643T397 620T356 584T311 525Q301 511 290 488T264 412T250 306Q250 191 300 105T422 -27Q437 -37 437 -53Z" transform="translate(1050,0)"></path><path data-c="1D7FB" d="M387 189Q387 244 354 278T273 313Q230 313 205 301T163 271T138 249H120Q102 249 97 251Q85 258 83 266T80 311Q80 320 80 359T81 430Q81 587 82 591Q88 605 103 610H108Q112 610 120 610T138 610T163 610T192 611T225 611T260 611H415Q416 610 421 607T428 602T432 596T436 587T437 573Q437 567 437 562T434 554T431 548T427 543T423 540T418 538L415 536L289 535H164V363L170 366Q175 368 184 372T207 380T238 386T276 389Q357 389 414 331T472 187Q472 116 412 53T245 -10Q218 -10 209 -9Q126 5 89 48T52 137Q52 164 68 177T104 191Q130 191 143 175T156 141Q156 132 154 125T149 113T146 107Q146 104 155 95T188 76T245 65Q298 65 342 98T387 189Z" transform="translate(1575,0)"></path><path data-c="2D" d="M57 306Q57 333 86 341H438Q468 332 468 306T438 271H86Q57 280 57 306Z" transform="translate(2100,0)"></path><path data-c="1D7F8" d="M52 462Q52 528 110 575T247 622H250Q343 622 407 565T472 421Q472 371 446 324T390 248T308 178Q307 177 275 151T214 101L185 77Q185 76 286 76H388V87Q388 105 397 114T430 123T463 114Q470 107 471 100T472 61V42Q472 24 468 16T450 1H75Q53 10 53 32V38V48Q53 57 63 67T127 122Q153 144 169 157L289 256Q388 345 388 419Q388 473 346 509T231 545H224Q176 545 146 499L144 494Q155 476 155 459Q154 459 155 455T154 444T148 430T136 417T114 408Q113 408 110 408T104 407Q80 407 66 422T52 462Z" transform="translate(2625,0)"></path><path data-c="29" d="M87 664Q87 694 126 694Q138 694 147 690T183 667Q266 605 312 510T358 306Q358 193 307 93T161 -70Q142 -82 126 -82Q105 -82 96 -73T87 -53Q87 -47 88 -44Q92 -36 116 -19T173 34T230 119Q273 206 273 306Q273 408 231 494T109 635Q87 649 87 664Z" transform="translate(3150,0)"></path><path data-c="2B" d="M147 271Q138 271 122 271T98 270Q68 270 53 277T38 306T53 335T98 342Q105 342 121 342T147 341H227V423L228 505Q241 531 262 531Q268 531 273 530T282 525T287 519T293 511L297 505V341H377H430Q457 341 467 338T483 321Q487 313 487 306Q487 295 480 286T463 273Q457 271 377 271H297V107Q281 81 262 81Q250 81 242 87T230 100L228 107L227 189V271H147Z" transform="translate(3675,0)"></path><path data-c="1D7FD" d="M204 -10Q162 -10 162 40Q162 146 198 261T310 477Q311 478 321 491T342 517T358 535H128V524Q128 506 119 497Q111 489 86 489H78Q55 489 46 508Q44 513 44 557V580Q44 605 52 616T88 627H93Q114 627 125 611H458Q474 598 477 593T480 573Q480 559 478 553T469 543T446 521T408 477Q252 290 246 49Q246 43 246 37T246 27T245 22Q243 11 233 1T204 -10Z" transform="translate(4200,0)"></path></g></g></g></svg></mjx-container> 对应的后缀表达式为：<mjx-container class="MathJax" jax="SVG"><svg style="vertical-align: -0.025ex;" xmlns="http://www.w3.org/2000/svg" width="14.253ex" height="1.443ex" role="img" focusable="false" viewBox="0 -627 6300 638"><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)"><g data-mml-node="math"><g data-mml-node="mtext"><path data-c="1D7F9" d="M260 546Q233 546 211 541T180 531T171 524L174 514Q177 505 177 497Q177 476 162 461T125 446Q106 446 90 459T73 504Q76 540 98 565T150 601T203 616T239 621Q241 622 265 622Q322 620 362 602T420 558T444 513T451 478Q451 386 369 329L375 326Q381 323 386 320T401 311T419 298T436 283T452 263T466 240T475 212T479 180Q479 99 416 44T259 -11T105 28T44 130Q44 154 59 168T95 183Q117 183 132 169T148 131Q148 119 139 101Q175 65 260 65Q316 65 355 97T395 179Q395 211 375 240Q336 292 253 292H234H215Q194 292 185 299T175 330Q175 350 184 359Q192 368 238 370T309 384Q336 398 351 423T367 474Q367 496 350 513Q321 546 260 546Z"></path><path data-c="2E" d="M193 70Q193 105 214 122T258 140Q291 140 311 120T332 70Q332 44 314 23T262 1Q234 1 214 18T193 70Z" transform="translate(525,0)"></path><path data-c="1D7FB" d="M387 189Q387 244 354 278T273 313Q230 313 205 301T163 271T138 249H120Q102 249 97 251Q85 258 83 266T80 311Q80 320 80 359T81 430Q81 587 82 591Q88 605 103 610H108Q112 610 120 610T138 610T163 610T192 611T225 611T260 611H415Q416 610 421 607T428 602T432 596T436 587T437 573Q437 567 437 562T434 554T431 548T427 543T423 540T418 538L415 536L289 535H164V363L170 366Q175 368 184 372T207 380T238 386T276 389Q357 389 414 331T472 187Q472 116 412 53T245 -10Q218 -10 209 -9Q126 5 89 48T52 137Q52 164 68 177T104 191Q130 191 143 175T156 141Q156 132 154 125T149 113T146 107Q146 104 155 95T188 76T245 65Q298 65 342 98T387 189Z" transform="translate(1050,0)"></path><path data-c="2E" d="M193 70Q193 105 214 122T258 140Q291 140 311 120T332 70Q332 44 314 23T262 1Q234 1 214 18T193 70Z" transform="translate(1575,0)"></path><path data-c="1D7F8" d="M52 462Q52 528 110 575T247 622H250Q343 622 407 565T472 421Q472 371 446 324T390 248T308 178Q307 177 275 151T214 101L185 77Q185 76 286 76H388V87Q388 105 397 114T430 123T463 114Q470 107 471 100T472 61V42Q472 24 468 16T450 1H75Q53 10 53 32V38V48Q53 57 63 67T127 122Q153 144 169 157L289 256Q388 345 388 419Q388 473 346 509T231 545H224Q176 545 146 499L144 494Q155 476 155 459Q154 459 155 455T154 444T148 430T136 417T114 408Q113 408 110 408T104 407Q80 407 66 422T52 462Z" transform="translate(2100,0)"></path><path data-c="2E" d="M193 70Q193 105 214 122T258 140Q291 140 311 120T332 70Q332 44 314 23T262 1Q234 1 214 18T193 70Z" transform="translate(2625,0)"></path><path data-c="2D" d="M57 306Q57 333 86 341H438Q468 332 468 306T438 271H86Q57 280 57 306Z" transform="translate(3150,0)"></path><path data-c="2A" d="M222 487Q224 501 235 510T262 520Q279 520 289 510T302 487Q302 458 301 429Q301 421 301 413T301 398T300 386T300 377V374Q300 373 301 373Q304 373 353 403T416 434Q432 434 444 423T456 393Q456 389 456 386T454 379T451 373T448 368T442 363T436 358T427 353T417 348T405 342T391 334Q345 309 339 305L388 279Q400 273 412 266T432 255T441 250Q456 238 456 218Q456 200 445 189T417 177Q403 177 354 207T301 238Q300 238 300 237V234Q300 231 300 226T300 214T301 199T301 182Q302 153 302 124Q300 109 289 100T262 90T235 100T222 124Q222 153 223 182Q223 190 223 198T223 213T224 225T224 234V237Q224 238 223 238Q220 238 171 208T108 177Q92 177 80 188T68 218Q68 237 79 246T134 277Q180 303 185 306L136 332Q124 338 112 345T92 356T83 361Q68 373 68 393Q68 411 79 422T107 434Q121 434 170 404T223 373Q224 373 224 374V377Q224 380 224 385T224 397T223 412T223 429Q222 458 222 487Z" transform="translate(3675,0)"></path><path data-c="1D7FD" d="M204 -10Q162 -10 162 40Q162 146 198 261T310 477Q311 478 321 491T342 517T358 535H128V524Q128 506 119 497Q111 489 86 489H78Q55 489 46 508Q44 513 44 557V580Q44 605 52 616T88 627H93Q114 627 125 611H458Q474 598 477 593T480 573Q480 559 478 553T469 543T446 521T408 477Q252 290 246 49Q246 43 246 37T246 27T245 22Q243 11 233 1T204 -10Z" transform="translate(4200,0)"></path><path data-c="2E" d="M193 70Q193 105 214 122T258 140Q291 140 311 120T332 70Q332 44 314 23T262 1Q234 1 214 18T193 70Z" transform="translate(4725,0)"></path><path data-c="2B" d="M147 271Q138 271 122 271T98 270Q68 270 53 277T38 306T53 335T98 342Q105 342 121 342T147 341H227V423L228 505Q241 531 262 531Q268 531 273 530T282 525T287 519T293 511L297 505V341H377H430Q457 341 467 338T483 321Q487 313 487 306Q487 295 480 286T463 273Q457 271 377 271H297V107Q281 81 262 81Q250 81 242 87T230 100L228 107L227 189V271H147Z" transform="translate(5250,0)"></path><path data-c="40" d="M44 306Q44 445 125 531T302 617Q332 617 358 607T411 574T456 502T479 387Q481 361 481 321Q481 203 421 143Q381 103 332 103Q266 103 225 165T183 307Q183 390 227 449T332 508Q358 508 378 498Q350 541 304 541Q229 541 172 473T115 305Q115 208 171 140T306 71H310Q358 71 397 105Q409 115 436 115Q458 115 462 113Q481 106 481 86Q481 73 468 61Q401 -6 305 -6Q262 -6 217 14T133 71T69 170T44 306ZM410 306Q410 361 386 396T333 431Q300 431 277 394T254 305Q254 256 276 218T332 180Q364 180 387 217T410 306Z" transform="translate(5775,0)"></path></g></g></g></svg></mjx-container>。在该式中，<code>@</code> 为表达式的结束符号。<code>.</code> 为操作数的结束符号。</p>
 <h2 id="输入格式"><a href="#输入格式" class="headerlink" title="输入格式"></a>输入格式</h2><p>输入一行一个字符串 <mjx-container class="MathJax" jax="SVG"><svg style="vertical-align: -0.023ex;" xmlns="http://www.w3.org/2000/svg" width="1.061ex" height="1.023ex" role="img" focusable="false" viewBox="0 -442 469 452"><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)"><g data-mml-node="math"><g data-mml-node="mi"><path data-c="1D460" d="M131 289Q131 321 147 354T203 415T300 442Q362 442 390 415T419 355Q419 323 402 308T364 292Q351 292 340 300T328 326Q328 342 337 354T354 372T367 378Q368 378 368 379Q368 382 361 388T336 399T297 405Q249 405 227 379T204 326Q204 301 223 291T278 274T330 259Q396 230 396 163Q396 135 385 107T352 51T289 7T195 -10Q118 -10 86 19T53 87Q53 126 74 143T118 160Q133 160 146 151T160 120Q160 94 142 76T111 58Q109 57 108 57T107 55Q108 52 115 47T146 34T201 27Q237 27 263 38T301 66T318 97T323 122Q323 150 302 164T254 181T195 196T148 231Q131 256 131 289Z"></path></g></g></g></svg></mjx-container>，表示后缀表达式。</p>
@@ -312,202 +268,43 @@ mjx-container[display="true"] + br {
 
 <h2 id="提示"><a href="#提示" class="headerlink" title="提示"></a>提示</h2><p>数据保证，<mjx-container class="MathJax" jax="SVG"><svg style="vertical-align: -0.564ex;" xmlns="http://www.w3.org/2000/svg" width="11.747ex" height="2.26ex" role="img" focusable="false" viewBox="0 -749.5 5192.1 999"><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)"><g data-mml-node="math"><g data-mml-node="mn"><path data-c="31" d="M213 578L200 573Q186 568 160 563T102 556H83V602H102Q149 604 189 617T245 641T273 663Q275 666 285 666Q294 666 302 660V361L303 61Q310 54 315 52T339 48T401 46H427V0H416Q395 3 257 3Q121 3 100 0H88V46H114Q136 46 152 46T177 47T193 50T201 52T207 57T213 61V578Z"></path></g><g data-mml-node="mo" transform="translate(777.8,0)"><path data-c="2264" d="M674 636Q682 636 688 630T694 615T687 601Q686 600 417 472L151 346L399 228Q687 92 691 87Q694 81 694 76Q694 58 676 56H670L382 192Q92 329 90 331Q83 336 83 348Q84 359 96 365Q104 369 382 500T665 634Q669 636 674 636ZM84 -118Q84 -108 99 -98H678Q694 -104 694 -118Q694 -130 679 -138H98Q84 -131 84 -118Z"></path></g><g data-mml-node="mo" transform="translate(1833.6,0) translate(0 -0.5)"><path data-c="7C" d="M139 -249H137Q125 -249 119 -235V251L120 737Q130 750 139 750Q152 750 159 735V-235Q151 -249 141 -249H139Z"></path></g><g data-mml-node="mi" transform="translate(2111.6,0)"><path data-c="1D460" d="M131 289Q131 321 147 354T203 415T300 442Q362 442 390 415T419 355Q419 323 402 308T364 292Q351 292 340 300T328 326Q328 342 337 354T354 372T367 378Q368 378 368 379Q368 382 361 388T336 399T297 405Q249 405 227 379T204 326Q204 301 223 291T278 274T330 259Q396 230 396 163Q396 135 385 107T352 51T289 7T195 -10Q118 -10 86 19T53 87Q53 126 74 143T118 160Q133 160 146 151T160 120Q160 94 142 76T111 58Q109 57 108 57T107 55Q108 52 115 47T146 34T201 27Q237 27 263 38T301 66T318 97T323 122Q323 150 302 164T254 181T195 196T148 231Q131 256 131 289Z"></path></g><g data-mml-node="mo" transform="translate(2580.6,0) translate(0 -0.5)"><path data-c="7C" d="M139 -249H137Q125 -249 119 -235V251L120 737Q130 750 139 750Q152 750 159 735V-235Q151 -249 141 -249H139Z"></path></g><g data-mml-node="mo" transform="translate(3136.3,0)"><path data-c="2264" d="M674 636Q682 636 688 630T694 615T687 601Q686 600 417 472L151 346L399 228Q687 92 691 87Q694 81 694 76Q694 58 676 56H670L382 192Q92 329 90 331Q83 336 83 348Q84 359 96 365Q104 369 382 500T665 634Q669 636 674 636ZM84 -118Q84 -108 99 -98H678Q694 -104 694 -118Q694 -130 679 -138H98Q84 -131 84 -118Z"></path></g><g data-mml-node="mn" transform="translate(4192.1,0)"><path data-c="35" d="M164 157Q164 133 148 117T109 101H102Q148 22 224 22Q294 22 326 82Q345 115 345 210Q345 313 318 349Q292 382 260 382H254Q176 382 136 314Q132 307 129 306T114 304Q97 304 95 310Q93 314 93 485V614Q93 664 98 664Q100 666 102 666Q103 666 123 658T178 642T253 634Q324 634 389 662Q397 666 402 666Q410 666 410 648V635Q328 538 205 538Q174 538 149 544L139 546V374Q158 388 169 396T205 412T256 420Q337 420 393 355T449 201Q449 109 385 44T229 -22Q148 -22 99 32T50 154Q50 178 61 192T84 210T107 214Q132 214 148 197T164 157Z"></path><path data-c="30" d="M96 585Q152 666 249 666Q297 666 345 640T423 548Q460 465 460 320Q460 165 417 83Q397 41 362 16T301 -15T250 -22Q224 -22 198 -16T137 16T82 83Q39 165 39 320Q39 494 96 585ZM321 597Q291 629 250 629Q208 629 178 597Q153 571 145 525T137 333Q137 175 145 125T181 46Q209 16 250 16Q290 16 318 46Q347 76 354 130T362 333Q362 478 354 524T321 597Z" transform="translate(500,0)"></path></g></g></g></svg></mjx-container>，答案和计算过程中的每一个值的绝对值不超过 <mjx-container class="MathJax" jax="SVG"><svg style="vertical-align: -0.05ex;" xmlns="http://www.w3.org/2000/svg" width="3.25ex" height="2.005ex" role="img" focusable="false" viewBox="0 -864 1436.6 886"><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)"><g data-mml-node="math"><g data-mml-node="msup"><g data-mml-node="mn"><path data-c="31" d="M213 578L200 573Q186 568 160 563T102 556H83V602H102Q149 604 189 617T245 641T273 663Q275 666 285 666Q294 666 302 660V361L303 61Q310 54 315 52T339 48T401 46H427V0H416Q395 3 257 3Q121 3 100 0H88V46H114Q136 46 152 46T177 47T193 50T201 52T207 57T213 61V578Z"></path><path data-c="30" d="M96 585Q152 666 249 666Q297 666 345 640T423 548Q460 465 460 320Q460 165 417 83Q397 41 362 16T301 -15T250 -22Q224 -22 198 -16T137 16T82 83Q39 165 39 320Q39 494 96 585ZM321 597Q291 629 250 629Q208 629 178 597Q153 571 145 525T137 333Q137 175 145 125T181 46Q209 16 250 16Q290 16 318 46Q347 76 354 130T362 333Q362 478 354 524T321 597Z" transform="translate(500,0)"></path></g><g data-mml-node="mn" transform="translate(1033,393.1) scale(0.707)"><path data-c="39" d="M352 287Q304 211 232 211Q154 211 104 270T44 396Q42 412 42 436V444Q42 537 111 606Q171 666 243 666Q245 666 249 666T257 665H261Q273 665 286 663T323 651T370 619T413 560Q456 472 456 334Q456 194 396 97Q361 41 312 10T208 -22Q147 -22 108 7T68 93T121 149Q143 149 158 135T173 96Q173 78 164 65T148 49T135 44L131 43Q131 41 138 37T164 27T206 22H212Q272 22 313 86Q352 142 352 280V287ZM244 248Q292 248 321 297T351 430Q351 508 343 542Q341 552 337 562T323 588T293 615T246 625Q208 625 181 598Q160 576 154 546T147 441Q147 358 152 329T172 282Q197 248 244 248Z"></path></g></g></g></g></svg></mjx-container>。</p>
 
-        </div>
+  </article>
+</div>
 
-    </div>
 
     
-
-    
-
-    
-
-    
-
-    
-
-    
-<nav class="article-nav">
-  
-    <a href="/2024/03/14/%E6%B4%9B%E8%B0%B7P1241-%E6%8B%AC%E5%8F%B7%E5%BA%8F%E5%88%97/" id="article-nav-newer" class="article-nav-link-wrap">
-      <div class="article-nav-caption">prossimo</div>
-      <div class="article-nav-title">
-        
-          洛谷P1241 括号序列
-        
-      </div>
-    </a>
-  
-  
-    <a href="/2024/03/14/%E6%B4%9B%E8%B0%B7P1090-NOIP2004-%E6%8F%90%E9%AB%98%E7%BB%84-%E5%90%88%E5%B9%B6%E6%9E%9C%E5%AD%90-USACO06NOV-Fence-Repair-G/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-caption">precedente</div>
-      <div class="article-nav-title">洛谷P1090 [NOIP2004 提高组] 合并果子 / [USACO06NOV] Fence Repair G</div>
-    </a>
-  
-</nav>
-
-
-    <section class="share">
-        <div class="share-title">share</div>
-        <a class="share-item" target="_blank"
-            href="https://twitter.com/share?text=洛谷P1449 后缀表达式 - Zdx-1&url=http%3A%2F%2Fzdx-1.github.io%2F2024%2F03%2F14%2F%25E6%25B4%259B%25E8%25B0%25B7P1449-%25E5%2590%258E%25E7%25BC%2580%25E8%25A1%25A8%25E8%25BE%25BE%25E5%25BC%258F%2F">
-            <ion-icon name="logo-twitter"></ion-icon>
-        </a>
-        <a class="share-item" target="_blank"
-            href="https://www.facebook.com/sharer.php?title=洛谷P1449 后缀表达式 - Zdx-1&u=http%3A%2F%2Fzdx-1.github.io%2F2024%2F03%2F14%2F%25E6%25B4%259B%25E8%25B0%25B7P1449-%25E5%2590%258E%25E7%25BC%2580%25E8%25A1%25A8%25E8%25BE%25BE%25E5%25BC%258F%2F">
-            <ion-icon name="logo-facebook"></ion-icon>
-        </a>
-        <!-- <a class="share-item" target="_blank"
-            href="https://service.weibo.com/share/share.php?title=洛谷P1449 后缀表达式 - Zdx-1&url=http://zdx-1.github.io/2024/03/14/%E6%B4%9B%E8%B0%B7P1449-%E5%90%8E%E7%BC%80%E8%A1%A8%E8%BE%BE%E5%BC%8F/&pic=">
-            <div class="n-icon n-icon-weibo"></div>
-        </a> -->
-    </section>
-
-</article>
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
 
 </div>
-                </section>
-            </section>
 
-            
-            <aside class="sidebar ">
-                
-
-
-<div class="widget" id="widget">
-    
+<div class="footer-wrapper container">
+  <footer class="footer clearfix">
+    <div class="clearfix">
+    <a href="http://zdx-1.github.io" class="footer-logo">
+      <i class="fa fa-github"></i>
+    </a>
+    <ul class="footer-social-link">
+      <li>© 2019 Dexin Zhang</li>
+      <li><a href="http://zdx-1.github.io">Home</a></li>
       
-  <div class="widget-wrap">
-    <div class="widget-inner">
-      <div class="toc post-toc-html"></div>
-    </div>
-  </div>
-
-    
+      <li><a target="_blank" rel="noopener" href="https://github.com/zdx-1">Github</a></li>
       
-  <div class="widget-wrap widget-cate">
-    <div class="widget-title"><span>Categories</span></div>
-    <div class="widget-inner">
-      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Hexo/">Hexo</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Java-EE-%E5%BC%80%E5%8F%91/">Java EE 开发</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Python/">Python</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%88%B7%E9%A2%98/">刷题</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/">数据结构</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E8%93%9D%E6%A1%A5%E6%9D%AFNote/">蓝桥杯Note</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E8%93%9D%E6%A1%A5%E6%9D%AF%E5%86%B2%E5%88%BA%E8%90%A5/">蓝桥杯冲刺营</a></li></ul>
+    </ul>
+    <div class="footer-theme-info">
+      Theme <a target="_blank" rel="noopener" href="//github.com/sabrinaluo/hexo-theme-replica">Replica</a>
+      by <a target="_blank" rel="noopener" href="//github.com/sabrinaluo">Hiitea</a> ❤ Powered by Hexo
     </div>
-  </div>
-
-
-    
-      
-  <div class="widget-wrap widget-tags">
-    <div class="widget-title"><span>Tags</span></div>
-    <div class="widget-inner">
-      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/MyBatis/" rel="tag">MyBatis</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Python/" rel="tag">Python</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/hexo%E4%BD%BF%E7%94%A8/" rel="tag">hexo使用</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E4%BA%8C%E5%88%86%E7%AE%97%E6%B3%95/" rel="tag">二分算法</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/" rel="tag">动态规划</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%9B%BE%E8%AE%BA%E5%85%A5%E9%97%A8/" rel="tag">图论入门</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%B7%A5%E5%85%B7%E5%87%BD%E6%95%B0%E6%A8%A1%E6%9D%BF/" rel="tag">工具函数模板</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%B7%AE%E5%88%86%E4%B8%8E%E5%89%8D%E7%BC%80%E5%92%8C/" rel="tag">差分与前缀和</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%B9%B6%E6%9F%A5%E9%9B%86/" rel="tag">并查集</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%89%8B%E7%AE%97%E4%B8%8E%E6%80%9D%E7%BB%B4%E9%A2%98/" rel="tag">手算与思维题</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%90%9C%E7%B4%A2%E7%AE%97%E6%B3%95/" rel="tag">搜索算法</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/" rel="tag">数据结构</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%9E%9A%E4%B8%BE%E4%B8%8E%E5%B0%BA%E5%8F%96%E6%B3%95/" rel="tag">枚举与尺取法</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%9E%9A%E4%B8%BE%E6%B3%95%E4%B8%8E%E5%B0%BA%E5%8F%96%E6%B3%95/" rel="tag">枚举法与尺取法</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%B4%9B%E8%B0%B7/" rel="tag">洛谷</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%AE%80%E5%8D%95%E6%95%B0%E8%AE%BA/" rel="tag">简单数论</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%BB%84%E5%90%88%E6%95%B0%E5%AD%A6/" rel="tag">组合数学</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%93%9D%E6%A1%A5%E6%9D%AF/" rel="tag">蓝桥杯</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%93%9D%E6%A1%A5%E6%9D%AF%E5%A4%87%E8%B5%9B/" rel="tag">蓝桥杯备赛</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%93%9D%E6%A1%A5%E6%9D%AF%E6%A8%A1%E6%8B%9F%E8%B5%9B/" rel="tag">蓝桥杯模拟赛</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%B4%AA%E5%BF%83%E7%AE%97%E6%B3%95/" rel="tag">贪心算法</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E9%80%92%E6%8E%A8%E6%B3%95%E5%92%8C%E9%80%92%E5%BD%92%E6%B3%95/" rel="tag">递推法和递归法</a></li></ul>
     </div>
-  </div>
-
-
     
-      
-  <div class="widget-wrap widget-recent-posts">
-    <div class="widget-title"><span>Recent Posts</span></div>
-    <div class="widget-inner">
-      <ul>
-        
-          <li>
-            <a href="/2024/03/22/%E7%BC%96%E7%A8%8B52-%E5%B0%8F%E8%93%9D%E5%90%83%E7%B3%96%E6%9E%9C/">编程52 小蓝吃糖果</a>
-          </li>
-        
-          <li>
-            <a href="/2024/03/22/%E7%BC%96%E7%A8%8B51-%E7%B3%8A%E6%B6%82%E4%BA%BA%E5%AF%84%E4%BF%A1/">编程51 糊涂人寄信</a>
-          </li>
-        
-          <li>
-            <a href="/2024/03/22/%E7%BC%96%E7%A8%8B50-%E5%88%86%E5%89%B2%E7%AB%8B%E6%96%B9%E4%BD%93/">编程50 分割立方体</a>
-          </li>
-        
-          <li>
-            <a href="/2024/03/22/%E7%BC%96%E7%A8%8B49-%E8%B4%A8%E6%95%B0/">编程49 质数</a>
-          </li>
-        
-          <li>
-            <a href="/2024/03/22/%E7%BC%96%E7%A8%8B47-%E6%A0%B8%E6%A1%83%E7%9A%84%E6%95%B0%E9%87%8F/">编程47 核桃的数量</a>
-          </li>
-        
-      </ul>
-    </div>
-  </div>
-
-    
-      
-  <div class="widget-wrap widget-archive">
-    <div class="widget-title"><span>Archive</span></div>
-    <div class="widget-inner">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2024/">2024</a></li></ul>
-    </div>
-  </div>
-
-
-    
+  </footer>
 </div>
 
-<div id="backtop"><i class="icon icon-arrow-up"></i></div>
-            </aside>
-            
-        </div>
-    </div>
-
-    <footer class="footer">
-    <div class="footer-wave">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="#3c4859" fill-opacity="1" d="M0,160L60,181.3C120,203,240,245,360,240C480,235,600,181,720,186.7C840,192,960,256,1080,261.3C1200,267,1320,213,1380,186.7L1440,160L1440,320L1380,320C1320,320,1200,320,1080,320C960,320,840,320,720,320C600,320,480,320,360,320C240,320,120,320,60,320L0,320Z"></path></svg>
-    </div>
-
-    <!-- Please do not remove this -->
-    <!-- 开源不易，请勿删除 -->
-    <div class="footer-wrap">
-        <div class="footer-inner"> 
-            Zdx-1 &copy; 2024<br>
-            Powered By Hexo · Theme By <a href="https://linhong.me/" target="_blank">Aomori</a> · <a href="https://github.com/lh1me/hexo-theme-aomori" target="_blank">Github</a>
-        </div>
-    </div>
-
-</footer>
-
-<script type="module" src="https://unpkg.com/ionicons@6.0.2/dist/ionicons/ionicons.esm.js"></script>
 
 
 
-
-
-
-<script src="/dist/build.js?1654266144177.js"></script>
-
-
-<script src="/dist/custom.js?1654266144177.js"></script>
-
-
-
-
-
-
-
-
-
-
-
-
+<script src="/js/main.js"></script>
 
 </body>
-
 </html>
