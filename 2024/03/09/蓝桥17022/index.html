@@ -1,41 +1,42 @@
-<!DOCTYPE html>
-<html lang="zh-CN">
-
-
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-  <meta name="viewport"
-        content="width=device-width, initial-scale=1.0, user-scalable=no">
-  <title>
-    蓝桥17022 | Zdx-1
-  </title>
-  <meta name="description" content="learning and sharing">
-  
-  <meta name="keywords" content="
-  蓝桥杯模拟赛
-  ">
-  
-  <meta name="author" content="Dexin Zhang">
-
-  <meta http-equiv="Cache-Control" content="no-transform"/>
-  <meta http-equiv="Cache-Control" content="no-siteapp">
-  <meta name="theme-color" content="#1e2327">
-  <link rel="apple-touch-icon" href="https://github.githubassets.com/apple-touch-icon.png">
-  <link rel="apple-touch-icon" sizes="180x180" href="https://github.githubassets.com/apple-touch-icon-180x180.png">
-
-  <link rel="icon" type="image/x-icon" href="https://github.githubassets.com/favicon.ico">
-  <link rel="stylesheet" href="/css/main.css">
-  <link rel="stylesheet"
-        href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-  
-
-  
-
-  <script src="//cdnjs.cloudflare.com/ajax/libs/vue/1.0.25-csp/vue.min.js"></script>
-  <script src="//cdnjs.cloudflare.com/ajax/libs/moment.js/2.11.2/moment.min.js"></script>
-<meta name="generator" content="Hexo 7.1.1"><link rel="alternate" href="/atom.xml" title="Zdx-1" type="application/atom+xml">
-<style>mjx-container[jax="SVG"] {
+<!DOCTYPE html><html lang="zh-CN" theme-mode="dark"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>蓝桥17022 | Zdx-1</title><link rel="icon" type="image/x-icon" href="/favicon.ico"><link rel="preload" as="font" crossorigin="anonymous" href="/font/Bender.ttf"><link rel="preload" as="font" crossorigin="anonymous" href="/font/BenderLight.ttf"><link rel="preload" as="font" crossorigin="anonymous" href="/font/JetBrainsMono-Regular.woff2"><link rel="stylesheet" href="/css/arknights.css"><style>@font-face {
+  font-family: Bender;
+  src: local('Bender'), url("/font/Bender.ttf"), url("/font/Bender.otf");
+}
+@font-face {
+  font-family: BenderLight;
+  src: local('BenderLight'), url("/font/BenderLight.ttf");
+}
+@font-face {
+  font-family: 'JetBrains Mono';
+  src: local('JetBrains Mono'), url('/font/JetBrainsMono-Regular.woff2') format('woff2');
+}
+</style><script>var config = {"root":"/","search":{"preload":false,"activeHolder":"Enter here","blurHolder":"Search","noResult":"Data \"$0\" not found"},"code":{"codeInfo":"$0 - $1 lines","copy":"copy"}}</script><link type="text/css" rel="stylesheet" href="/lib/encrypt/hbe.style.css"><link type="text/css" rel="stylesheet" href="//unpkg.com/lightgallery@2.7.1/css/lightgallery.css"><link type="text/css" rel="stylesheet" href="//unpkg.com/lightgallery@2.7.1/css/lg-zoom.css"><link type="text/css" rel="stylesheet" href="//unpkg.com/lightgallery@2.7.1/css/lg-thumbnail.css"><link type="text/css" rel="stylesheet" href="/lib/fontawesome/css/all.min.css"><script>if (window.localStorage.getItem('theme-mode') === 'light')
+ document.documentElement.setAttribute('theme-mode', 'light')
+if (window.localStorage.getItem('theme-mode') === 'dark')
+ document.documentElement.setAttribute('theme-mode', 'dark')</script><style>:root {
+ --dark-background: url('https://ak.hypergryph.com/assets/index/images/ak/pc/bk.jpg');
+ --light-background: url('/img/bk.jpg');
+ --theme-encrypt-confirm: 'confirm'
+}</style><script defer src="/js/arknights.js"></script><script defer src="/js/search.js"></script><script defer type="module">import mermaid from '//unpkg.com/mermaid@10.5.0/dist/mermaid.esm.mjs';
+window.mermaid = mermaid;
+code.paintMermaid();
+</script><script async src="//unpkg.com/lightgallery@2.7.1/lightgallery.min.js"></script><script async src="//unpkg.com/lightgallery@2.7.1/plugins/zoom/lg-zoom.min.js"></script><script async src="//unpkg.com/lightgallery@2.7.1/plugins/thumbnail/lg-thumbnail.min.js"></script><script async src="/lib/encrypt/hbe.js"></script><script async src="/js/pjax.js"></script><script class="pjax-js">reset= () => {document.querySelector('.lg-container')?.remove()
+lightGallery(document.getElementById('post-bg'), {
+  plugins: [lgZoom,lgThumbnail],
+  selector: '.item-img'})}</script><script>window.addEventListener("load",() => {pjax = new Pjax({
+ cacheBust: false,
+ selectors: ['title','article','#aside-block','.pjax-js','data-pjax','.busuanzi'],
+ switches: {'article': Pjax.switches.sideBySide},
+ switchesOptions: {
+   'article': {
+     classNames: {
+       remove: "pjax-out",
+       add: "pjax-in"
+     }
+   }
+ }
+});
+document.addEventListener("pjax:complete", reset);reset()})</script><meta name="generator" content="Hexo 7.1.1"><style>mjx-container[jax="SVG"] {
   direction: ltr;
 }
 
@@ -147,113 +148,8 @@ mjx-container[display="true"] {
 mjx-container[display="true"] + br {
   display: none;
 }
-</style></head>
-
-<body id="replica-app">
-
-<nav class="navbar-wrapper">
-  <div class="navbar">
-    <div class="container clearfix">
-      <a href="/" class="navbar-logo"><i class="fa fa-github"></i></a>
-
-      <div class="navbar-search float-left desktop-only">
-        <div class="navbar-search-form">
-          <label for="gsc-i-id1">This website</label>
-          <div id="google-search">
-            <gcse:search></gcse:search>
-          </div>
-        </div>
-      </div>
-
-      <ul class="navbar-nav float-left">
-        
-        <li><a href="/">Archives</a></li>
-        
-        
-        <li><a href="/">Categories</a></li>
-        
-        
-        <li><a href="/">Tags</a></li>
-        
-        
-        <li class="desktop-only"><a href="/atom.xml" target="_blank">RSS</a></li>
-        
-      </ul>
-
-      <ul class="navbar-nav user-nav float-right desktop-only">
-        <li class="user-nav-notification">
-          <a><span class="user-nav-unread"></span><i class="fa fa-bell"></i></a>
-        </li>
-        <li>
-          <a><i class="fa fa-plus"></i> <i class="fa fa-caret-down"></i></a>
-        </li>
-        <li class="user-nav-logo">
-          <a><img src="https://octodex.github.com/images/baracktocat.jpg"> <i class="fa fa-caret-down"></i></i></a>
-        </li>
-      </ul>
-    </div>
-  </div>
-</nav>
-
-<div class="main-container">
-  <header class="header-wrapper desktop-only">
-  <div class="container header-site-detail">
-    <ul class="header-toolbar">
-      <li class="clearfix">
-        <a href="/" class="header-toolbar-left"><i
-                  class="fa fa-file-text"></i> Posts </a>
-        <a href="/"
-           class="header-toolbar-right"> 89 </a>
-      </li>
-      <li>
-        <a href="/" class="header-toolbar-left"><i
-                  class="fa fa-tags"></i> Tags </a>
-        <a href="/"
-           class="header-toolbar-right"> 22 </a>
-      </li>
-      <li>
-        <a href="/" class="header-toolbar-left"><i
-                  class="fa fa-folder-open"></i> Categories </a>
-        <a href="/"
-           class="header-toolbar-right"> 7 </a>
-      </li>
-    </ul>
-    <h2 class="header-title">
-      <i class="fa fa-book text-muted"></i>
-      <a href="/">Zdx-1</a>
-      
-      
-    </h2>
-  </div>
-
-  <div class="container">
-    <div class="header-tab-wrapper clearfix">
-      <span class="header-tab header-tab-selected"><i class="fa fa-thumbs-o-up"></i> Like</span>
-      <span class="header-tab"><i class="fa fa-share-alt"></i> Share</span>
-      <span class="header-tab"><i class="fa fa-comments-o"></i> Discussion</span>
-      <span class="header-tab"><i class="fa fa-bookmark-o"></i> Bookmark </span>
-      <span class="header-tab"><i class="fa fa-smile-o"></i> Smile <i class="fa fa-caret-down"></i></span>
-    </div>
-  </div>
-</header>
-
-
-<div class="post-container container">
-  <h3>
-    <i class="fa fa-user-o"></i>
-    Dexin Zhang
-
-    <span class="post-date float-right" title="{{moment(1709992516000).format('MMM DD, YYYY, h:mm:ss A')}}">
-      
-          <i class="fa fa-pencil-square-o"></i>
-      
-      {{moment(1709992516000).fromNow()}}
-    </span>
-  </h3>
-
-  <article class="post-content">
-    <h1>蓝桥17022</h1>
-    <h1 id="奇偶排序"><a href="#奇偶排序" class="headerlink" title="奇偶排序"></a>奇偶排序</h1><h3 id="问题描述"><a href="#问题描述" class="headerlink" title="问题描述"></a>问题描述</h3><p>小蓝所在的王国名为偶数王国，在他们王国中数字的比较通常按以下步骤进行：</p>
+</style><link rel="alternate" href="/atom.xml" title="Zdx-1" type="application/atom+xml">
+</head><body><div class="loading" style="opacity: 0;"><div class="loadingBar left"></div><div class="loadingBar right"></div></div><main><header class="closed"><div class="navBtn"><i class="navBtnIcon"><span class="navBtnIconBar"></span><span class="navBtnIconBar"></span><span class="navBtnIconBar"></span></i></div><nav><div class="navItem" id="search-header"><span class="navItemTitle"><input autocomplete="off" autocorrect="off" autocapitalize="none" placeholder="Search" spellcheck="false" maxlength="50" type="text" id="search-input"></span></div><div class="navItem" id="search-holder"></div><div class="search-popup" tabindex="0"><div id="search-result"></div></div><ol class="navContent"><li class="navItem"><a class="navBlock" href="/"><span class="navItemTitle">Home</span></a></li><li class="navItem" matchdata="categories,tags"><a class="navBlock" href="/archives/"><span class="navItemTitle">Archives</span></a></li></ol></nav></header><article><div id="post-bg"><div id="post-title"><h1>蓝桥17022</h1><div id="post-info"><span>First Post: <div class="control"><time datetime="2024-03-09T13:55:16.000Z" id="date"> 2024-03-09</time></div></span><br><span>Last Update: <div class="control"><time datetime="2024-03-10T01:41:50.851Z" id="updated"> 2024-03-10</time></div></span></div></div><hr><div id="post-content"><h1 id="奇偶排序"><a href="#奇偶排序" class="headerlink" title="奇偶排序"></a>奇偶排序</h1><h3 id="问题描述"><a href="#问题描述" class="headerlink" title="问题描述"></a>问题描述</h3><p>小蓝所在的王国名为偶数王国，在他们王国中数字的比较通常按以下步骤进行：</p>
 <ul>
 <li>如果两个数字的奇偶性不同，那么偶数一定大于奇数。</li>
 <li>如果两个数字的奇偶性相同，则比较它们的实际数值大小。</li>
@@ -277,44 +173,4 @@ mjx-container[display="true"] + br {
 
 <p>解法4：</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> os</span><br><span class="line"><span class="keyword">import</span> sys</span><br><span class="line"></span><br><span class="line"><span class="comment"># 请在此输入您的代码</span></span><br><span class="line">n = <span class="built_in">int</span>(<span class="built_in">input</span>())</span><br><span class="line">a = <span class="built_in">list</span>(<span class="built_in">map</span>(<span class="built_in">int</span>, <span class="built_in">input</span>().split()))</span><br><span class="line">a.sort()</span><br><span class="line">b = []</span><br><span class="line">c = []</span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(n):</span><br><span class="line">    <span class="keyword">if</span> a[i] % <span class="number">2</span> == <span class="number">0</span>:</span><br><span class="line">        b.append(a[i])</span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">        c.append(a[i])</span><br><span class="line"><span class="built_in">print</span>(<span class="string">" "</span>.join(<span class="built_in">map</span>(<span class="built_in">str</span>, c)),<span class="string">" "</span>.join(<span class="built_in">map</span>(<span class="built_in">str</span>,b)))</span><br></pre></td></tr></table></figure>
-
-  </article>
-</div>
-
-
-    
-
-
-
-
-</div>
-
-<div class="footer-wrapper container">
-  <footer class="footer clearfix">
-    <div class="clearfix">
-    <a href="http://zdx-1.github.io" class="footer-logo">
-      <i class="fa fa-github"></i>
-    </a>
-    <ul class="footer-social-link">
-      <li>© 2019 Dexin Zhang</li>
-      <li><a href="http://zdx-1.github.io">Home</a></li>
-      
-      <li><a target="_blank" rel="noopener" href="https://github.com/zdx-1">Github</a></li>
-      
-    </ul>
-    <div class="footer-theme-info">
-      Theme <a target="_blank" rel="noopener" href="//github.com/sabrinaluo/hexo-theme-replica">Replica</a>
-      by <a target="_blank" rel="noopener" href="//github.com/sabrinaluo">Hiitea</a> ❤ Powered by Hexo
-    </div>
-    </div>
-    
-  </footer>
-</div>
-
-
-
-
-<script src="/js/main.js"></script>
-
-</body>
-</html>
+<div id="paginator"></div></div><div id="post-footer"><div id="pages"><div class="footer-link" style="width: 50%;text-align:right;border-right:1px #fe2 solid"><a href="/2024/03/09/%E8%93%9D%E6%A1%A517021/">← Next 蓝桥17021</a></div><div class="footer-link" style="width: 50%;right:1px;border-left:1px #fe2 solid"><a href="/2024/03/09/%E8%93%9D%E6%A1%A517003/">蓝桥17003 Prev →</a></div></div></div></div><div class="bottom-btn"><div><a class="i-top" id="to-top" onClick="scrolls.scrolltop();" title="To Top" style="opacity: 0; display: none;">∧ </a><a class="i-index" id="to-index" href="#toc-div" title="To Catalog">≡</a><a class="i-color" id="color-mode" onClick="colorMode.change()" title="Change Theme"></a></div></div></article><aside><div id="about"><a href="/" id="logo"><img src="https://ak.hypergryph.com/assets/index/images/ak/pc/faction/1.png" alt="Logo"></a><h1 id="Dr"><a href="/">Dexin Zhang</a></h1><div id="description"><p>learning and sharing</p></div></div><div id="aside-block"><div id="toc-div"><h1>Catalog</h1><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%A5%87%E5%81%B6%E6%8E%92%E5%BA%8F"><span class="toc-number">1.</span> <span class="toc-text">奇偶排序</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%97%AE%E9%A2%98%E6%8F%8F%E8%BF%B0"><span class="toc-number">1.0.1.</span> <span class="toc-text">问题描述</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%BE%93%E5%85%A5%E6%A0%BC%E5%BC%8F"><span class="toc-number">1.0.2.</span> <span class="toc-text">输入格式</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%BE%93%E5%87%BA%E6%A0%BC%E5%BC%8F"><span class="toc-number">1.0.3.</span> <span class="toc-text">输出格式</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%A0%B7%E4%BE%8B%E8%BE%93%E5%85%A5"><span class="toc-number">1.0.4.</span> <span class="toc-text">样例输入</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%A0%B7%E4%BE%8B%E8%BE%93%E5%87%BA"><span class="toc-number">1.0.5.</span> <span class="toc-text">样例输出</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E8%A7%A3%E9%A2%98%E6%80%9D%E8%B7%AF"><span class="toc-number">2.</span> <span class="toc-text">解题思路</span></a></li></ol></div></div><footer><nobr>Published with <a target="_blank" rel="noopener" href="http://hexo.io">Hexo</a></nobr><wbr><nobr> Theme <a target="_blank" rel="noopener" href="https://github.com/Yue-plus/hexo-theme-arknights">Arknights</a></nobr><wbr><nobr> by <a target="_blank" rel="noopener" href="https://github.com/Yue-plus">Yue_plus</a></nobr></footer></aside></main><canvas id="canvas-dust"></canvas></body></html>

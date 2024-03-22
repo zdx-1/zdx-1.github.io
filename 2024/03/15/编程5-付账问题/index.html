@@ -1,41 +1,42 @@
-<!DOCTYPE html>
-<html lang="zh-CN">
-
-
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-  <meta name="viewport"
-        content="width=device-width, initial-scale=1.0, user-scalable=no">
-  <title>
-    编程5 付账问题 | Zdx-1
-  </title>
-  <meta name="description" content="learning and sharing">
-  
-  <meta name="keywords" content="
-  手算与思维题,蓝桥杯
-  ">
-  
-  <meta name="author" content="Dexin Zhang">
-
-  <meta http-equiv="Cache-Control" content="no-transform"/>
-  <meta http-equiv="Cache-Control" content="no-siteapp">
-  <meta name="theme-color" content="#1e2327">
-  <link rel="apple-touch-icon" href="https://github.githubassets.com/apple-touch-icon.png">
-  <link rel="apple-touch-icon" sizes="180x180" href="https://github.githubassets.com/apple-touch-icon-180x180.png">
-
-  <link rel="icon" type="image/x-icon" href="https://github.githubassets.com/favicon.ico">
-  <link rel="stylesheet" href="/css/main.css">
-  <link rel="stylesheet"
-        href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-  
-
-  
-
-  <script src="//cdnjs.cloudflare.com/ajax/libs/vue/1.0.25-csp/vue.min.js"></script>
-  <script src="//cdnjs.cloudflare.com/ajax/libs/moment.js/2.11.2/moment.min.js"></script>
-<meta name="generator" content="Hexo 7.1.1"><link rel="alternate" href="/atom.xml" title="Zdx-1" type="application/atom+xml">
-<style>mjx-container[jax="SVG"] {
+<!DOCTYPE html><html lang="zh-CN" theme-mode="dark"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>编程5 付账问题 | Zdx-1</title><link rel="icon" type="image/x-icon" href="/favicon.ico"><link rel="preload" as="font" crossorigin="anonymous" href="/font/Bender.ttf"><link rel="preload" as="font" crossorigin="anonymous" href="/font/BenderLight.ttf"><link rel="preload" as="font" crossorigin="anonymous" href="/font/JetBrainsMono-Regular.woff2"><link rel="stylesheet" href="/css/arknights.css"><style>@font-face {
+  font-family: Bender;
+  src: local('Bender'), url("/font/Bender.ttf"), url("/font/Bender.otf");
+}
+@font-face {
+  font-family: BenderLight;
+  src: local('BenderLight'), url("/font/BenderLight.ttf");
+}
+@font-face {
+  font-family: 'JetBrains Mono';
+  src: local('JetBrains Mono'), url('/font/JetBrainsMono-Regular.woff2') format('woff2');
+}
+</style><script>var config = {"root":"/","search":{"preload":false,"activeHolder":"Enter here","blurHolder":"Search","noResult":"Data \"$0\" not found"},"code":{"codeInfo":"$0 - $1 lines","copy":"copy"}}</script><link type="text/css" rel="stylesheet" href="/lib/encrypt/hbe.style.css"><link type="text/css" rel="stylesheet" href="//unpkg.com/lightgallery@2.7.1/css/lightgallery.css"><link type="text/css" rel="stylesheet" href="//unpkg.com/lightgallery@2.7.1/css/lg-zoom.css"><link type="text/css" rel="stylesheet" href="//unpkg.com/lightgallery@2.7.1/css/lg-thumbnail.css"><link type="text/css" rel="stylesheet" href="/lib/fontawesome/css/all.min.css"><script>if (window.localStorage.getItem('theme-mode') === 'light')
+ document.documentElement.setAttribute('theme-mode', 'light')
+if (window.localStorage.getItem('theme-mode') === 'dark')
+ document.documentElement.setAttribute('theme-mode', 'dark')</script><style>:root {
+ --dark-background: url('https://ak.hypergryph.com/assets/index/images/ak/pc/bk.jpg');
+ --light-background: url('/img/bk.jpg');
+ --theme-encrypt-confirm: 'confirm'
+}</style><script defer src="/js/arknights.js"></script><script defer src="/js/search.js"></script><script defer type="module">import mermaid from '//unpkg.com/mermaid@10.5.0/dist/mermaid.esm.mjs';
+window.mermaid = mermaid;
+code.paintMermaid();
+</script><script async src="//unpkg.com/lightgallery@2.7.1/lightgallery.min.js"></script><script async src="//unpkg.com/lightgallery@2.7.1/plugins/zoom/lg-zoom.min.js"></script><script async src="//unpkg.com/lightgallery@2.7.1/plugins/thumbnail/lg-thumbnail.min.js"></script><script async src="/lib/encrypt/hbe.js"></script><script async src="/js/pjax.js"></script><script class="pjax-js">reset= () => {document.querySelector('.lg-container')?.remove()
+lightGallery(document.getElementById('post-bg'), {
+  plugins: [lgZoom,lgThumbnail],
+  selector: '.item-img'})}</script><script>window.addEventListener("load",() => {pjax = new Pjax({
+ cacheBust: false,
+ selectors: ['title','article','#aside-block','.pjax-js','data-pjax','.busuanzi'],
+ switches: {'article': Pjax.switches.sideBySide},
+ switchesOptions: {
+   'article': {
+     classNames: {
+       remove: "pjax-out",
+       add: "pjax-in"
+     }
+   }
+ }
+});
+document.addEventListener("pjax:complete", reset);reset()})</script><meta name="generator" content="Hexo 7.1.1"><style>mjx-container[jax="SVG"] {
   direction: ltr;
 }
 
@@ -147,113 +148,8 @@ mjx-container[display="true"] {
 mjx-container[display="true"] + br {
   display: none;
 }
-</style></head>
-
-<body id="replica-app">
-
-<nav class="navbar-wrapper">
-  <div class="navbar">
-    <div class="container clearfix">
-      <a href="/" class="navbar-logo"><i class="fa fa-github"></i></a>
-
-      <div class="navbar-search float-left desktop-only">
-        <div class="navbar-search-form">
-          <label for="gsc-i-id1">This website</label>
-          <div id="google-search">
-            <gcse:search></gcse:search>
-          </div>
-        </div>
-      </div>
-
-      <ul class="navbar-nav float-left">
-        
-        <li><a href="/">Archives</a></li>
-        
-        
-        <li><a href="/">Categories</a></li>
-        
-        
-        <li><a href="/">Tags</a></li>
-        
-        
-        <li class="desktop-only"><a href="/atom.xml" target="_blank">RSS</a></li>
-        
-      </ul>
-
-      <ul class="navbar-nav user-nav float-right desktop-only">
-        <li class="user-nav-notification">
-          <a><span class="user-nav-unread"></span><i class="fa fa-bell"></i></a>
-        </li>
-        <li>
-          <a><i class="fa fa-plus"></i> <i class="fa fa-caret-down"></i></a>
-        </li>
-        <li class="user-nav-logo">
-          <a><img src="https://octodex.github.com/images/baracktocat.jpg"> <i class="fa fa-caret-down"></i></i></a>
-        </li>
-      </ul>
-    </div>
-  </div>
-</nav>
-
-<div class="main-container">
-  <header class="header-wrapper desktop-only">
-  <div class="container header-site-detail">
-    <ul class="header-toolbar">
-      <li class="clearfix">
-        <a href="/" class="header-toolbar-left"><i
-                  class="fa fa-file-text"></i> Posts </a>
-        <a href="/"
-           class="header-toolbar-right"> 89 </a>
-      </li>
-      <li>
-        <a href="/" class="header-toolbar-left"><i
-                  class="fa fa-tags"></i> Tags </a>
-        <a href="/"
-           class="header-toolbar-right"> 22 </a>
-      </li>
-      <li>
-        <a href="/" class="header-toolbar-left"><i
-                  class="fa fa-folder-open"></i> Categories </a>
-        <a href="/"
-           class="header-toolbar-right"> 7 </a>
-      </li>
-    </ul>
-    <h2 class="header-title">
-      <i class="fa fa-book text-muted"></i>
-      <a href="/">Zdx-1</a>
-      
-      
-    </h2>
-  </div>
-
-  <div class="container">
-    <div class="header-tab-wrapper clearfix">
-      <span class="header-tab header-tab-selected"><i class="fa fa-thumbs-o-up"></i> Like</span>
-      <span class="header-tab"><i class="fa fa-share-alt"></i> Share</span>
-      <span class="header-tab"><i class="fa fa-comments-o"></i> Discussion</span>
-      <span class="header-tab"><i class="fa fa-bookmark-o"></i> Bookmark </span>
-      <span class="header-tab"><i class="fa fa-smile-o"></i> Smile <i class="fa fa-caret-down"></i></span>
-    </div>
-  </div>
-</header>
-
-
-<div class="post-container container">
-  <h3>
-    <i class="fa fa-user-o"></i>
-    Dexin Zhang
-
-    <span class="post-date float-right" title="{{moment(1710494330000).format('MMM DD, YYYY, h:mm:ss A')}}">
-      
-          <i class="fa fa-pencil-square-o"></i>
-      
-      {{moment(1710494330000).fromNow()}}
-    </span>
-  </h3>
-
-  <article class="post-content">
-    <h1>编程5 付账问题</h1>
-    <p>付账问题</p>
+</style><link rel="alternate" href="/atom.xml" title="Zdx-1" type="application/atom+xml">
+</head><body><div class="loading" style="opacity: 0;"><div class="loadingBar left"></div><div class="loadingBar right"></div></div><main><header class="closed"><div class="navBtn"><i class="navBtnIcon"><span class="navBtnIconBar"></span><span class="navBtnIconBar"></span><span class="navBtnIconBar"></span></i></div><nav><div class="navItem" id="search-header"><span class="navItemTitle"><input autocomplete="off" autocorrect="off" autocapitalize="none" placeholder="Search" spellcheck="false" maxlength="50" type="text" id="search-input"></span></div><div class="navItem" id="search-holder"></div><div class="search-popup" tabindex="0"><div id="search-result"></div></div><ol class="navContent"><li class="navItem"><a class="navBlock" href="/"><span class="navItemTitle">Home</span></a></li><li class="navItem" matchdata="categories,tags"><a class="navBlock" href="/archives/"><span class="navItemTitle">Archives</span></a></li></ol></nav></header><article><div id="post-bg"><div id="post-title"><h1>编程5 付账问题</h1><div id="post-info"><span>First Post: <div class="control"><time datetime="2024-03-15T09:18:50.000Z" id="date"> 2024-03-15</time></div></span><br><span>Last Update: <div class="control"><time datetime="2024-03-16T02:29:10.331Z" id="updated"> 2024-03-16</time></div></span></div></div><hr><div id="post-content"><p>付账问题</p>
 <h3 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h3><p>几个人一起出去吃饭是常有的事。但在结帐的时候，常常会出现一些争执。</p>
 <p>现在有 <mjx-container class="MathJax" jax="SVG"><svg style="vertical-align: -0.025ex;" xmlns="http://www.w3.org/2000/svg" width="1.357ex" height="1.025ex" role="img" focusable="false" viewBox="0 -442 600 453"><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)"><g data-mml-node="math"><g data-mml-node="mi"><path data-c="1D45B" d="M21 287Q22 293 24 303T36 341T56 388T89 425T135 442Q171 442 195 424T225 390T231 369Q231 367 232 367L243 378Q304 442 382 442Q436 442 469 415T503 336T465 179T427 52Q427 26 444 26Q450 26 453 27Q482 32 505 65T540 145Q542 153 560 153Q580 153 580 145Q580 144 576 130Q568 101 554 73T508 17T439 -10Q392 -10 371 17T350 73Q350 92 386 193T423 345Q423 404 379 404H374Q288 404 229 303L222 291L189 157Q156 26 151 16Q138 -11 108 -11Q95 -11 87 -5T76 7T74 17Q74 30 112 180T152 343Q153 348 153 366Q153 405 129 405Q91 405 66 305Q60 285 60 284Q58 278 41 278H27Q21 284 21 287Z"></path></g></g></g></svg></mjx-container> 个人出去吃饭，他们总共消费了 <mjx-container class="MathJax" jax="SVG"><svg style="vertical-align: -0.05ex;" xmlns="http://www.w3.org/2000/svg" width="1.459ex" height="1.645ex" role="img" focusable="false" viewBox="0 -705 645 727"><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)"><g data-mml-node="math"><g data-mml-node="mi"><path data-c="1D446" d="M308 24Q367 24 416 76T466 197Q466 260 414 284Q308 311 278 321T236 341Q176 383 176 462Q176 523 208 573T273 648Q302 673 343 688T407 704H418H425Q521 704 564 640Q565 640 577 653T603 682T623 704Q624 704 627 704T632 705Q645 705 645 698T617 577T585 459T569 456Q549 456 549 465Q549 471 550 475Q550 478 551 494T553 520Q553 554 544 579T526 616T501 641Q465 662 419 662Q362 662 313 616T263 510Q263 480 278 458T319 427Q323 425 389 408T456 390Q490 379 522 342T554 242Q554 216 546 186Q541 164 528 137T492 78T426 18T332 -20Q320 -22 298 -22Q199 -22 144 33L134 44L106 13Q83 -14 78 -18T65 -22Q52 -22 52 -14Q52 -11 110 221Q112 227 130 227H143Q149 221 149 216Q149 214 148 207T144 186T142 153Q144 114 160 87T203 47T255 29T308 24Z"></path></g></g></g></svg></mjx-container> 元。其中第 <mjx-container class="MathJax" jax="SVG"><svg style="vertical-align: -0.025ex;" xmlns="http://www.w3.org/2000/svg" width="0.781ex" height="1.52ex" role="img" focusable="false" viewBox="0 -661 345 672"><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)"><g data-mml-node="math"><g data-mml-node="mi"><path data-c="1D456" d="M184 600Q184 624 203 642T247 661Q265 661 277 649T290 619Q290 596 270 577T226 557Q211 557 198 567T184 600ZM21 287Q21 295 30 318T54 369T98 420T158 442Q197 442 223 419T250 357Q250 340 236 301T196 196T154 83Q149 61 149 51Q149 26 166 26Q175 26 185 29T208 43T235 78T260 137Q263 149 265 151T282 153Q302 153 302 143Q302 135 293 112T268 61T223 11T161 -11Q129 -11 102 10T74 74Q74 91 79 106T122 220Q160 321 166 341T173 380Q173 404 156 404H154Q124 404 99 371T61 287Q60 286 59 284T58 281T56 279T53 278T49 278T41 278H27Q21 284 21 287Z"></path></g></g></g></svg></mjx-container> 个人带了 <mjx-container class="MathJax" jax="SVG"><svg style="vertical-align: -0.357ex;" xmlns="http://www.w3.org/2000/svg" width="1.937ex" height="1.355ex" role="img" focusable="false" viewBox="0 -441 856 598.8"><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)"><g data-mml-node="math"><g data-mml-node="msub"><g data-mml-node="mi"><path data-c="1D44E" d="M33 157Q33 258 109 349T280 441Q331 441 370 392Q386 422 416 422Q429 422 439 414T449 394Q449 381 412 234T374 68Q374 43 381 35T402 26Q411 27 422 35Q443 55 463 131Q469 151 473 152Q475 153 483 153H487Q506 153 506 144Q506 138 501 117T481 63T449 13Q436 0 417 -8Q409 -10 393 -10Q359 -10 336 5T306 36L300 51Q299 52 296 50Q294 48 292 46Q233 -10 172 -10Q117 -10 75 30T33 157ZM351 328Q351 334 346 350T323 385T277 405Q242 405 210 374T160 293Q131 214 119 129Q119 126 119 118T118 106Q118 61 136 44T179 26Q217 26 254 59T298 110Q300 114 325 217T351 328Z"></path></g><g data-mml-node="mi" transform="translate(562,-150) scale(0.707)"><path data-c="1D456" d="M184 600Q184 624 203 642T247 661Q265 661 277 649T290 619Q290 596 270 577T226 557Q211 557 198 567T184 600ZM21 287Q21 295 30 318T54 369T98 420T158 442Q197 442 223 419T250 357Q250 340 236 301T196 196T154 83Q149 61 149 51Q149 26 166 26Q175 26 185 29T208 43T235 78T260 137Q263 149 265 151T282 153Q302 153 302 143Q302 135 293 112T268 61T223 11T161 -11Q129 -11 102 10T74 74Q74 91 79 106T122 220Q160 321 166 341T173 380Q173 404 156 404H154Q124 404 99 371T61 287Q60 286 59 284T58 281T56 279T53 278T49 278T41 278H27Q21 284 21 287Z"></path></g></g></g></g></svg></mjx-container>元。幸运的是，所有人带的钱的总数是足够付账的，但现在问题来了：每个人分别要出多少钱呢？</p>
 <p>为了公平起见，我们希望在总付钱量恰好为 <mjx-container class="MathJax" jax="SVG"><svg style="vertical-align: -0.05ex;" xmlns="http://www.w3.org/2000/svg" width="1.459ex" height="1.645ex" role="img" focusable="false" viewBox="0 -705 645 727"><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)"><g data-mml-node="math"><g data-mml-node="mi"><path data-c="1D446" d="M308 24Q367 24 416 76T466 197Q466 260 414 284Q308 311 278 321T236 341Q176 383 176 462Q176 523 208 573T273 648Q302 673 343 688T407 704H418H425Q521 704 564 640Q565 640 577 653T603 682T623 704Q624 704 627 704T632 705Q645 705 645 698T617 577T585 459T569 456Q549 456 549 465Q549 471 550 475Q550 478 551 494T553 520Q553 554 544 579T526 616T501 641Q465 662 419 662Q362 662 313 616T263 510Q263 480 278 458T319 427Q323 425 389 408T456 390Q490 379 522 342T554 242Q554 216 546 186Q541 164 528 137T492 78T426 18T332 -20Q320 -22 298 -22Q199 -22 144 33L134 44L106 13Q83 -14 78 -18T65 -22Q52 -22 52 -14Q52 -11 110 221Q112 227 130 227H143Q149 221 149 216Q149 214 148 207T144 186T142 153Q144 114 160 87T203 47T255 29T308 24Z"></path></g></g></g></svg></mjx-container> 的前提下，最后每个人付的钱的标准差最小。这里我们约定，每个人支付的钱数可以是任意非负实数，即可以不是 1 分钱的整数倍。你需要输出最小的标准差是多少。</p>
@@ -305,44 +201,4 @@ mjx-container[display="true"] + br {
 </tbody></table>
 <h3 id="解题思路"><a href="#解题思路" class="headerlink" title="解题思路"></a>解题思路</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> math <span class="keyword">import</span> *</span><br><span class="line">n, s = <span class="built_in">map</span>(<span class="built_in">int</span>,<span class="built_in">input</span>().split())</span><br><span class="line">a = <span class="built_in">list</span>(<span class="built_in">map</span>(<span class="built_in">int</span>,<span class="built_in">input</span>().split()))</span><br><span class="line">a.sort()</span><br><span class="line">avg = s/n</span><br><span class="line"><span class="built_in">sum</span> = <span class="number">0</span></span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(n):</span><br><span class="line">     <span class="keyword">if</span> a[i]*(n-i) &lt; s:</span><br><span class="line">          <span class="built_in">sum</span> += <span class="built_in">pow</span>(a[i]-avg,<span class="number">2</span>)</span><br><span class="line">          s -= a[i]</span><br><span class="line">     <span class="keyword">else</span>:</span><br><span class="line">          cur_avg = s/(n-i);      <span class="comment">#更新平均出钱数</span></span><br><span class="line">          <span class="built_in">sum</span> += <span class="built_in">pow</span>(cur_avg-avg,<span class="number">2</span>)*(n-i)</span><br><span class="line">          <span class="keyword">break</span></span><br><span class="line"><span class="built_in">print</span>(<span class="string">"{:.4f}"</span>.<span class="built_in">format</span>(sqrt(<span class="built_in">sum</span>/(n))))</span><br></pre></td></tr></table></figure>
 
-
-  </article>
-</div>
-
-
-    
-
-
-
-
-</div>
-
-<div class="footer-wrapper container">
-  <footer class="footer clearfix">
-    <div class="clearfix">
-    <a href="http://zdx-1.github.io" class="footer-logo">
-      <i class="fa fa-github"></i>
-    </a>
-    <ul class="footer-social-link">
-      <li>© 2019 Dexin Zhang</li>
-      <li><a href="http://zdx-1.github.io">Home</a></li>
-      
-      <li><a target="_blank" rel="noopener" href="https://github.com/zdx-1">Github</a></li>
-      
-    </ul>
-    <div class="footer-theme-info">
-      Theme <a target="_blank" rel="noopener" href="//github.com/sabrinaluo/hexo-theme-replica">Replica</a>
-      by <a target="_blank" rel="noopener" href="//github.com/sabrinaluo">Hiitea</a> ❤ Powered by Hexo
-    </div>
-    </div>
-    
-  </footer>
-</div>
-
-
-
-
-<script src="/js/main.js"></script>
-
-</body>
-</html>
+<div id="paginator"></div></div><div id="post-footer"><div id="pages"><div class="footer-link" style="width: 50%;text-align:right;border-right:1px #fe2 solid"><a href="/2024/03/15/%E7%BC%96%E7%A8%8B6-%E6%95%B0%E5%AD%97%E4%B8%89%E8%A7%92%E5%BD%A2/">← Next 编程6 数字三角形</a></div><div class="footer-link" style="width: 50%;right:1px;border-left:1px #fe2 solid"><a href="/2024/03/15/%E7%BC%96%E7%A8%8B4-%E4%B9%98%E7%A7%AF%E5%B0%BE%E9%9B%B6/">编程4 乘积尾零 Prev →</a></div></div></div></div><div class="bottom-btn"><div><a class="i-top" id="to-top" onClick="scrolls.scrolltop();" title="To Top" style="opacity: 0; display: none;">∧ </a><a class="i-index" id="to-index" href="#toc-div" title="To Catalog">≡</a><a class="i-color" id="color-mode" onClick="colorMode.change()" title="Change Theme"></a></div></div></article><aside><div id="about"><a href="/" id="logo"><img src="https://ak.hypergryph.com/assets/index/images/ak/pc/faction/1.png" alt="Logo"></a><h1 id="Dr"><a href="/">Dexin Zhang</a></h1><div id="description"><p>learning and sharing</p></div></div><div id="aside-block"><div id="toc-div"><h1>Catalog</h1><ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%A2%98%E7%9B%AE%E6%8F%8F%E8%BF%B0"><span class="toc-number">1.</span> <span class="toc-text">题目描述</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%BE%93%E5%85%A5%E6%8F%8F%E8%BF%B0"><span class="toc-number">2.</span> <span class="toc-text">输入描述</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%BE%93%E5%87%BA%E6%8F%8F%E8%BF%B0"><span class="toc-number">3.</span> <span class="toc-text">输出描述</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%BE%93%E5%85%A5%E8%BE%93%E5%87%BA%E6%A0%B7%E4%BE%8B"><span class="toc-number">4.</span> <span class="toc-text">输入输出样例</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%A4%BA%E4%BE%8B"><span class="toc-number">4.1.</span> <span class="toc-text">示例</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%BF%90%E8%A1%8C%E9%99%90%E5%88%B6"><span class="toc-number">5.</span> <span class="toc-text">运行限制</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%A7%A3%E9%A2%98%E6%80%9D%E8%B7%AF"><span class="toc-number">6.</span> <span class="toc-text">解题思路</span></a></li></ol></div></div><footer><nobr>Published with <a target="_blank" rel="noopener" href="http://hexo.io">Hexo</a></nobr><wbr><nobr> Theme <a target="_blank" rel="noopener" href="https://github.com/Yue-plus/hexo-theme-arknights">Arknights</a></nobr><wbr><nobr> by <a target="_blank" rel="noopener" href="https://github.com/Yue-plus">Yue_plus</a></nobr></footer></aside></main><canvas id="canvas-dust"></canvas></body></html>

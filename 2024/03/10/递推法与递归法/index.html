@@ -1,41 +1,42 @@
-<!DOCTYPE html>
-<html lang="zh-CN">
-
-
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-  <meta name="viewport"
-        content="width=device-width, initial-scale=1.0, user-scalable=no">
-  <title>
-    递推法与递归法 | Zdx-1
-  </title>
-  <meta name="description" content="learning and sharing">
-  
-  <meta name="keywords" content="
-  蓝桥杯备赛,递推法和递归法
-  ">
-  
-  <meta name="author" content="Dexin Zhang">
-
-  <meta http-equiv="Cache-Control" content="no-transform"/>
-  <meta http-equiv="Cache-Control" content="no-siteapp">
-  <meta name="theme-color" content="#1e2327">
-  <link rel="apple-touch-icon" href="https://github.githubassets.com/apple-touch-icon.png">
-  <link rel="apple-touch-icon" sizes="180x180" href="https://github.githubassets.com/apple-touch-icon-180x180.png">
-
-  <link rel="icon" type="image/x-icon" href="https://github.githubassets.com/favicon.ico">
-  <link rel="stylesheet" href="/css/main.css">
-  <link rel="stylesheet"
-        href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-  
-
-  
-
-  <script src="//cdnjs.cloudflare.com/ajax/libs/vue/1.0.25-csp/vue.min.js"></script>
-  <script src="//cdnjs.cloudflare.com/ajax/libs/moment.js/2.11.2/moment.min.js"></script>
-<meta name="generator" content="Hexo 7.1.1"><link rel="alternate" href="/atom.xml" title="Zdx-1" type="application/atom+xml">
-<style>mjx-container[jax="SVG"] {
+<!DOCTYPE html><html lang="zh-CN" theme-mode="dark"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>递推法与递归法 | Zdx-1</title><link rel="icon" type="image/x-icon" href="/favicon.ico"><link rel="preload" as="font" crossorigin="anonymous" href="/font/Bender.ttf"><link rel="preload" as="font" crossorigin="anonymous" href="/font/BenderLight.ttf"><link rel="preload" as="font" crossorigin="anonymous" href="/font/JetBrainsMono-Regular.woff2"><link rel="stylesheet" href="/css/arknights.css"><style>@font-face {
+  font-family: Bender;
+  src: local('Bender'), url("/font/Bender.ttf"), url("/font/Bender.otf");
+}
+@font-face {
+  font-family: BenderLight;
+  src: local('BenderLight'), url("/font/BenderLight.ttf");
+}
+@font-face {
+  font-family: 'JetBrains Mono';
+  src: local('JetBrains Mono'), url('/font/JetBrainsMono-Regular.woff2') format('woff2');
+}
+</style><script>var config = {"root":"/","search":{"preload":false,"activeHolder":"Enter here","blurHolder":"Search","noResult":"Data \"$0\" not found"},"code":{"codeInfo":"$0 - $1 lines","copy":"copy"}}</script><link type="text/css" rel="stylesheet" href="/lib/encrypt/hbe.style.css"><link type="text/css" rel="stylesheet" href="//unpkg.com/lightgallery@2.7.1/css/lightgallery.css"><link type="text/css" rel="stylesheet" href="//unpkg.com/lightgallery@2.7.1/css/lg-zoom.css"><link type="text/css" rel="stylesheet" href="//unpkg.com/lightgallery@2.7.1/css/lg-thumbnail.css"><link type="text/css" rel="stylesheet" href="/lib/fontawesome/css/all.min.css"><script>if (window.localStorage.getItem('theme-mode') === 'light')
+ document.documentElement.setAttribute('theme-mode', 'light')
+if (window.localStorage.getItem('theme-mode') === 'dark')
+ document.documentElement.setAttribute('theme-mode', 'dark')</script><style>:root {
+ --dark-background: url('https://ak.hypergryph.com/assets/index/images/ak/pc/bk.jpg');
+ --light-background: url('/img/bk.jpg');
+ --theme-encrypt-confirm: 'confirm'
+}</style><script defer src="/js/arknights.js"></script><script defer src="/js/search.js"></script><script defer type="module">import mermaid from '//unpkg.com/mermaid@10.5.0/dist/mermaid.esm.mjs';
+window.mermaid = mermaid;
+code.paintMermaid();
+</script><script async src="//unpkg.com/lightgallery@2.7.1/lightgallery.min.js"></script><script async src="//unpkg.com/lightgallery@2.7.1/plugins/zoom/lg-zoom.min.js"></script><script async src="//unpkg.com/lightgallery@2.7.1/plugins/thumbnail/lg-thumbnail.min.js"></script><script async src="/lib/encrypt/hbe.js"></script><script async src="/js/pjax.js"></script><script class="pjax-js">reset= () => {document.querySelector('.lg-container')?.remove()
+lightGallery(document.getElementById('post-bg'), {
+  plugins: [lgZoom,lgThumbnail],
+  selector: '.item-img'})}</script><script>window.addEventListener("load",() => {pjax = new Pjax({
+ cacheBust: false,
+ selectors: ['title','article','#aside-block','.pjax-js','data-pjax','.busuanzi'],
+ switches: {'article': Pjax.switches.sideBySide},
+ switchesOptions: {
+   'article': {
+     classNames: {
+       remove: "pjax-out",
+       add: "pjax-in"
+     }
+   }
+ }
+});
+document.addEventListener("pjax:complete", reset);reset()})</script><meta name="generator" content="Hexo 7.1.1"><style>mjx-container[jax="SVG"] {
   direction: ltr;
 }
 
@@ -147,113 +148,8 @@ mjx-container[display="true"] {
 mjx-container[display="true"] + br {
   display: none;
 }
-</style></head>
-
-<body id="replica-app">
-
-<nav class="navbar-wrapper">
-  <div class="navbar">
-    <div class="container clearfix">
-      <a href="/" class="navbar-logo"><i class="fa fa-github"></i></a>
-
-      <div class="navbar-search float-left desktop-only">
-        <div class="navbar-search-form">
-          <label for="gsc-i-id1">This website</label>
-          <div id="google-search">
-            <gcse:search></gcse:search>
-          </div>
-        </div>
-      </div>
-
-      <ul class="navbar-nav float-left">
-        
-        <li><a href="/">Archives</a></li>
-        
-        
-        <li><a href="/">Categories</a></li>
-        
-        
-        <li><a href="/">Tags</a></li>
-        
-        
-        <li class="desktop-only"><a href="/atom.xml" target="_blank">RSS</a></li>
-        
-      </ul>
-
-      <ul class="navbar-nav user-nav float-right desktop-only">
-        <li class="user-nav-notification">
-          <a><span class="user-nav-unread"></span><i class="fa fa-bell"></i></a>
-        </li>
-        <li>
-          <a><i class="fa fa-plus"></i> <i class="fa fa-caret-down"></i></a>
-        </li>
-        <li class="user-nav-logo">
-          <a><img src="https://octodex.github.com/images/baracktocat.jpg"> <i class="fa fa-caret-down"></i></i></a>
-        </li>
-      </ul>
-    </div>
-  </div>
-</nav>
-
-<div class="main-container">
-  <header class="header-wrapper desktop-only">
-  <div class="container header-site-detail">
-    <ul class="header-toolbar">
-      <li class="clearfix">
-        <a href="/" class="header-toolbar-left"><i
-                  class="fa fa-file-text"></i> Posts </a>
-        <a href="/"
-           class="header-toolbar-right"> 89 </a>
-      </li>
-      <li>
-        <a href="/" class="header-toolbar-left"><i
-                  class="fa fa-tags"></i> Tags </a>
-        <a href="/"
-           class="header-toolbar-right"> 22 </a>
-      </li>
-      <li>
-        <a href="/" class="header-toolbar-left"><i
-                  class="fa fa-folder-open"></i> Categories </a>
-        <a href="/"
-           class="header-toolbar-right"> 7 </a>
-      </li>
-    </ul>
-    <h2 class="header-title">
-      <i class="fa fa-book text-muted"></i>
-      <a href="/">Zdx-1</a>
-      
-      
-    </h2>
-  </div>
-
-  <div class="container">
-    <div class="header-tab-wrapper clearfix">
-      <span class="header-tab header-tab-selected"><i class="fa fa-thumbs-o-up"></i> Like</span>
-      <span class="header-tab"><i class="fa fa-share-alt"></i> Share</span>
-      <span class="header-tab"><i class="fa fa-comments-o"></i> Discussion</span>
-      <span class="header-tab"><i class="fa fa-bookmark-o"></i> Bookmark </span>
-      <span class="header-tab"><i class="fa fa-smile-o"></i> Smile <i class="fa fa-caret-down"></i></span>
-    </div>
-  </div>
-</header>
-
-
-<div class="post-container container">
-  <h3>
-    <i class="fa fa-user-o"></i>
-    Dexin Zhang
-
-    <span class="post-date float-right" title="{{moment(1710059640000).format('MMM DD, YYYY, h:mm:ss A')}}">
-      
-          <i class="fa fa-pencil-square-o"></i>
-      
-      {{moment(1710059640000).fromNow()}}
-    </span>
-  </h3>
-
-  <article class="post-content">
-    <h1>递推法与递归法</h1>
-    <p>[TOC]</p>
+</style><link rel="alternate" href="/atom.xml" title="Zdx-1" type="application/atom+xml">
+</head><body><div class="loading" style="opacity: 0;"><div class="loadingBar left"></div><div class="loadingBar right"></div></div><main><header class="closed"><div class="navBtn"><i class="navBtnIcon"><span class="navBtnIconBar"></span><span class="navBtnIconBar"></span><span class="navBtnIconBar"></span></i></div><nav><div class="navItem" id="search-header"><span class="navItemTitle"><input autocomplete="off" autocorrect="off" autocapitalize="none" placeholder="Search" spellcheck="false" maxlength="50" type="text" id="search-input"></span></div><div class="navItem" id="search-holder"></div><div class="search-popup" tabindex="0"><div id="search-result"></div></div><ol class="navContent"><li class="navItem"><a class="navBlock" href="/"><span class="navItemTitle">Home</span></a></li><li class="navItem" matchdata="categories,tags"><a class="navBlock" href="/archives/"><span class="navItemTitle">Archives</span></a></li></ol></nav></header><article><div id="post-bg"><div id="post-title"><h1>递推法与递归法</h1><div id="post-info"><span>First Post: <div class="control"><time datetime="2024-03-10T08:34:00.000Z" id="date"> 2024-03-10</time></div></span><br><span>Last Update: <div class="control"><time datetime="2024-03-16T00:28:42.899Z" id="updated"> 2024-03-16</time></div></span></div></div><hr><div id="post-content"><p>[TOC]</p>
 <h2 id="递推法与递归法"><a href="#递推法与递归法" class="headerlink" title="递推法与递归法"></a>递推法与递归法</h2><p><strong>递推法：</strong></p>
 <p>递推法是一种在数学和其他领域广泛应用的重要方法，它在计算机科学中被用作一种关键的数值求解算法。</p>
 <p><strong>知识点：</strong></p>
@@ -377,7 +273,7 @@ mjx-container[display="true"] + br {
 <p><strong>题目解析：</strong></p>
 <p>这道题跟上面一道题的算法原理相同，只是增加了多次查询的复杂度，所以仅需修改这一点即可。</p>
 <p>再有的是有的同学担心自己的输入输出是在一个屏幕上的，评测的时候会不会出现问题。</p>
-<p><img src="/./../images/%E9%80%92%E6%8E%A8%E6%B3%95%E4%B8%8E%E9%80%92%E5%BD%92%E6%B3%95/40a8cde4be1c5946317ab844a61f697f-0.png" alt="图片描述"></p>
+<p class='item-img' data-src='/./../images/%E9%80%92%E6%8E%A8%E6%B3%95%E4%B8%8E%E9%80%92%E5%BD%92%E6%B3%95/40a8cde4be1c5946317ab844a61f697f-0.png'><img src="/./../images/%E9%80%92%E6%8E%A8%E6%B3%95%E4%B8%8E%E9%80%92%E5%BD%92%E6%B3%95/40a8cde4be1c5946317ab844a61f697f-0.png" alt="图片描述"></p>
 <p>类似这样的情况，这一点是不用担心的，只要不是交互题，评测机的输入与输出是分开的，只有你的输出会用来跟答案比较，所以我们只用关心我们的输出即可。</p>
 <p>比如有一道题让你计算 <mjx-container class="MathJax" jax="SVG"><svg style="vertical-align: -0.464ex;" xmlns="http://www.w3.org/2000/svg" width="5.168ex" height="1.783ex" role="img" focusable="false" viewBox="0 -583 2284.4 788"><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)"><g data-mml-node="math"><g data-mml-node="mi"><path data-c="1D465" d="M52 289Q59 331 106 386T222 442Q257 442 286 424T329 379Q371 442 430 442Q467 442 494 420T522 361Q522 332 508 314T481 292T458 288Q439 288 427 299T415 328Q415 374 465 391Q454 404 425 404Q412 404 406 402Q368 386 350 336Q290 115 290 78Q290 50 306 38T341 26Q378 26 414 59T463 140Q466 150 469 151T485 153H489Q504 153 504 145Q504 144 502 134Q486 77 440 33T333 -11Q263 -11 227 52Q186 -10 133 -10H127Q78 -10 57 16T35 71Q35 103 54 123T99 143Q142 143 142 101Q142 81 130 66T107 46T94 41L91 40Q91 39 97 36T113 29T132 26Q168 26 194 71Q203 87 217 139T245 247T261 313Q266 340 266 352Q266 380 251 392T217 404Q177 404 142 372T93 290Q91 281 88 280T72 278H58Q52 284 52 289Z"></path></g><g data-mml-node="mo" transform="translate(794.2,0)"><path data-c="2B" d="M56 237T56 250T70 270H369V420L370 570Q380 583 389 583Q402 583 409 568V270H707Q722 262 722 250T707 230H409V-68Q401 -82 391 -82H389H387Q375 -82 369 -68V230H70Q56 237 56 250Z"></path></g><g data-mml-node="mi" transform="translate(1794.4,0)"><path data-c="1D466" d="M21 287Q21 301 36 335T84 406T158 442Q199 442 224 419T250 355Q248 336 247 334Q247 331 231 288T198 191T182 105Q182 62 196 45T238 27Q261 27 281 38T312 61T339 94Q339 95 344 114T358 173T377 247Q415 397 419 404Q432 431 462 431Q475 431 483 424T494 412T496 403Q496 390 447 193T391 -23Q363 -106 294 -155T156 -205Q111 -205 77 -183T43 -117Q43 -95 50 -80T69 -58T89 -48T106 -45Q150 -45 150 -87Q150 -107 138 -122T115 -142T102 -147L99 -148Q101 -153 118 -160T152 -167H160Q177 -167 186 -165Q219 -156 247 -127T290 -65T313 -9T321 21L315 17Q309 13 296 6T270 -6Q250 -11 231 -11Q185 -11 150 11T104 82Q103 89 103 113Q103 170 138 262T173 379Q173 380 173 381Q173 390 173 393T169 400T158 404H154Q131 404 112 385T82 344T65 302T57 280Q55 278 41 278H27Q21 284 21 287Z"></path></g></g></g></svg></mjx-container> 的值，如果你知道每答案，就可以直接输出，都不用进行读入。</p>
 <p>然后我们来看一下需要多次询问的题目该怎么解决。</p>
@@ -408,7 +304,7 @@ mjx-container[display="true"] + br {
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> com.company;</span><br><span class="line"><span class="keyword">import</span> java.util.Scanner;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">Main</span> {</span><br><span class="line"></span><br><span class="line">    <span class="keyword">static</span> <span class="type">int</span> []F=<span class="keyword">new</span> <span class="title class_">int</span> [<span class="number">35</span>];</span><br><span class="line"></span><br><span class="line">    <span class="keyword">static</span> <span class="type">int</span> <span class="title function_">fn</span><span class="params">(<span class="type">int</span> n)</span></span><br><span class="line">    {</span><br><span class="line">        <span class="comment">//递归出口1</span></span><br><span class="line">        <span class="keyword">if</span>(n==<span class="number">0</span>)</span><br><span class="line">        {</span><br><span class="line"></span><br><span class="line">            F[<span class="number">0</span>]=<span class="number">0</span>;</span><br><span class="line">            <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">        }</span><br><span class="line"></span><br><span class="line">        <span class="comment">//递归出口2</span></span><br><span class="line">        <span class="keyword">else</span> <span class="keyword">if</span>(n==<span class="number">1</span> )</span><br><span class="line">        {</span><br><span class="line">            F[<span class="number">1</span>]=<span class="number">1</span>;</span><br><span class="line">            <span class="keyword">return</span> <span class="number">1</span>;</span><br><span class="line">        }</span><br><span class="line"></span><br><span class="line">        <span class="keyword">else</span></span><br><span class="line">        {</span><br><span class="line">            F[n]=fn(n-<span class="number">1</span>)+fn(n-<span class="number">2</span>);</span><br><span class="line">            <span class="keyword">return</span> F[n]; <span class="comment">//递归关系式</span></span><br><span class="line">        }</span><br><span class="line">    }</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[] args)</span> {</span><br><span class="line"></span><br><span class="line">        <span class="type">int</span> m; <span class="comment">//m次查询</span></span><br><span class="line">        <span class="type">int</span> n; <span class="comment">//第几个数</span></span><br><span class="line">        fn(<span class="number">30</span>);</span><br><span class="line">        <span class="type">Scanner</span> <span class="variable">in</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">Scanner</span>(System.in);</span><br><span class="line">        m = in.nextInt();</span><br><span class="line">        <span class="keyword">while</span>(m&gt;<span class="number">0</span>){</span><br><span class="line">            m-=<span class="number">1</span>;</span><br><span class="line">            n= in.nextInt();</span><br><span class="line">            System.out.println(F[n]);</span><br><span class="line">        }</span><br><span class="line">    }</span><br><span class="line">}</span><br></pre></td></tr></table></figure>
 
 <h3 id="数字三角形问题"><a href="#数字三角形问题" class="headerlink" title="数字三角形问题"></a>数字三角形问题</h3><p><strong>题目描述:</strong></p>
-<p><img src="/./../images/%E9%80%92%E6%8E%A8%E6%B3%95%E4%B8%8E%E9%80%92%E5%BD%92%E6%B3%95/06b8663e2aceb6c87e0913d2fe0710f2-0.png" alt="图片描述"></p>
+<p class='item-img' data-src='/./../images/%E9%80%92%E6%8E%A8%E6%B3%95%E4%B8%8E%E9%80%92%E5%BD%92%E6%B3%95/06b8663e2aceb6c87e0913d2fe0710f2-0.png'><img src="/./../images/%E9%80%92%E6%8E%A8%E6%B3%95%E4%B8%8E%E9%80%92%E5%BD%92%E6%B3%95/06b8663e2aceb6c87e0913d2fe0710f2-0.png" alt="图片描述"></p>
 <p>如图数字三角形。如下所示为一个数字三角形。请编一个程序计算从顶到底的某处的一条路径，使该路径所经过的数字总和最大。只要求输出总和。 　</p>
 <ol>
 <li>一步可沿左斜线向下或右斜线向下走；</li>
@@ -444,44 +340,4 @@ mjx-container[display="true"] + br {
 <h3 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h3><p>我们这节课讲了递推与递归的知识点，并且也讲了何时采用递归设计程序，何时采用递推设计程序。对于多次询问的题目，也为大家展示了一种解决方法。</p>
 <p>对于递推算法，我们覆盖了正推和逆推两种方式。无论是递推和递归的关键在于找到关系式。</p>
 <p>希望同学能够独立完成题目进行练习。并且在后面的学习中会多次用到递归与递推设计其他算法。</p>
-
-  </article>
-</div>
-
-
-    
-
-
-
-
-</div>
-
-<div class="footer-wrapper container">
-  <footer class="footer clearfix">
-    <div class="clearfix">
-    <a href="http://zdx-1.github.io" class="footer-logo">
-      <i class="fa fa-github"></i>
-    </a>
-    <ul class="footer-social-link">
-      <li>© 2019 Dexin Zhang</li>
-      <li><a href="http://zdx-1.github.io">Home</a></li>
-      
-      <li><a target="_blank" rel="noopener" href="https://github.com/zdx-1">Github</a></li>
-      
-    </ul>
-    <div class="footer-theme-info">
-      Theme <a target="_blank" rel="noopener" href="//github.com/sabrinaluo/hexo-theme-replica">Replica</a>
-      by <a target="_blank" rel="noopener" href="//github.com/sabrinaluo">Hiitea</a> ❤ Powered by Hexo
-    </div>
-    </div>
-    
-  </footer>
-</div>
-
-
-
-
-<script src="/js/main.js"></script>
-
-</body>
-</html>
+<div id="paginator"></div></div><div id="post-footer"><div id="pages"><div class="footer-link" style="width: 50%;text-align:right;border-right:1px #fe2 solid"><a href="/2024/03/10/%E6%90%9C%E7%B4%A2%E7%AE%97%E6%B3%95/">← Next 搜索算法</a></div><div class="footer-link" style="width: 50%;right:1px;border-left:1px #fe2 solid"><a href="/2024/03/10/%E6%89%8B%E7%AE%97%E4%B8%8E%E6%80%9D%E7%BB%B4%E9%A2%98/">手算与思维题 Prev →</a></div></div></div></div><div class="bottom-btn"><div><a class="i-top" id="to-top" onClick="scrolls.scrolltop();" title="To Top" style="opacity: 0; display: none;">∧ </a><a class="i-index" id="to-index" href="#toc-div" title="To Catalog">≡</a><a class="i-color" id="color-mode" onClick="colorMode.change()" title="Change Theme"></a></div></div></article><aside><div id="about"><a href="/" id="logo"><img src="https://ak.hypergryph.com/assets/index/images/ak/pc/faction/1.png" alt="Logo"></a><h1 id="Dr"><a href="/">Dexin Zhang</a></h1><div id="description"><p>learning and sharing</p></div></div><div id="aside-block"><div id="toc-div"><h1>Catalog</h1><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%80%92%E6%8E%A8%E6%B3%95%E4%B8%8E%E9%80%92%E5%BD%92%E6%B3%95"><span class="toc-number">1.</span> <span class="toc-text">递推法与递归法</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%80%92%E6%8E%A8%E7%AE%97%E6%B3%95%E7%9A%84%E7%89%B9%E7%82%B9"><span class="toc-number">2.</span> <span class="toc-text">递推算法的特点</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%96%90%E6%B3%A2%E7%BA%B3%E5%A5%91%E6%95%B0%E5%88%97-fibonacci-%E9%97%AE%E9%A2%98"><span class="toc-number">2.1.</span> <span class="toc-text">斐波纳契数列 fibonacci 问题</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%AD%94%E6%A1%88%E8%A7%A3%E6%9E%90"><span class="toc-number">2.1.1.</span> <span class="toc-text">答案解析</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AD%98%E5%82%A8%E5%9E%8B%E7%9A%84%E9%80%92%E6%8E%A8%E4%B8%8E%E9%80%92%E5%BD%92"><span class="toc-number">2.2.</span> <span class="toc-text">存储型的递推与递归</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%AD%94%E6%A1%88%E8%A7%A3%E6%9E%90-1"><span class="toc-number">2.2.1.</span> <span class="toc-text">答案解析</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%95%B0%E5%AD%97%E4%B8%89%E8%A7%92%E5%BD%A2%E9%97%AE%E9%A2%98"><span class="toc-number">2.3.</span> <span class="toc-text">数字三角形问题</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%AD%94%E6%A1%88%E8%A7%A3%E6%9E%90-2"><span class="toc-number">2.3.1.</span> <span class="toc-text">答案解析</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%80%BB%E7%BB%93"><span class="toc-number">2.4.</span> <span class="toc-text">总结</span></a></li></ol></li></ol></div></div><footer><nobr>Published with <a target="_blank" rel="noopener" href="http://hexo.io">Hexo</a></nobr><wbr><nobr> Theme <a target="_blank" rel="noopener" href="https://github.com/Yue-plus/hexo-theme-arknights">Arknights</a></nobr><wbr><nobr> by <a target="_blank" rel="noopener" href="https://github.com/Yue-plus">Yue_plus</a></nobr></footer></aside></main><canvas id="canvas-dust"></canvas></body></html>

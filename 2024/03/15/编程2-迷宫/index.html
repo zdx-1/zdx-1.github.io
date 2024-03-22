@@ -1,41 +1,42 @@
-<!DOCTYPE html>
-<html lang="zh-CN">
-
-
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-  <meta name="viewport"
-        content="width=device-width, initial-scale=1.0, user-scalable=no">
-  <title>
-    编程2 迷宫 | Zdx-1
-  </title>
-  <meta name="description" content="learning and sharing">
-  
-  <meta name="keywords" content="
-  手算与思维题,蓝桥杯
-  ">
-  
-  <meta name="author" content="Dexin Zhang">
-
-  <meta http-equiv="Cache-Control" content="no-transform"/>
-  <meta http-equiv="Cache-Control" content="no-siteapp">
-  <meta name="theme-color" content="#1e2327">
-  <link rel="apple-touch-icon" href="https://github.githubassets.com/apple-touch-icon.png">
-  <link rel="apple-touch-icon" sizes="180x180" href="https://github.githubassets.com/apple-touch-icon-180x180.png">
-
-  <link rel="icon" type="image/x-icon" href="https://github.githubassets.com/favicon.ico">
-  <link rel="stylesheet" href="/css/main.css">
-  <link rel="stylesheet"
-        href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-  
-
-  
-
-  <script src="//cdnjs.cloudflare.com/ajax/libs/vue/1.0.25-csp/vue.min.js"></script>
-  <script src="//cdnjs.cloudflare.com/ajax/libs/moment.js/2.11.2/moment.min.js"></script>
-<meta name="generator" content="Hexo 7.1.1"><link rel="alternate" href="/atom.xml" title="Zdx-1" type="application/atom+xml">
-<style>mjx-container[jax="SVG"] {
+<!DOCTYPE html><html lang="zh-CN" theme-mode="dark"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>编程2 迷宫 | Zdx-1</title><link rel="icon" type="image/x-icon" href="/favicon.ico"><link rel="preload" as="font" crossorigin="anonymous" href="/font/Bender.ttf"><link rel="preload" as="font" crossorigin="anonymous" href="/font/BenderLight.ttf"><link rel="preload" as="font" crossorigin="anonymous" href="/font/JetBrainsMono-Regular.woff2"><link rel="stylesheet" href="/css/arknights.css"><style>@font-face {
+  font-family: Bender;
+  src: local('Bender'), url("/font/Bender.ttf"), url("/font/Bender.otf");
+}
+@font-face {
+  font-family: BenderLight;
+  src: local('BenderLight'), url("/font/BenderLight.ttf");
+}
+@font-face {
+  font-family: 'JetBrains Mono';
+  src: local('JetBrains Mono'), url('/font/JetBrainsMono-Regular.woff2') format('woff2');
+}
+</style><script>var config = {"root":"/","search":{"preload":false,"activeHolder":"Enter here","blurHolder":"Search","noResult":"Data \"$0\" not found"},"code":{"codeInfo":"$0 - $1 lines","copy":"copy"}}</script><link type="text/css" rel="stylesheet" href="/lib/encrypt/hbe.style.css"><link type="text/css" rel="stylesheet" href="//unpkg.com/lightgallery@2.7.1/css/lightgallery.css"><link type="text/css" rel="stylesheet" href="//unpkg.com/lightgallery@2.7.1/css/lg-zoom.css"><link type="text/css" rel="stylesheet" href="//unpkg.com/lightgallery@2.7.1/css/lg-thumbnail.css"><link type="text/css" rel="stylesheet" href="/lib/fontawesome/css/all.min.css"><script>if (window.localStorage.getItem('theme-mode') === 'light')
+ document.documentElement.setAttribute('theme-mode', 'light')
+if (window.localStorage.getItem('theme-mode') === 'dark')
+ document.documentElement.setAttribute('theme-mode', 'dark')</script><style>:root {
+ --dark-background: url('https://ak.hypergryph.com/assets/index/images/ak/pc/bk.jpg');
+ --light-background: url('/img/bk.jpg');
+ --theme-encrypt-confirm: 'confirm'
+}</style><script defer src="/js/arknights.js"></script><script defer src="/js/search.js"></script><script defer type="module">import mermaid from '//unpkg.com/mermaid@10.5.0/dist/mermaid.esm.mjs';
+window.mermaid = mermaid;
+code.paintMermaid();
+</script><script async src="//unpkg.com/lightgallery@2.7.1/lightgallery.min.js"></script><script async src="//unpkg.com/lightgallery@2.7.1/plugins/zoom/lg-zoom.min.js"></script><script async src="//unpkg.com/lightgallery@2.7.1/plugins/thumbnail/lg-thumbnail.min.js"></script><script async src="/lib/encrypt/hbe.js"></script><script async src="/js/pjax.js"></script><script class="pjax-js">reset= () => {document.querySelector('.lg-container')?.remove()
+lightGallery(document.getElementById('post-bg'), {
+  plugins: [lgZoom,lgThumbnail],
+  selector: '.item-img'})}</script><script>window.addEventListener("load",() => {pjax = new Pjax({
+ cacheBust: false,
+ selectors: ['title','article','#aside-block','.pjax-js','data-pjax','.busuanzi'],
+ switches: {'article': Pjax.switches.sideBySide},
+ switchesOptions: {
+   'article': {
+     classNames: {
+       remove: "pjax-out",
+       add: "pjax-in"
+     }
+   }
+ }
+});
+document.addEventListener("pjax:complete", reset);reset()})</script><meta name="generator" content="Hexo 7.1.1"><style>mjx-container[jax="SVG"] {
   direction: ltr;
 }
 
@@ -147,113 +148,8 @@ mjx-container[display="true"] {
 mjx-container[display="true"] + br {
   display: none;
 }
-</style></head>
-
-<body id="replica-app">
-
-<nav class="navbar-wrapper">
-  <div class="navbar">
-    <div class="container clearfix">
-      <a href="/" class="navbar-logo"><i class="fa fa-github"></i></a>
-
-      <div class="navbar-search float-left desktop-only">
-        <div class="navbar-search-form">
-          <label for="gsc-i-id1">This website</label>
-          <div id="google-search">
-            <gcse:search></gcse:search>
-          </div>
-        </div>
-      </div>
-
-      <ul class="navbar-nav float-left">
-        
-        <li><a href="/">Archives</a></li>
-        
-        
-        <li><a href="/">Categories</a></li>
-        
-        
-        <li><a href="/">Tags</a></li>
-        
-        
-        <li class="desktop-only"><a href="/atom.xml" target="_blank">RSS</a></li>
-        
-      </ul>
-
-      <ul class="navbar-nav user-nav float-right desktop-only">
-        <li class="user-nav-notification">
-          <a><span class="user-nav-unread"></span><i class="fa fa-bell"></i></a>
-        </li>
-        <li>
-          <a><i class="fa fa-plus"></i> <i class="fa fa-caret-down"></i></a>
-        </li>
-        <li class="user-nav-logo">
-          <a><img src="https://octodex.github.com/images/baracktocat.jpg"> <i class="fa fa-caret-down"></i></i></a>
-        </li>
-      </ul>
-    </div>
-  </div>
-</nav>
-
-<div class="main-container">
-  <header class="header-wrapper desktop-only">
-  <div class="container header-site-detail">
-    <ul class="header-toolbar">
-      <li class="clearfix">
-        <a href="/" class="header-toolbar-left"><i
-                  class="fa fa-file-text"></i> Posts </a>
-        <a href="/"
-           class="header-toolbar-right"> 89 </a>
-      </li>
-      <li>
-        <a href="/" class="header-toolbar-left"><i
-                  class="fa fa-tags"></i> Tags </a>
-        <a href="/"
-           class="header-toolbar-right"> 22 </a>
-      </li>
-      <li>
-        <a href="/" class="header-toolbar-left"><i
-                  class="fa fa-folder-open"></i> Categories </a>
-        <a href="/"
-           class="header-toolbar-right"> 7 </a>
-      </li>
-    </ul>
-    <h2 class="header-title">
-      <i class="fa fa-book text-muted"></i>
-      <a href="/">Zdx-1</a>
-      
-      
-    </h2>
-  </div>
-
-  <div class="container">
-    <div class="header-tab-wrapper clearfix">
-      <span class="header-tab header-tab-selected"><i class="fa fa-thumbs-o-up"></i> Like</span>
-      <span class="header-tab"><i class="fa fa-share-alt"></i> Share</span>
-      <span class="header-tab"><i class="fa fa-comments-o"></i> Discussion</span>
-      <span class="header-tab"><i class="fa fa-bookmark-o"></i> Bookmark </span>
-      <span class="header-tab"><i class="fa fa-smile-o"></i> Smile <i class="fa fa-caret-down"></i></span>
-    </div>
-  </div>
-</header>
-
-
-<div class="post-container container">
-  <h3>
-    <i class="fa fa-user-o"></i>
-    Dexin Zhang
-
-    <span class="post-date float-right" title="{{moment(1710494026000).format('MMM DD, YYYY, h:mm:ss A')}}">
-      
-          <i class="fa fa-pencil-square-o"></i>
-      
-      {{moment(1710494026000).fromNow()}}
-    </span>
-  </h3>
-
-  <article class="post-content">
-    <h1>编程2 迷宫</h1>
-    <p>迷宫</p>
+</style><link rel="alternate" href="/atom.xml" title="Zdx-1" type="application/atom+xml">
+</head><body><div class="loading" style="opacity: 0;"><div class="loadingBar left"></div><div class="loadingBar right"></div></div><main><header class="closed"><div class="navBtn"><i class="navBtnIcon"><span class="navBtnIconBar"></span><span class="navBtnIconBar"></span><span class="navBtnIconBar"></span></i></div><nav><div class="navItem" id="search-header"><span class="navItemTitle"><input autocomplete="off" autocorrect="off" autocapitalize="none" placeholder="Search" spellcheck="false" maxlength="50" type="text" id="search-input"></span></div><div class="navItem" id="search-holder"></div><div class="search-popup" tabindex="0"><div id="search-result"></div></div><ol class="navContent"><li class="navItem"><a class="navBlock" href="/"><span class="navItemTitle">Home</span></a></li><li class="navItem" matchdata="categories,tags"><a class="navBlock" href="/archives/"><span class="navItemTitle">Archives</span></a></li></ol></nav></header><article><div id="post-bg"><div id="post-title"><h1>编程2 迷宫</h1><div id="post-info"><span>First Post: <div class="control"><time datetime="2024-03-15T09:13:46.000Z" id="date"> 2024-03-15</time></div></span><br><span>Last Update: <div class="control"><time datetime="2024-03-16T00:54:19.793Z" id="updated"> 2024-03-16</time></div></span></div></div><hr><div id="post-content"><p>迷宫</p>
 <h3 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h3><p><strong>本题为填空题，只需要算出结果后，在代码中使用输出语句将所填结果输出即可。</strong></p>
 <p>X 星球的一处迷宫游乐场建在某个小山坡上。它是由 <mjx-container class="MathJax" jax="SVG"><svg style="vertical-align: -0.05ex;" xmlns="http://www.w3.org/2000/svg" width="7.291ex" height="1.557ex" role="img" focusable="false" viewBox="0 -666 3222.4 688"><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)"><g data-mml-node="math"><g data-mml-node="mn"><path data-c="31" d="M213 578L200 573Q186 568 160 563T102 556H83V602H102Q149 604 189 617T245 641T273 663Q275 666 285 666Q294 666 302 660V361L303 61Q310 54 315 52T339 48T401 46H427V0H416Q395 3 257 3Q121 3 100 0H88V46H114Q136 46 152 46T177 47T193 50T201 52T207 57T213 61V578Z"></path><path data-c="30" d="M96 585Q152 666 249 666Q297 666 345 640T423 548Q460 465 460 320Q460 165 417 83Q397 41 362 16T301 -15T250 -22Q224 -22 198 -16T137 16T82 83Q39 165 39 320Q39 494 96 585ZM321 597Q291 629 250 629Q208 629 178 597Q153 571 145 525T137 333Q137 175 145 125T181 46Q209 16 250 16Q290 16 318 46Q347 76 354 130T362 333Q362 478 354 524T321 597Z" transform="translate(500,0)"></path></g><g data-mml-node="mo" transform="translate(1222.2,0)"><path data-c="D7" d="M630 29Q630 9 609 9Q604 9 587 25T493 118L389 222L284 117Q178 13 175 11Q171 9 168 9Q160 9 154 15T147 29Q147 36 161 51T255 146L359 250L255 354Q174 435 161 449T147 471Q147 480 153 485T168 490Q173 490 175 489Q178 487 284 383L389 278L493 382Q570 459 587 475T609 491Q630 491 630 471Q630 464 620 453T522 355L418 250L522 145Q606 61 618 48T630 29Z"></path></g><g data-mml-node="mn" transform="translate(2222.4,0)"><path data-c="31" d="M213 578L200 573Q186 568 160 563T102 556H83V602H102Q149 604 189 617T245 641T273 663Q275 666 285 666Q294 666 302 660V361L303 61Q310 54 315 52T339 48T401 46H427V0H416Q395 3 257 3Q121 3 100 0H88V46H114Q136 46 152 46T177 47T193 50T201 52T207 57T213 61V578Z"></path><path data-c="30" d="M96 585Q152 666 249 666Q297 666 345 640T423 548Q460 465 460 320Q460 165 417 83Q397 41 362 16T301 -15T250 -22Q224 -22 198 -16T137 16T82 83Q39 165 39 320Q39 494 96 585ZM321 597Q291 629 250 629Q208 629 178 597Q153 571 145 525T137 333Q137 175 145 125T181 46Q209 16 250 16Q290 16 318 46Q347 76 354 130T362 333Q362 478 354 524T321 597Z" transform="translate(500,0)"></path></g></g></g></svg></mjx-container> 相互连通的小房间组成的。</p>
 <p>房间的地板上写着一个很大的字母。我们假设玩家是面朝上坡的方向站立，则：</p>
@@ -270,7 +166,7 @@ mjx-container[display="true"] + br {
 
 <p>请你计算一下，最后，有多少玩家会走出迷宫，而不是在里边兜圈子？</p>
 <p>如果你还没明白游戏规则，可以参看下面一个简化的 4x4 迷宫的解说图：</p>
-<p><img src="/./../images/%E7%BC%96%E7%A8%8B2-%E8%BF%B7%E5%AE%AB/uid1580206-20210317-1615963493412.png" alt="图片描述"></p>
+<p class='item-img' data-src='/./../images/%E7%BC%96%E7%A8%8B2-%E8%BF%B7%E5%AE%AB/uid1580206-20210317-1615963493412.png'><img src="/./../images/%E7%BC%96%E7%A8%8B2-%E8%BF%B7%E5%AE%AB/uid1580206-20210317-1615963493412.png" alt="图片描述"></p>
 <h3 id="运行限制"><a href="#运行限制" class="headerlink" title="运行限制"></a>运行限制</h3><table>
 <thead>
 <tr>
@@ -307,44 +203,4 @@ mjx-container[display="true"] + br {
 
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#深度dfs递归</span></span><br><span class="line"><span class="built_in">map</span> = [<span class="string">'UDDLUULRUL'</span>,</span><br><span class="line">       <span class="string">'UURLLLRRRU'</span>,</span><br><span class="line">       <span class="string">'RRUURLDLRD'</span>,</span><br><span class="line">       <span class="string">'RUDDDDUUUU'</span>,</span><br><span class="line">       <span class="string">'URUDLLRRUU'</span>,</span><br><span class="line">       <span class="string">'DURLRLDLRL'</span>,</span><br><span class="line">       <span class="string">'ULLURLLRDU'</span>,</span><br><span class="line">       <span class="string">'RDLULLRDDD'</span>,</span><br><span class="line">       <span class="string">'UUDDUDUDLL'</span>,</span><br><span class="line">       <span class="string">'ULRDLUURRR'</span>]<span class="comment">#这里字符串元素要用单引号括起，用双引号，后面会提示数组越界</span></span><br><span class="line">count = <span class="number">0</span></span><br><span class="line">tablist = [[<span class="number">0</span>] * <span class="number">10</span> <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">10</span>)]</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">find</span>(<span class="params">x, y</span>):</span><br><span class="line">    <span class="keyword">if</span> x &lt; <span class="number">0</span> <span class="keyword">or</span> x &gt; <span class="number">9</span> <span class="keyword">or</span> y &lt; <span class="number">0</span> <span class="keyword">or</span> y &gt; <span class="number">9</span>:  <span class="comment"># 走出迷宫</span></span><br><span class="line">        <span class="keyword">global</span> count</span><br><span class="line">        count += <span class="number">1</span></span><br><span class="line">        <span class="keyword">return</span> <span class="literal">True</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">if</span> tablist[x][y] == <span class="number">1</span>:  <span class="comment"># 已走过</span></span><br><span class="line">        <span class="keyword">return</span> <span class="literal">False</span></span><br><span class="line"></span><br><span class="line">    tablist[x][y] = <span class="number">1</span>  <span class="comment"># 若之前没走过，则标记走过</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">if</span> <span class="built_in">map</span>[x][y] == <span class="string">"U"</span>:</span><br><span class="line">        find(x - <span class="number">1</span>, y)<span class="comment">#递归</span></span><br><span class="line">    <span class="keyword">elif</span> <span class="built_in">map</span>[x][y] == <span class="string">"D"</span>:</span><br><span class="line">        find(x + <span class="number">1</span>, y)</span><br><span class="line">    <span class="keyword">elif</span> <span class="built_in">map</span>[x][y] == <span class="string">"L"</span>:</span><br><span class="line">        find(x, y - <span class="number">1</span>)</span><br><span class="line">    <span class="keyword">elif</span> <span class="built_in">map</span>[x][y] == <span class="string">"R"</span>:</span><br><span class="line">        find(x, y + <span class="number">1</span>)</span><br><span class="line">    <span class="keyword">return</span> <span class="literal">False</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">list</span>(<span class="built_in">range</span>(<span class="number">10</span>)):</span><br><span class="line">    <span class="keyword">for</span> j <span class="keyword">in</span> <span class="built_in">list</span>(<span class="built_in">range</span>(<span class="number">10</span>)):</span><br><span class="line">        tablist = [[<span class="number">0</span>] * <span class="number">10</span> <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">10</span>)]<span class="comment">#遍历每个坐标起点开始前都先清零</span></span><br><span class="line">        find(i, j)</span><br><span class="line"></span><br><span class="line"><span class="built_in">print</span>(count)</span><br></pre></td></tr></table></figure>
 
-
-  </article>
-</div>
-
-
-    
-
-
-
-
-</div>
-
-<div class="footer-wrapper container">
-  <footer class="footer clearfix">
-    <div class="clearfix">
-    <a href="http://zdx-1.github.io" class="footer-logo">
-      <i class="fa fa-github"></i>
-    </a>
-    <ul class="footer-social-link">
-      <li>© 2019 Dexin Zhang</li>
-      <li><a href="http://zdx-1.github.io">Home</a></li>
-      
-      <li><a target="_blank" rel="noopener" href="https://github.com/zdx-1">Github</a></li>
-      
-    </ul>
-    <div class="footer-theme-info">
-      Theme <a target="_blank" rel="noopener" href="//github.com/sabrinaluo/hexo-theme-replica">Replica</a>
-      by <a target="_blank" rel="noopener" href="//github.com/sabrinaluo">Hiitea</a> ❤ Powered by Hexo
-    </div>
-    </div>
-    
-  </footer>
-</div>
-
-
-
-
-<script src="/js/main.js"></script>
-
-</body>
-</html>
+<div id="paginator"></div></div><div id="post-footer"><div id="pages"><div class="footer-link" style="width: 50%;text-align:right;border-right:1px #fe2 solid"><a href="/2024/03/15/%E7%BC%96%E7%A8%8B3-%E6%98%9F%E6%9C%9F%E4%B8%80/">← Next 编程3 星期一</a></div><div class="footer-link" style="width: 50%;right:1px;border-left:1px #fe2 solid"><a href="/2024/03/15/%E7%BC%96%E7%A8%8B1-%E9%97%A8%E7%89%8C%E5%88%B6%E4%BD%9C/">编程1 门牌制作 Prev →</a></div></div></div></div><div class="bottom-btn"><div><a class="i-top" id="to-top" onClick="scrolls.scrolltop();" title="To Top" style="opacity: 0; display: none;">∧ </a><a class="i-index" id="to-index" href="#toc-div" title="To Catalog">≡</a><a class="i-color" id="color-mode" onClick="colorMode.change()" title="Change Theme"></a></div></div></article><aside><div id="about"><a href="/" id="logo"><img src="https://ak.hypergryph.com/assets/index/images/ak/pc/faction/1.png" alt="Logo"></a><h1 id="Dr"><a href="/">Dexin Zhang</a></h1><div id="description"><p>learning and sharing</p></div></div><div id="aside-block"><div id="toc-div"><h1>Catalog</h1><ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%A2%98%E7%9B%AE%E6%8F%8F%E8%BF%B0"><span class="toc-number">1.</span> <span class="toc-text">题目描述</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%BF%90%E8%A1%8C%E9%99%90%E5%88%B6"><span class="toc-number">2.</span> <span class="toc-text">运行限制</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%A7%A3%E9%A2%98%E6%80%9D%E8%B7%AF"><span class="toc-number">3.</span> <span class="toc-text">解题思路</span></a></li></ol></div></div><footer><nobr>Published with <a target="_blank" rel="noopener" href="http://hexo.io">Hexo</a></nobr><wbr><nobr> Theme <a target="_blank" rel="noopener" href="https://github.com/Yue-plus/hexo-theme-arknights">Arknights</a></nobr><wbr><nobr> by <a target="_blank" rel="noopener" href="https://github.com/Yue-plus">Yue_plus</a></nobr></footer></aside></main><canvas id="canvas-dust"></canvas></body></html>
