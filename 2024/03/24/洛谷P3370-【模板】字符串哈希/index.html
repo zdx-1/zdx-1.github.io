@@ -24,7 +24,7 @@
 <meta property="og:description" content="【模板】字符串哈希题目描述如题，给定  个字符串（第  个字符串长度为 ，字符串内包含数字、大小写字母，大小写敏感），请求出  个字符串中共有多少个不同的字符串。 友情提醒：如果真的想好好练习哈希的话，请自觉。 输入格式第一行包含一个整数 ，为字符串的个数。 接下来  行每行包含一个字符串，为所提供的字符串。 输出格式输出包含一行，包含一个整数，为不同的字符串个数。 样例 #1样例输入 #1123">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2024-03-24T02:51:21.000Z">
-<meta property="article:modified_time" content="2024-03-25T11:44:04.450Z">
+<meta property="article:modified_time" content="2024-03-27T16:00:04.916Z">
 <meta property="article:author" content="zdx">
 <meta property="article:tag" content="数据结构">
 <meta property="article:tag" content="洛谷">
@@ -341,7 +341,7 @@ mjx-container[display="true"] + br {
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          321 字
+          376 字
         
       </span>
     
@@ -352,7 +352,7 @@ mjx-container[display="true"] + br {
         
         
         
-          3 分钟
+          4 分钟
         
       </span>
     
@@ -402,7 +402,7 @@ mjx-container[display="true"] + br {
               <p id="updated-time" class="note note-info" style="">
                 
                   
-                    本文最后更新于 2024年3月25日 晚上
+                    本文最后更新于 2024年3月28日 凌晨
                   
                 
               </p>
@@ -429,6 +429,12 @@ mjx-container[display="true"] + br {
 <p>BZOJ3098：<a target="_blank" rel="noopener" href="http://www.lydsy.com/JudgeOnline/problem.php?id=3098">http://www.lydsy.com/JudgeOnline/problem.php?id=3098</a></p>
 <p>BZOJ3099：<a target="_blank" rel="noopener" href="http://www.lydsy.com/JudgeOnline/problem.php?id=3099">http://www.lydsy.com/JudgeOnline/problem.php?id=3099</a></p>
 <p>如果你仔细研究过了（或者至少仔细看过AC人数的话），我想你一定会明白字符串哈希的正确姿势的^_^</p>
+<h2 id="解题代码"><a href="#解题代码" class="headerlink" title="解题代码"></a>解题代码</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><code class="hljs python">n=<span class="hljs-built_in">int</span>(<span class="hljs-built_in">input</span>())<br>a=<span class="hljs-built_in">list</span>(<span class="hljs-built_in">input</span>() <span class="hljs-keyword">for</span> _ <span class="hljs-keyword">in</span> <span class="hljs-built_in">range</span>(n))<br>a.sort()<br>cout=<span class="hljs-number">0</span><br><span class="hljs-keyword">while</span> a:<br>    <span class="hljs-keyword">if</span> <span class="hljs-built_in">len</span>(a)==<span class="hljs-number">1</span>:<br>        cout+=<span class="hljs-number">1</span><br>        <span class="hljs-keyword">break</span><br>    <span class="hljs-keyword">if</span> a[<span class="hljs-number">0</span>]!=a[<span class="hljs-number">1</span>]:<br>        cout+=<span class="hljs-number">1</span><br>        a.pop(<span class="hljs-number">0</span>)<br>    <span class="hljs-keyword">else</span>:<br>        a.pop(<span class="hljs-number">0</span>)<br><span class="hljs-built_in">print</span>(cout)<br></code></pre></td></tr></table></figure>
+
+
+
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><code class="hljs python">n = <span class="hljs-built_in">int</span>(<span class="hljs-built_in">input</span>())<br>lst = [<span class="hljs-built_in">input</span>() <span class="hljs-keyword">for</span> _ <span class="hljs-keyword">in</span> <span class="hljs-built_in">range</span>(n)]<br>lst.sort()<br> <br>count = n<br><span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> <span class="hljs-built_in">range</span>(<span class="hljs-number">1</span>, n):<br>    <span class="hljs-keyword">if</span> lst[i] == lst[i - <span class="hljs-number">1</span>]:<br>        count -= <span class="hljs-number">1</span><br> <br><span class="hljs-built_in">print</span>(count)<br></code></pre></td></tr></table></figure>
+
 
                 
               </div>

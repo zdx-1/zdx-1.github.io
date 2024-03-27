@@ -24,7 +24,7 @@
 <meta property="og:description" content="【深基17.例5】木材仓库题目描述博艾市有一个木材仓库，里面可以存储各种长度的木材，但是保证没有两个木材的长度是相同的。作为仓库负责人，你有时候会进货，有时候会出货，因此需要维护这个库存。有不超过 100000 条的操作：  进货，格式1 Length：在仓库中放入一根长度为 Length(不超过 ) 的木材。如果已经有相同长度的木材那么输出Already Exist。 出货，格式2 Length">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2024-03-24T02:52:41.000Z">
-<meta property="article:modified_time" content="2024-03-25T11:44:01.319Z">
+<meta property="article:modified_time" content="2024-03-27T15:49:46.310Z">
 <meta property="article:author" content="zdx">
 <meta property="article:tag" content="数据结构">
 <meta property="article:tag" content="洛谷">
@@ -341,7 +341,7 @@ mjx-container[display="true"] + br {
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          239 字
+          375 字
         
       </span>
     
@@ -352,7 +352,7 @@ mjx-container[display="true"] + br {
         
         
         
-          2 分钟
+          4 分钟
         
       </span>
     
@@ -402,7 +402,7 @@ mjx-container[display="true"] + br {
               <p id="updated-time" class="note note-info" style="">
                 
                   
-                    本文最后更新于 2024年3月25日 晚上
+                    本文最后更新于 2024年3月27日 晚上
                   
                 
               </p>
@@ -418,6 +418,9 @@ mjx-container[display="true"] + br {
 <h2 id="输入格式"><a href="#输入格式" class="headerlink" title="输入格式"></a>输入格式</h2><h2 id="输出格式"><a href="#输出格式" class="headerlink" title="输出格式"></a>输出格式</h2><h2 id="样例-1"><a href="#样例-1" class="headerlink" title="样例 #1"></a>样例 #1</h2><h3 id="样例输入-1"><a href="#样例输入-1" class="headerlink" title="样例输入 #1"></a>样例输入 #1</h3><figure class="highlight basic"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><code class="hljs basic"><span class="hljs-number">7</span><br><span class="hljs-symbol">1 </span><span class="hljs-number">1</span><br><span class="hljs-symbol">1 </span><span class="hljs-number">5</span><br><span class="hljs-symbol">1 </span><span class="hljs-number">3</span><br><span class="hljs-symbol">2 </span><span class="hljs-number">3</span><br><span class="hljs-symbol">2 </span><span class="hljs-number">3</span><br><span class="hljs-symbol">2 </span><span class="hljs-number">3</span><br><span class="hljs-symbol">2 </span><span class="hljs-number">3</span><br></code></pre></td></tr></table></figure>
 
 <h3 id="样例输出-1"><a href="#样例输出-1" class="headerlink" title="样例输出 #1"></a>样例输出 #1</h3><figure class="highlight mathematica"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs mathematica"><span class="hljs-number">3</span><br><span class="hljs-number">1</span><br><span class="hljs-number">5</span><br><span class="hljs-built_in">Empty</span><br></code></pre></td></tr></table></figure>
+
+<h2 id="解题答案"><a href="#解题答案" class="headerlink" title="解题答案"></a>解题答案</h2><figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br></pre></td><td class="code"><pre><code class="hljs py"><span class="hljs-keyword">from</span> bisect <span class="hljs-keyword">import</span> bisect_left  <br>  <br>s = <span class="hljs-built_in">set</span>()  <br>n = <span class="hljs-built_in">int</span>(<span class="hljs-built_in">input</span>())  <br>  <br><span class="hljs-keyword">for</span> _ <span class="hljs-keyword">in</span> <span class="hljs-built_in">range</span>(n):  <br>    k, l = <span class="hljs-built_in">map</span>(<span class="hljs-built_in">int</span>, <span class="hljs-built_in">input</span>().split())  <br>      <br>    <span class="hljs-keyword">if</span> k == <span class="hljs-number">1</span>:  <br>        <span class="hljs-keyword">if</span> l <span class="hljs-keyword">not</span> <span class="hljs-keyword">in</span> s:  <br>            s.add(l)  <br>        <span class="hljs-keyword">else</span>:  <br>            <span class="hljs-built_in">print</span>(<span class="hljs-string">"Already Exist"</span>)  <br>    <span class="hljs-keyword">else</span>:  <br>        <span class="hljs-keyword">if</span> <span class="hljs-keyword">not</span> s:  <br>            <span class="hljs-built_in">print</span>(<span class="hljs-string">"Empty"</span>)  <br>            <span class="hljs-keyword">continue</span>  <br>          <br>        <span class="hljs-comment"># Python的set没有lower_bound方法，但我们可以使用bisect_left来找到最接近l的元素索引  </span><br>        <span class="hljs-comment"># 首先将set转换为sorted list  </span><br>        sorted_s = <span class="hljs-built_in">sorted</span>(s)  <br>        index = bisect_left(sorted_s, l)  <br>          <br>        <span class="hljs-keyword">if</span> index == <span class="hljs-number">0</span>:  <br>            <span class="hljs-built_in">print</span>(sorted_s[index])  <br>            s.remove(sorted_s[index])  <br>            <span class="hljs-keyword">continue</span>  <br>          <br>        <span class="hljs-keyword">if</span> index == <span class="hljs-built_in">len</span>(sorted_s):  <br>            index -= <span class="hljs-number">1</span>  <br>            <span class="hljs-built_in">print</span>(sorted_s[index])  <br>            s.remove(sorted_s[index])  <br>            <span class="hljs-keyword">continue</span>  <br>          <br>        <span class="hljs-comment"># 找出离l最近的两个元素  </span><br>        prev = sorted_s[index - <span class="hljs-number">1</span>]  <br>        curr = sorted_s[index]  <br>          <br>        <span class="hljs-comment"># 根据差值大小决定删除哪个元素  </span><br>        <span class="hljs-keyword">if</span> l - prev &lt;= curr - l:  <br>            <span class="hljs-built_in">print</span>(prev)  <br>            s.remove(prev)  <br>        <span class="hljs-keyword">else</span>:  <br>            <span class="hljs-built_in">print</span>(curr)  <br>            s.remove(curr)<br></code></pre></td></tr></table></figure>
+
 
                 
               </div>
