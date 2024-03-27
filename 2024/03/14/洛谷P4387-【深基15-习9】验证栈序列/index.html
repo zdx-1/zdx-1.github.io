@@ -24,7 +24,7 @@
 <meta property="og:description" content="【深基15.习9】验证栈序列题目描述给出两个序列 pushed 和 poped 两个序列，其取值从 1 到 。已知入栈序列是 pushed，如果出栈序列有可能是 poped，则输出 Yes，否则输出 No。为了防止骗分，每个测试点有多组数据。 输入格式第一行一个整数 ，询问次数。 接下来  个询问，对于每个询问： 第一行一个整数  表示序列长度； 第二行  个整数表示入栈序列； 第三行  个整数表">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2024-03-14T08:24:31.000Z">
-<meta property="article:modified_time" content="2024-03-25T11:44:39.318Z">
+<meta property="article:modified_time" content="2024-03-27T06:44:25.214Z">
 <meta property="article:author" content="zdx">
 <meta property="article:tag" content="数据结构">
 <meta property="article:tag" content="洛谷">
@@ -85,8 +85,7 @@
 
 
   
-<meta name="generator" content="Hexo 7.1.1"><link rel="alternate" href="/atom.xml" title="Zdx-1" type="application/atom+xml">
-<style>mjx-container[jax="SVG"] {
+<meta name="generator" content="Hexo 7.1.1"><style>mjx-container[jax="SVG"] {
   direction: ltr;
 }
 
@@ -198,7 +197,8 @@ mjx-container[display="true"] {
 mjx-container[display="true"] + br {
   display: none;
 }
-</style></head>
+</style><link rel="alternate" href="/atom.xml" title="Zdx-1" type="application/atom+xml">
+</head>
 
 
 <body>
@@ -341,7 +341,7 @@ mjx-container[display="true"] + br {
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          167 字
+          318 字
         
       </span>
     
@@ -352,7 +352,7 @@ mjx-container[display="true"] + br {
         
         
         
-          2 分钟
+          3 分钟
         
       </span>
     
@@ -402,7 +402,7 @@ mjx-container[display="true"] + br {
               <p id="updated-time" class="note note-info" style="">
                 
                   
-                    本文最后更新于 2024年3月25日 晚上
+                    本文最后更新于 2024年3月27日 下午
                   
                 
               </p>
@@ -419,7 +419,14 @@ mjx-container[display="true"] + br {
 <h2 id="输出格式"><a href="#输出格式" class="headerlink" title="输出格式"></a>输出格式</h2><p>对于每个询问输出答案。</p>
 <h2 id="样例-1"><a href="#样例-1" class="headerlink" title="样例 #1"></a>样例 #1</h2><h3 id="样例输入-1"><a href="#样例输入-1" class="headerlink" title="样例输入 #1"></a>样例输入 #1</h3><figure class="highlight basic"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs basic"><span class="hljs-number">2</span><br><span class="hljs-number">5</span><br><span class="hljs-symbol">1 </span><span class="hljs-number">2</span> <span class="hljs-number">3</span> <span class="hljs-number">4</span> <span class="hljs-number">5</span><br><span class="hljs-symbol">5 </span><span class="hljs-number">4</span> <span class="hljs-number">3</span> <span class="hljs-number">2</span> <span class="hljs-number">1</span><br><span class="hljs-number">4</span><br><span class="hljs-symbol">1 </span><span class="hljs-number">2</span> <span class="hljs-number">3</span> <span class="hljs-number">4</span><br><span class="hljs-symbol">2 </span><span class="hljs-number">4</span> <span class="hljs-number">1</span> <span class="hljs-number">3</span><br></code></pre></td></tr></table></figure>
 
-<h3 id="样例输出-1"><a href="#样例输出-1" class="headerlink" title="样例输出 #1"></a>样例输出 #1</h3><figure class="highlight gams"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs gams"><span class="hljs-keyword">Yes</span><br><span class="hljs-keyword">No</span><br></code></pre></td></tr></table></figure>
+<h3 id="样例输出-1"><a href="#样例输出-1" class="headerlink" title="样例输出 #1"></a>样例输出 #1</h3><figure class="highlight txt"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs txt">Yes<br>No<br></code></pre></td></tr></table></figure>
+
+<h3 id="解题思路"><a href="#解题思路" class="headerlink" title="解题思路"></a>解题思路</h3><p>在python中，对于栈使用的是stack。</p>
+<p>可以如下两种编写方式，重构后感觉第二种更适合刷题。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-keyword">def</span> <span class="hljs-title function_">judge</span>(<span class="hljs-params">pushed, poped</span>):  <br>    stack = []<br>    push = <span class="hljs-number">0</span>  <br>    popo = <span class="hljs-number">0</span>  <br>    <span class="hljs-keyword">while</span> push &lt; <span class="hljs-built_in">len</span>(pushed) <span class="hljs-keyword">and</span> popo &lt; <span class="hljs-built_in">len</span>(poped):   <br>        stack.append(pushed[push])  <br>        push += <span class="hljs-number">1</span>   <br>        <span class="hljs-keyword">while</span> stack <span class="hljs-keyword">and</span> stack[-<span class="hljs-number">1</span>] == poped[popo]:  <br>            stack.pop()  <br>            popo += <span class="hljs-number">1</span>  <br>    <span class="hljs-keyword">return</span> push == <span class="hljs-built_in">len</span>(pushed) <span class="hljs-keyword">and</span> popo == <span class="hljs-built_in">len</span>(poped) <span class="hljs-keyword">and</span> <span class="hljs-keyword">not</span> stack  <br>q = <span class="hljs-built_in">int</span>(<span class="hljs-built_in">input</span>())  <br><span class="hljs-keyword">for</span> _ <span class="hljs-keyword">in</span> <span class="hljs-built_in">range</span>(q):  <br>    n = <span class="hljs-built_in">int</span>(<span class="hljs-built_in">input</span>())  <br>    pushed = <span class="hljs-built_in">list</span>(<span class="hljs-built_in">map</span>(<span class="hljs-built_in">int</span>, <span class="hljs-built_in">input</span>().split()))  <br>    poped = <span class="hljs-built_in">list</span>(<span class="hljs-built_in">map</span>(<span class="hljs-built_in">int</span>, <span class="hljs-built_in">input</span>().split()))  <br>    <span class="hljs-built_in">print</span>(<span class="hljs-string">"Yes"</span> <span class="hljs-keyword">if</span> judge(pushed, poped) <span class="hljs-keyword">else</span> <span class="hljs-string">"No"</span>)<br></code></pre></td></tr></table></figure>
+
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><code class="hljs python">q=<span class="hljs-built_in">int</span>(<span class="hljs-built_in">input</span>())<br><span class="hljs-keyword">for</span> _ <span class="hljs-keyword">in</span> <span class="hljs-built_in">range</span>(q):<br>    n=<span class="hljs-built_in">int</span>(<span class="hljs-built_in">input</span>())<br>    pushed=<span class="hljs-built_in">list</span>(<span class="hljs-built_in">map</span>(<span class="hljs-built_in">int</span>,<span class="hljs-built_in">input</span>().split()))<br>    poped=<span class="hljs-built_in">list</span>(<span class="hljs-built_in">map</span>(<span class="hljs-built_in">int</span>,<span class="hljs-built_in">input</span>().split()))<br>    stack = []<br>    push_index=<span class="hljs-number">0</span><br>    pop_index=<span class="hljs-number">0</span><br>    <span class="hljs-keyword">while</span> push_index &lt; <span class="hljs-built_in">len</span>(pushed) <span class="hljs-keyword">and</span> pop_index &lt;<span class="hljs-built_in">len</span>(poped):<br>        stack.append(pushed[push_index])<br>        push_index +=<span class="hljs-number">1</span><br>        <span class="hljs-keyword">while</span> stack <span class="hljs-keyword">and</span> stack[-<span class="hljs-number">1</span>]==poped[pop_index]:<br>            stack.pop()<br>            pop_index += <span class="hljs-number">1</span><br>    <span class="hljs-keyword">if</span> push_index == <span class="hljs-built_in">len</span>(pushed) <span class="hljs-keyword">and</span> pop_index ==<span class="hljs-built_in">len</span>(poped) <span class="hljs-keyword">and</span> <span class="hljs-keyword">not</span> stack:<br>        <span class="hljs-built_in">print</span>(<span class="hljs-string">"Yes"</span>)<br>    <span class="hljs-keyword">else</span>:<br>        <span class="hljs-built_in">print</span>(<span class="hljs-string">"No"</span>)<br></code></pre></td></tr></table></figure>
+
 
                 
               </div>
