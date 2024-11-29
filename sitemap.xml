@@ -2,6 +2,24 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://zdx-1.github.io/about/index.html</loc>
+    
+    <lastmod>2024-11-29</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>http://zdx-1.github.io/2024/07/09/Server-UbuntuInstall/</loc>
+    
+    <lastmod>2024-11-29</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>http://zdx-1.github.io/2024/08/01/MySql-Doc/</loc>
     
     <lastmod>2024-11-29</lastmod>
@@ -12,15 +30,6 @@
   
   <url>
     <loc>http://zdx-1.github.io/2024/07/11/WinForm-NanUI/</loc>
-    
-    <lastmod>2024-11-29</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>http://zdx-1.github.io/2024/11/29/Server-UbuntuInstall/</loc>
     
     <lastmod>2024-11-29</lastmod>
     
@@ -307,15 +316,6 @@
     <priority>0.6</priority>
   </url>
   
-  <url>
-    <loc>http://zdx-1.github.io/about/index.html</loc>
-    
-    <lastmod>2024-11-29</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
 
   <url>
     <loc>http://zdx-1.github.io/</loc>
@@ -431,13 +431,6 @@
   </url>
   
   <url>
-    <loc>http://zdx-1.github.io/tags/PyQt/</loc>
-    <lastmod>2024-11-29</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
     <loc>http://zdx-1.github.io/tags/Server/</loc>
     <lastmod>2024-11-29</lastmod>
     <changefreq>weekly</changefreq>
@@ -446,6 +439,13 @@
   
   <url>
     <loc>http://zdx-1.github.io/tags/Ubuntu/</loc>
+    <lastmod>2024-11-29</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>http://zdx-1.github.io/tags/PyQt/</loc>
     <lastmod>2024-11-29</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -466,6 +466,13 @@
   </url>
   
   <url>
+    <loc>http://zdx-1.github.io/tags/NanUI/</loc>
+    <lastmod>2024-11-29</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
     <loc>http://zdx-1.github.io/tags/EntityFramework/</loc>
     <lastmod>2024-11-29</lastmod>
     <changefreq>weekly</changefreq>
@@ -474,13 +481,6 @@
   
   <url>
     <loc>http://zdx-1.github.io/tags/Kivy/</loc>
-    <lastmod>2024-11-29</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>http://zdx-1.github.io/tags/NanUI/</loc>
     <lastmod>2024-11-29</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>

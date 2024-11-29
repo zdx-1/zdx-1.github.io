@@ -1,6 +1,7 @@
+http://zdx-1.github.io/about/index.html
+http://zdx-1.github.io/2024/07/09/Server-UbuntuInstall/
 http://zdx-1.github.io/2024/08/01/MySql-Doc/
 http://zdx-1.github.io/2024/07/11/WinForm-NanUI/
-http://zdx-1.github.io/2024/11/29/Server-UbuntuInstall/
 http://zdx-1.github.io/2024/03/10/HexoDebug/
 http://zdx-1.github.io/2024/03/09/HexoInstallAndDeploy/
 http://zdx-1.github.io/2024/03/10/DSA-MentalMathAndBrainTeasers/
@@ -32,7 +33,6 @@ http://zdx-1.github.io/2024/07/16/Python-FlaskBase/
 http://zdx-1.github.io/2024/07/09/Python-KivyBase/
 http://zdx-1.github.io/2024/07/17/Python-PyQtBase/
 http://zdx-1.github.io/2024/07/31/Gitee-ImgWarehouse/
-http://zdx-1.github.io/about/index.html
 http://zdx-1.github.io/
 http://zdx-1.github.io/tags/CSharp/
 http://zdx-1.github.io/tags/Asp-Net/
@@ -49,14 +49,14 @@ http://zdx-1.github.io/tags/Py%E5%86%85%E7%BD%AE%E5%87%BD%E6%95%B0/
 http://zdx-1.github.io/tags/Python/
 http://zdx-1.github.io/tags/Django/
 http://zdx-1.github.io/tags/Flask/
-http://zdx-1.github.io/tags/PyQt/
 http://zdx-1.github.io/tags/Server/
 http://zdx-1.github.io/tags/Ubuntu/
+http://zdx-1.github.io/tags/PyQt/
 http://zdx-1.github.io/tags/Vue/
 http://zdx-1.github.io/tags/WinForm/
+http://zdx-1.github.io/tags/NanUI/
 http://zdx-1.github.io/tags/EntityFramework/
 http://zdx-1.github.io/tags/Kivy/
-http://zdx-1.github.io/tags/NanUI/
 http://zdx-1.github.io/categories/CSharp/
 http://zdx-1.github.io/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95/
 http://zdx-1.github.io/categories/Gitee/
