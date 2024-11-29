@@ -215,14 +215,14 @@
   </url>
   
   <url>
-    <loc>http://zdx-1.github.io/categories/Hexo/</loc>
+    <loc>http://zdx-1.github.io/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95/%E8%93%9D%E6%A1%A5%E9%A2%98%E7%9B%AE%E6%B1%87%E6%80%BB/</loc>
     <lastmod>2024-11-29</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>http://zdx-1.github.io/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95/%E8%93%9D%E6%A1%A5%E9%A2%98%E7%9B%AE%E6%B1%87%E6%80%BB/</loc>
+    <loc>http://zdx-1.github.io/categories/Hexo/</loc>
     <lastmod>2024-11-29</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
