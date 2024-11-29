@@ -1,0 +1,261 @@
+<!DOCTYPE html><html lang="zh-cn" theme-mode="dark"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Hexo-安装部署 | ZDX-1</title><link rel="icon" type="image/x-icon" href="/favicon.ico"><link rel="preload" as="font" crossorigin="anonymous" href="/font/Bender.ttf"><link rel="preload" as="font" crossorigin="anonymous" href="/font/BenderLight.ttf"><link rel="preload" as="font" crossorigin="anonymous" href="/font/JetBrainsMono-Regular.woff2"><link rel="stylesheet" href="/css/arknights.css"><style>@font-face {
+  font-family: Bender;
+  src: local('Bender'), url("/font/Bender.ttf"), url("/font/Bender.otf");
+}
+@font-face {
+  font-family: BenderLight;
+  src: local('BenderLight'), url("/font/BenderLight.ttf");
+}
+@font-face {
+  font-family: 'JetBrains Mono';
+  src: local('JetBrains Mono'), url('/font/JetBrainsMono-Regular.woff2') format('woff2');
+}
+</style><script>var config = {"root":"/","search":{"preload":true,"activeHolder":"键入以继续","blurHolder":"数据检索","noResult":"无 $0 相关数据"},"code":{"codeInfo":"$0 - $1 行","copy":"复制"}}</script><link type="text/css" rel="stylesheet" href="/lib/encrypt/hbe.style.css"><script src="/js/gitalk.js"></script><script src="//unpkg.com/mermaid@10.5.0/dist/mermaid.min.js"></script><script src="//cdnjs.cloudflare.com/ajax/libs/mathjax/2.6.1/MathJax.js"></script><script>MathJax.Hub.Config({
+ menuSettings: {
+   zoom: "None"
+ },
+ showMathMenu: false,
+ jax: ["input/TeX","output/CommonHTML"],
+ extensions: ["tex2jax.js"],
+ TeX: {
+   extensions: ["AMSmath.js","AMSsymbols.js"],
+   equationNumbers: {
+     autoNumber: "AMS"
+   }
+ },
+ tex2jax: {
+   inlineMath: [["\\(", "\\)"]],
+   displayMath: [["\\[", "\\]"]]
+ }
+});</script><link type="text/css" rel="stylesheet" href="//unpkg.com/lightgallery@2.7.1/css/lightgallery.css"><link type="text/css" rel="stylesheet" href="//unpkg.com/lightgallery@2.7.1/css/lg-zoom.css"><link type="text/css" rel="stylesheet" href="//unpkg.com/lightgallery@2.7.1/css/lg-thumbnail.css"><link type="text/css" rel="stylesheet" href="/lib/fontawesome/css/all.min.css"><script>if (window.localStorage.getItem('theme-mode') === 'light')
+ document.documentElement.setAttribute('theme-mode', 'light')
+if (window.localStorage.getItem('theme-mode') === 'dark')
+ document.documentElement.setAttribute('theme-mode', 'dark')</script><style>@font-face {
+ font-family: BenderLight;
+ src: local('Bender'), url("/font/BenderLight.woff2") format('woff2');
+}
+@font-face {
+ font-family: 'JetBrains Mono';
+ src: local('JetBrains Mono'), url('/font/JetBrainsMono-Regular.woff2') format('woff2');
+}</style><style>:root {
+ --dark-background: url('https://ak.hypergryph.com/assets/index/images/ak/pc/bk.jpg');
+ --light-background: url('/img/bk.jpg');
+ --theme-encrypt-confirm: '确认'
+}</style><script defer src="/js/arknights.js"></script><script defer src="/js/search.js"></script><script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script><script async src="/js/gitalk.js"></script><script defer type="module">import mermaid from '//unpkg.com/mermaid@10.5.0/dist/mermaid.esm.mjs';
+window.mermaid = mermaid;
+code.paintMermaid();
+</script><script src="//cdnjs.cloudflare.com/ajax/libs/mathjax/2.6.1/MathJax.js"></script><script>MathJax.Hub.Config({
+  menuSettings: {
+    zoom: "None"
+  },
+  showMathMenu: false,
+  jax: ["input/TeX","output/CommonHTML"],
+  extensions: ["tex2jax.js"],
+  TeX: {
+    extensions: ["AMSmath.js","AMSsymbols.js"],
+    equationNumbers: {
+      autoNumber: "AMS"
+    }
+  },
+  tex2jax: {
+    inlineMath: [["\\(", "\\)"]],
+    displayMath: [["\\[", "\\]"]]
+  }
+});
+</script><script async src="//unpkg.com/lightgallery@2.7.1/lightgallery.min.js"></script><script async src="//unpkg.com/lightgallery@2.7.1/plugins/zoom/lg-zoom.min.js"></script><script async src="//unpkg.com/lightgallery@2.7.1/plugins/thumbnail/lg-thumbnail.min.js"></script><script async src="/lib/encrypt/hbe.js"></script><script async src="/js/pjax.js"></script><script class="pjax-js">reset= () => {gitalk = new Gitalk({
+ clientID: 'Ov23liB6qafwc0hDL1wu',
+ clientSecret: '840f621f418fcb18299616e781c7689ab10018d4',
+ repo: 'zdx-1.github.io',
+ owner: 'zdx-1',
+ admin: ['zdx-1'],
+ distractionFreeMode: false,
+ id: location.pathname
+});
+if (document.querySelector("#gitalk")) gitalk.render("gitalk");document.querySelector('.lg-container')?.remove()
+lightGallery(document.getElementById('post-bg'), {
+  plugins: [lgZoom,lgThumbnail],
+  selector: '.item-img'})}</script><script>window.addEventListener("load",() => {pjax = new Pjax({
+ cacheBust: false,
+ selectors: ['title','article','#aside-block','.pjax-js','data-pjax','.busuanzi'],
+ switches: {'article': Pjax.switches.sideBySide},
+ switchesOptions: {
+   'article': {
+     classNames: {
+       remove: "pjax-out",
+       add: "pjax-in"
+     }
+   }
+ }
+});
+document.addEventListener("pjax:complete", reset);document.addEventListener('pjax:success', _ => bszCaller.fetch(
+ "//busuanzi.ibruce.info/busuanzi?jsonpCallback=BusuanziCallback", a => {
+  bszTag.texts(a),
+  bszTag.shows()
+}));reset()})</script><script class="pjax-js">reset= () => {gitalk = new Gitalk({
+ clientID: 'Ov23liB6qafwc0hDL1wu',
+ clientSecret: '840f621f418fcb18299616e781c7689ab10018d4',
+ repo: 'zdx-1.github.io',
+ owner: 'zdx-1',
+ admin: ['zdx-1'],
+ distractionFreeMode: false,
+ id: location.pathname
+});
+if (document.querySelector("#gitalk")) gitalk.render("gitalk");document.querySelector('.lg-container')?.remove()
+lightGallery(document.getElementById('post-bg'), {
+  plugins: [lgZoom,lgThumbnail],
+  selector: '.item-img'})}</script><script>window.addEventListener("load",() => {pjax = new Pjax({
+ cacheBust: false,
+ selectors: ['title','article','#aside-block','.pjax-js'],
+ switches: {'article': Pjax.switches.sideBySide},
+ switchesOptions: {
+   'article': {
+     classNames: {
+       remove: "pjax-out",
+       add: "pjax-in"
+     }
+   }
+ }
+});
+document.addEventListener("pjax:complete", reset);reset()})</script><meta name="generator" content="Hexo 7.3.0"><style>mjx-container[jax="SVG"] {
+  direction: ltr;
+}
+
+mjx-container[jax="SVG"] > svg {
+  overflow: visible;
+}
+
+mjx-container[jax="SVG"][display="true"] {
+  display: block;
+  text-align: center;
+  margin: 1em 0;
+}
+
+mjx-container[jax="SVG"][justify="left"] {
+  text-align: left;
+}
+
+mjx-container[jax="SVG"][justify="right"] {
+  text-align: right;
+}
+
+g[data-mml-node="merror"] > g {
+  fill: red;
+  stroke: red;
+}
+
+g[data-mml-node="merror"] > rect[data-background] {
+  fill: yellow;
+  stroke: none;
+}
+
+g[data-mml-node="mtable"] > line[data-line] {
+  stroke-width: 70px;
+  fill: none;
+}
+
+g[data-mml-node="mtable"] > rect[data-frame] {
+  stroke-width: 70px;
+  fill: none;
+}
+
+g[data-mml-node="mtable"] > .mjx-dashed {
+  stroke-dasharray: 140;
+}
+
+g[data-mml-node="mtable"] > .mjx-dotted {
+  stroke-linecap: round;
+  stroke-dasharray: 0,140;
+}
+
+g[data-mml-node="mtable"] > svg {
+  overflow: visible;
+}
+
+[jax="SVG"] mjx-tool {
+  display: inline-block;
+  position: relative;
+  width: 0;
+  height: 0;
+}
+
+[jax="SVG"] mjx-tool > mjx-tip {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+mjx-tool > mjx-tip {
+  display: inline-block;
+  padding: .2em;
+  border: 1px solid #888;
+  font-size: 70%;
+  background-color: #F8F8F8;
+  color: black;
+  box-shadow: 2px 2px 5px #AAAAAA;
+}
+
+g[data-mml-node="maction"][data-toggle] {
+  cursor: pointer;
+}
+
+mjx-status {
+  display: block;
+  position: fixed;
+  left: 1em;
+  bottom: 1em;
+  min-width: 25%;
+  padding: .2em .4em;
+  border: 1px solid #888;
+  font-size: 90%;
+  background-color: #F8F8F8;
+  color: black;
+}
+
+foreignObject[data-mjx-xml] {
+  font-family: initial;
+  line-height: normal;
+  overflow: visible;
+}
+
+.MathJax path {
+  stroke-width: 3;
+}
+
+mjx-container[display="true"] {
+  overflow: auto hidden;
+}
+
+mjx-container[display="true"] + br {
+  display: none;
+}
+</style></head><body><div class="loading" style="opacity: 0;"><div class="loadingBar left"></div><div class="loadingBar right"></div></div><main><header class="closed"><div class="navBtn"><i class="navBtnIcon"><span class="navBtnIconBar"></span><span class="navBtnIconBar"></span><span class="navBtnIconBar"></span></i></div><nav><div class="navItem" id="search-header"><span class="navItemTitle"><input autocomplete="off" autocorrect="off" autocapitalize="none" placeholder="数据检索" spellcheck="false" maxlength="50" type="text" id="search-input"></span></div><div class="navItem" id="search-holder"></div><div class="search-popup" tabindex="0"><div id="search-result"></div></div><ol class="navContent"><li class="navItem"><a class="navBlock" href="/"><span class="navItemTitle">Home</span></a></li><li class="navItem" matchdata="categories,tags"><a class="navBlock" href="/archives/"><span class="navItemTitle">Archives</span></a></li><li class="navItem"><a class="navBlock" href="/about/"><span class="navItemTitle">About</span></a></li></ol></nav></header><article><div id="post-bg"><div id="post-title"><h1>Hexo-安装部署</h1></div><hr><div id="post-content"><h1 id="Hexo安装"><a href="#Hexo安装" class="headerlink" title="Hexo安装"></a>Hexo安装</h1><p>可以参照hexo官网给出的文档，官网文档：<a target="_blank" rel="noopener" href="https://hexo.io/zh-cn/docs/">https://hexo.io/zh-cn/docs/</a></p>
+<p>安装前需要先安装git工具和nodejs</p>
+<ul>
+<li>git工具 官网： <a target="_blank" rel="noopener" href="https://git-scm.com/download/win">https://git-scm.com/download/win</a></li>
+<li>nodejs 下载地址：<a target="_blank" rel="noopener" href="https://registry.npmmirror.com/binary.html?path=node/%EF%BC%88%E6%B7%98%E5%AE%9D%E9%95%9C%E5%83%8F-%E5%9B%BD%E5%86%85%E5%AE%98%E7%BD%91%E8%AE%BF%E9%97%AE%E6%85%A2%EF%BC%89">https://registry.npmmirror.com/binary.html?path=node/（淘宝镜像-国内官网访问慢）</a></li>
+</ul>
+<p>安装hexo（全局）</p>
+<figure class="highlight cmd"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs cmd">npm install -g hexo-cli<br></code></pre></td></tr></table></figure>
+
+<p>安装hexo（在当前文件夹）</p>
+<figure class="highlight cmd"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs cmd">npm install hexo<br></code></pre></td></tr></table></figure>
+
+
+
+<h1 id="Hexo网站搭建"><a href="#Hexo网站搭建" class="headerlink" title="Hexo网站搭建"></a>Hexo网站搭建</h1><p>使用以下命令进行建站</p>
+<figure class="highlight cmd"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs cmd">hexo init &lt;folder&gt;<br><span class="hljs-built_in">cd</span> &lt;folder&gt;<br>npm install<br></code></pre></td></tr></table></figure>
+
+<p>完成以上命令后，修改folder目录下的_config.yml文件</p>
+<figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br></pre></td><td class="code"><pre><code class="hljs yml"><span class="hljs-comment"># Hexo Configuration</span><br><span class="hljs-comment">## Docs: https://hexo.io/docs/configuration.html</span><br><span class="hljs-comment">## Source: https://github.com/hexojs/hexo/</span><br><br><span class="hljs-comment"># Site 站点信息</span><br><span class="hljs-attr">title:</span> <span class="hljs-string">zdx-1</span><br><span class="hljs-attr">subtitle:</span> <span class="hljs-string">''</span><br><span class="hljs-attr">description:</span> <span class="hljs-string">个人学习的一些笔记记录，只用于学习交流</span><br><span class="hljs-attr">keywords:</span> <span class="hljs-string">zdx-1</span><br><span class="hljs-attr">author:</span> <span class="hljs-string">Dexin</span> <span class="hljs-string">Zhang</span><br><span class="hljs-attr">language:</span> <span class="hljs-string">zh-CN</span><br><span class="hljs-attr">timezone:</span> <span class="hljs-string">''</span><br><br><span class="hljs-comment"># URL 你的网站地址源</span><br><span class="hljs-comment">## Set your site url here. For example, if you use GitHub Page, set url as 'https://username.github.io/project'</span><br><span class="hljs-attr">url:</span> <span class="hljs-string">http://zdx-1.github.io</span><br><span class="hljs-attr">permalink:</span> <span class="hljs-string">:year/:month/:day/:title/</span><br><span class="hljs-attr">permalink_defaults:</span><br><span class="hljs-attr">pretty_urls:</span><br>  <span class="hljs-attr">trailing_index:</span> <span class="hljs-literal">true</span> <span class="hljs-comment"># Set to false to remove trailing 'index.html' from permalinks</span><br>  <span class="hljs-attr">trailing_html:</span> <span class="hljs-literal">true</span> <span class="hljs-comment"># Set to false to remove trailing '.html' from permalinks</span><br><br><span class="hljs-comment"># Directory</span><br><span class="hljs-attr">source_dir:</span> <span class="hljs-string">source</span><br><span class="hljs-attr">public_dir:</span> <span class="hljs-string">public</span><br><span class="hljs-attr">tag_dir:</span> <span class="hljs-string">tags</span><br><span class="hljs-attr">archive_dir:</span> <span class="hljs-string">archives</span><br><span class="hljs-attr">category_dir:</span> <span class="hljs-string">categories</span><br><span class="hljs-attr">code_dir:</span> <span class="hljs-string">downloads/code</span><br><span class="hljs-attr">i18n_dir:</span> <span class="hljs-string">:lang</span><br><span class="hljs-attr">skip_render:</span><br><br><span class="hljs-comment"># Writing</span><br><span class="hljs-attr">new_post_name:</span> <span class="hljs-string">:title.md</span> <span class="hljs-comment"># File name of new posts</span><br><span class="hljs-attr">default_layout:</span> <span class="hljs-string">post</span><br><span class="hljs-attr">titlecase:</span> <span class="hljs-literal">false</span> <span class="hljs-comment"># Transform title into titlecase</span><br><span class="hljs-attr">external_link:</span><br>  <span class="hljs-attr">enable:</span> <span class="hljs-literal">true</span> <span class="hljs-comment"># Open external links in new tab</span><br>  <span class="hljs-attr">field:</span> <span class="hljs-string">site</span> <span class="hljs-comment"># Apply to the whole site</span><br>  <span class="hljs-attr">exclude:</span> <span class="hljs-string">''</span><br><span class="hljs-attr">filename_case:</span> <span class="hljs-number">0</span><br><span class="hljs-attr">render_drafts:</span> <span class="hljs-literal">false</span><br><span class="hljs-attr">post_asset_folder:</span> <span class="hljs-literal">false</span><br><span class="hljs-attr">relative_link:</span> <span class="hljs-literal">false</span><br><span class="hljs-attr">future:</span> <span class="hljs-literal">true</span><br><span class="hljs-attr">syntax_highlighter:</span> <br><span class="hljs-attr">highlight:</span><br>  <span class="hljs-attr">line_number:</span> <span class="hljs-literal">true</span><br>  <span class="hljs-attr">auto_detect:</span> <span class="hljs-literal">false</span><br>  <span class="hljs-attr">tab_replace:</span> <span class="hljs-string">''</span><br>  <span class="hljs-attr">wrap:</span> <span class="hljs-literal">true</span><br>  <span class="hljs-attr">hljs:</span> <span class="hljs-literal">false</span><br><span class="hljs-attr">prismjs:</span><br>  <span class="hljs-attr">preprocess:</span> <span class="hljs-literal">true</span><br>  <span class="hljs-attr">line_number:</span> <span class="hljs-literal">true</span><br>  <span class="hljs-attr">tab_replace:</span> <span class="hljs-string">''</span><br><br><span class="hljs-comment"># Home page setting</span><br><span class="hljs-comment"># path: Root path for your blogs index page. (default = '')</span><br><span class="hljs-comment"># per_page: Posts displayed per page. (0 = disable pagination)</span><br><span class="hljs-comment"># order_by: Posts order. (Order by date descending by default)</span><br><span class="hljs-attr">index_generator:</span><br>  <span class="hljs-attr">path:</span> <span class="hljs-string">''</span><br>  <span class="hljs-attr">per_page:</span> <span class="hljs-number">10</span><br>  <span class="hljs-attr">order_by:</span> <span class="hljs-string">-date</span><br><br><span class="hljs-comment"># Category &amp; Tag</span><br><span class="hljs-attr">default_category:</span> <span class="hljs-string">uncategorized</span><br><span class="hljs-attr">category_map:</span><br><span class="hljs-attr">tag_map:</span><br><br><span class="hljs-comment"># Metadata elements</span><br><span class="hljs-comment">## https://developer.mozilla.org/en-US/docs/Web/HTML/Element/meta</span><br><span class="hljs-attr">meta_generator:</span> <span class="hljs-literal">true</span><br><br><span class="hljs-comment"># Date / Time format</span><br><span class="hljs-comment">## Hexo uses Moment.js to parse and display date</span><br><span class="hljs-comment">## You can customize the date format as defined in</span><br><span class="hljs-comment">## http://momentjs.com/docs/#/displaying/format/</span><br><span class="hljs-attr">date_format:</span> <span class="hljs-string">YYYY-MM-DD</span><br><span class="hljs-attr">time_format:</span> <span class="hljs-string">HH:mm:ss</span><br><span class="hljs-comment">## updated_option supports 'mtime', 'date', 'empty'</span><br><span class="hljs-attr">updated_option:</span> <span class="hljs-string">'mtime'</span><br><br><span class="hljs-comment"># Pagination</span><br><span class="hljs-comment">## Set per_page to 0 to disable pagination</span><br><span class="hljs-attr">per_page:</span> <span class="hljs-number">10</span><br><span class="hljs-attr">pagination_dir:</span> <span class="hljs-string">page</span><br><br><span class="hljs-comment"># Include / Exclude file(s)</span><br><span class="hljs-comment">## include:/exclude: options only apply to the 'source/' folder</span><br><span class="hljs-attr">include:</span><br><span class="hljs-attr">exclude:</span><br><span class="hljs-attr">ignore:</span><br><br><span class="hljs-comment"># Extensions 设置使用的主题</span><br><span class="hljs-comment">## Plugins: https://hexo.io/plugins/</span><br><span class="hljs-comment">## Themes: https://hexo.io/themes/</span><br><span class="hljs-attr">theme:</span> <span class="hljs-number">3</span><span class="hljs-string">-hexo</span><br><br><span class="hljs-comment"># Deployment 上传到github的方式，上传到哪个分支</span><br><span class="hljs-comment">## Docs: https://hexo.io/docs/one-command-deployment</span><br><span class="hljs-attr">deploy:</span><br>  <span class="hljs-attr">type:</span> <span class="hljs-string">git</span><br>  <span class="hljs-attr">repo:</span> <span class="hljs-string">git@github.com:zdx-1/zdx-1.github.io.git</span><br>  <span class="hljs-attr">branch:</span> <span class="hljs-string">main</span><br><br></code></pre></td></tr></table></figure>
+
+
+
+<h1 id="Hexo配置git上传插件"><a href="#Hexo配置git上传插件" class="headerlink" title="Hexo配置git上传插件"></a>Hexo配置git上传插件</h1><figure class="highlight cmd"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs cmd">npm install hexo-deployer-git --save<br></code></pre></td></tr></table></figure>
+
+<h1 id="Hexo上传github"><a href="#Hexo上传github" class="headerlink" title="Hexo上传github"></a>Hexo上传github</h1><p>清理缓存，生成文件，上传文件</p>
+<figure class="highlight cmd"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs cmd">hexo cl &amp;&amp; hexo g &amp;&amp; hexo d<br></code></pre></td></tr></table></figure>
+
+<p>清理缓存，生成文件，本地预览</p>
+<figure class="highlight cmd"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs cmd">hexo cl &amp;&amp; hexo g &amp;&amp; hexo s<br></code></pre></td></tr></table></figure>
+
+<div id="paginator"></div></div><div id="post-footer"><div id="pages" style="justify-content: flex-start"><div class="footer-link" style="width: 50%;text-align:right;border-right:1px #fe2 solid"><a href="/2024/03/10/HexoDebug/">← 下一篇 Hexo-问题解决方案</a></div></div></div><div id="comments"><div id="gitalk"></div></div></div><div class="bottom-btn"><div><a class="i-top" id="to-top" onClick="scrolls.scrolltop();" title="回到顶部" style="opacity: 0; display: none;">∧ </a><a class="i-index" id="to-index" href="#toc-div" title="文章目录">≡</a><a class="i-color" id="color-mode" onClick="colorMode.change()" title="切换主题"></a></div></div></article><aside><div id="about"><a href="/" id="logo"><img src="https://ak.hypergryph.com/assets/index/images/ak/pc/faction/1.png" alt="Logo"></a><h1 id="Dr"><a href="/">zdx</a></h1><div id="description"><p>记录学习的点点滴滴</p></div><div id="social-links"><a class="social" target="_blank" rel="noopener" href="https://github.com/zdx-1"><i class="fab fa-github" alt="GitHub"></i></a><a class="social" href="mailto:119546328912@163.com"><i class="fa fa-envelope" alt="E-Mail"></i></a></div></div><div id="aside-block"><div id="toc-div"><h1>目录</h1><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Hexo%E5%AE%89%E8%A3%85"><span class="toc-number">1.</span> <span class="toc-text">Hexo安装</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Hexo%E7%BD%91%E7%AB%99%E6%90%AD%E5%BB%BA"><span class="toc-number">2.</span> <span class="toc-text">Hexo网站搭建</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Hexo%E9%85%8D%E7%BD%AEgit%E4%B8%8A%E4%BC%A0%E6%8F%92%E4%BB%B6"><span class="toc-number">3.</span> <span class="toc-text">Hexo配置git上传插件</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Hexo%E4%B8%8A%E4%BC%A0github"><span class="toc-number">4.</span> <span class="toc-text">Hexo上传github</span></a></li></ol></div></div><footer><nobr>构建自 <a target="_blank" rel="noopener" href="http://hexo.io">Hexo</a></nobr><wbr><nobr> 使用主题 <a target="_blank" rel="noopener" href="https://github.com/Yue-plus/hexo-theme-arknights">Arknights</a></nobr><wbr><nobr> 主题作者 <a target="_blank" rel="noopener" href="https://github.com/Yue-plus">Yue_plus</a></nobr></footer></aside></main><canvas id="canvas-dust"></canvas></body></html>
