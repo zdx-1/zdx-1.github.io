@@ -2,6 +2,87 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://zdx-1.github.io/2024/07/17/Python-PyQtBase/</loc>
+    
+    <lastmod>2024-11-29</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>http://zdx-1.github.io/2024/11/29/Server-UbuntuInstall/</loc>
+    
+    <lastmod>2024-11-29</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>http://zdx-1.github.io/2024/08/01/MySql-Doc/</loc>
+    
+    <lastmod>2024-11-29</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>http://zdx-1.github.io/2024/07/11/WinForm-NanUI/</loc>
+    
+    <lastmod>2024-11-29</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>http://zdx-1.github.io/2024/07/31/Gitee-ImgWarehouse/</loc>
+    
+    <lastmod>2024-11-29</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>http://zdx-1.github.io/2024/07/09/Python-KivyBase/</loc>
+    
+    <lastmod>2024-11-29</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>http://zdx-1.github.io/2024/07/16/Python-FlaskBase/</loc>
+    
+    <lastmod>2024-11-29</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>http://zdx-1.github.io/2024/07/28/Python-DjangoBase/</loc>
+    
+    <lastmod>2024-11-29</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>http://zdx-1.github.io/2024/05/24/DSA-KnowledgeOrganization/</loc>
+    
+    <lastmod>2024-11-29</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>http://zdx-1.github.io/2024/04/10/WinForm-EntityFramework/</loc>
     
     <lastmod>2024-11-29</lastmod>
@@ -280,7 +361,7 @@
   </url>
   
   <url>
-    <loc>http://zdx-1.github.io/tags/Vue/</loc>
+    <loc>http://zdx-1.github.io/tags/%E4%BA%91%E5%9B%BE%E5%BA%93/</loc>
     <lastmod>2024-11-29</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -294,6 +375,13 @@
   </url>
   
   <url>
+    <loc>http://zdx-1.github.io/tags/MySql/</loc>
+    <lastmod>2024-11-29</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
     <loc>http://zdx-1.github.io/tags/Py%E5%86%85%E7%BD%AE%E5%87%BD%E6%95%B0/</loc>
     <lastmod>2024-11-29</lastmod>
     <changefreq>weekly</changefreq>
@@ -301,7 +389,28 @@
   </url>
   
   <url>
-    <loc>http://zdx-1.github.io/tags/WinForm/</loc>
+    <loc>http://zdx-1.github.io/tags/Flask/</loc>
+    <lastmod>2024-11-29</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>http://zdx-1.github.io/tags/Django/</loc>
+    <lastmod>2024-11-29</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>http://zdx-1.github.io/tags/Vue/</loc>
+    <lastmod>2024-11-29</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>http://zdx-1.github.io/tags/PyQt/</loc>
     <lastmod>2024-11-29</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -309,6 +418,27 @@
   
   <url>
     <loc>http://zdx-1.github.io/tags/EntityFramework/</loc>
+    <lastmod>2024-11-29</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>http://zdx-1.github.io/tags/Kivy/</loc>
+    <lastmod>2024-11-29</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>http://zdx-1.github.io/tags/Ubuntu/</loc>
+    <lastmod>2024-11-29</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>http://zdx-1.github.io/tags/NanUI/</loc>
     <lastmod>2024-11-29</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -352,6 +482,13 @@
   </url>
   
   <url>
+    <loc>http://zdx-1.github.io/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95/%E8%93%9D%E6%A1%A5%E6%9D%AF%E7%9F%A5%E8%AF%86%E6%A2%B3%E7%90%86/</loc>
+    <lastmod>2024-11-29</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
     <loc>http://zdx-1.github.io/categories/Hexo/</loc>
     <lastmod>2024-11-29</lastmod>
     <changefreq>weekly</changefreq>
@@ -359,7 +496,7 @@
   </url>
   
   <url>
-    <loc>http://zdx-1.github.io/categories/Vue/</loc>
+    <loc>http://zdx-1.github.io/categories/Gitee/</loc>
     <lastmod>2024-11-29</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -373,6 +510,13 @@
   </url>
   
   <url>
+    <loc>http://zdx-1.github.io/categories/MySql/</loc>
+    <lastmod>2024-11-29</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
     <loc>http://zdx-1.github.io/categories/Python/</loc>
     <lastmod>2024-11-29</lastmod>
     <changefreq>weekly</changefreq>
@@ -380,14 +524,28 @@
   </url>
   
   <url>
-    <loc>http://zdx-1.github.io/categories/CSharp/EntityFramework/</loc>
+    <loc>http://zdx-1.github.io/categories/Vue/</loc>
     <lastmod>2024-11-29</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>http://zdx-1.github.io/categories/Vue/%E5%9F%BA%E7%A1%80%E8%AF%AD%E6%B3%95%E8%AF%A6%E8%A7%A3/</loc>
+    <loc>http://zdx-1.github.io/categories/CSharp/WinForm/</loc>
+    <lastmod>2024-11-29</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>http://zdx-1.github.io/categories/Server/</loc>
+    <lastmod>2024-11-29</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>http://zdx-1.github.io/categories/Gitee/%E4%BA%91%E5%9B%BE%E5%BA%93/</loc>
     <lastmod>2024-11-29</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -402,6 +560,48 @@
   
   <url>
     <loc>http://zdx-1.github.io/categories/Python/%E5%86%85%E7%BD%AE%E5%87%BD%E6%95%B0/</loc>
+    <lastmod>2024-11-29</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>http://zdx-1.github.io/categories/Python/Flask/</loc>
+    <lastmod>2024-11-29</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>http://zdx-1.github.io/categories/Python/Django/</loc>
+    <lastmod>2024-11-29</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>http://zdx-1.github.io/categories/Vue/%E5%9F%BA%E7%A1%80%E8%AF%AD%E6%B3%95%E8%AF%A6%E8%A7%A3/</loc>
+    <lastmod>2024-11-29</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>http://zdx-1.github.io/categories/Python/PyQt/</loc>
+    <lastmod>2024-11-29</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>http://zdx-1.github.io/categories/Python/Kivy/</loc>
+    <lastmod>2024-11-29</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>http://zdx-1.github.io/categories/Server/Ubuntu/</loc>
     <lastmod>2024-11-29</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
