@@ -403,21 +403,7 @@
   </url>
   
   <url>
-    <loc>http://zdx-1.github.io/tags/Py%E5%86%85%E7%BD%AE%E5%87%BD%E6%95%B0/</loc>
-    <lastmod>2024-11-29</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
     <loc>http://zdx-1.github.io/tags/Python/</loc>
-    <lastmod>2024-11-29</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>http://zdx-1.github.io/tags/Django/</loc>
     <lastmod>2024-11-29</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -431,14 +417,7 @@
   </url>
   
   <url>
-    <loc>http://zdx-1.github.io/tags/Server/</loc>
-    <lastmod>2024-11-29</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>http://zdx-1.github.io/tags/Ubuntu/</loc>
+    <loc>http://zdx-1.github.io/tags/Py%E5%86%85%E7%BD%AE%E5%87%BD%E6%95%B0/</loc>
     <lastmod>2024-11-29</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -452,7 +431,21 @@
   </url>
   
   <url>
+    <loc>http://zdx-1.github.io/tags/Django/</loc>
+    <lastmod>2024-11-29</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
     <loc>http://zdx-1.github.io/tags/Vue/</loc>
+    <lastmod>2024-11-29</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>http://zdx-1.github.io/tags/Kivy/</loc>
     <lastmod>2024-11-29</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -473,14 +466,21 @@
   </url>
   
   <url>
-    <loc>http://zdx-1.github.io/tags/EntityFramework/</loc>
+    <loc>http://zdx-1.github.io/tags/Server/</loc>
     <lastmod>2024-11-29</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>http://zdx-1.github.io/tags/Kivy/</loc>
+    <loc>http://zdx-1.github.io/tags/Ubuntu/</loc>
+    <lastmod>2024-11-29</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>http://zdx-1.github.io/tags/EntityFramework/</loc>
     <lastmod>2024-11-29</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -538,14 +538,14 @@
   </url>
   
   <url>
-    <loc>http://zdx-1.github.io/categories/Server/</loc>
+    <loc>http://zdx-1.github.io/categories/Vue/</loc>
     <lastmod>2024-11-29</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>http://zdx-1.github.io/categories/Vue/</loc>
+    <loc>http://zdx-1.github.io/categories/Server/</loc>
     <lastmod>2024-11-29</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
