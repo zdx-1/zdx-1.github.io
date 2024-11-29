@@ -1,4 +1,4 @@
-http://zdx-1.github.io/2024/03/10/Recursion/
+http://zdx-1.github.io/2024/03/10/DSA-Recurrence-Relation-and-Recursion/
 http://zdx-1.github.io/2024/03/11/DSA-Binary/
 http://zdx-1.github.io/2024/03/10/DSA-MM-and-BT/
 http://zdx-1.github.io/about/index.html
