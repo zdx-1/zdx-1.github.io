@@ -1,0 +1,264 @@
+<!DOCTYPE html><html lang="zh-cn" theme-mode="auto"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>【JavaScript】基础语法详解 | ZDX-1</title><link rel="icon" type="image/x-icon" href="/favicon.ico"><link rel="preload" as="font" crossorigin="anonymous" href="/font/Bender.ttf"><link rel="preload" as="font" crossorigin="anonymous" href="/font/BenderLight.ttf"><link rel="preload" as="font" crossorigin="anonymous" href="/font/JetBrainsMono-Regular.woff2"><link rel="stylesheet" href="/css/arknights.css"><style>@font-face {
+  font-family: Bender;
+  src: local('Bender'), url("/font/Bender.ttf"), url("/font/Bender.otf");
+}
+@font-face {
+  font-family: BenderLight;
+  src: local('BenderLight'), url("/font/BenderLight.ttf");
+}
+@font-face {
+  font-family: 'JetBrains Mono';
+  src: local('JetBrains Mono'), url('/font/JetBrainsMono-Regular.woff2') format('woff2');
+}
+</style><script>var config = {"root":"/","search":{"preload":true,"activeHolder":"键入以继续","blurHolder":"数据检索","noResult":"无 $0 相关数据"},"code":{"codeInfo":"$0 - $1 行","copy":"复制"}}</script><link type="text/css" rel="stylesheet" href="/lib/encrypt/hbe.style.css"><script src="/js/gitalk.js"></script><script src="//unpkg.com/mermaid@10.5.0/dist/mermaid.min.js"></script><script src="//cdnjs.cloudflare.com/ajax/libs/mathjax/2.6.1/MathJax.js"></script><script>MathJax.Hub.Config({
+ menuSettings: {
+   zoom: "None"
+ },
+ showMathMenu: false,
+ jax: ["input/TeX","output/CommonHTML"],
+ extensions: ["tex2jax.js"],
+ TeX: {
+   extensions: ["AMSmath.js","AMSsymbols.js"],
+   equationNumbers: {
+     autoNumber: "AMS"
+   }
+ },
+ tex2jax: {
+   inlineMath: [["\\(", "\\)"]],
+   displayMath: [["\\[", "\\]"]]
+ }
+});</script><link type="text/css" rel="stylesheet" href="//unpkg.com/lightgallery@2.7.1/css/lightgallery.css"><link type="text/css" rel="stylesheet" href="//unpkg.com/lightgallery@2.7.1/css/lg-zoom.css"><link type="text/css" rel="stylesheet" href="//unpkg.com/lightgallery@2.7.1/css/lg-thumbnail.css"><link type="text/css" rel="stylesheet" href="/lib/fontawesome/css/all.min.css"><script>if (window.localStorage.getItem('theme-mode') === 'light' || window.matchMedia('(prefers-color-scheme:light)').matches)
+ document.documentElement.setAttribute('theme-mode', 'light')
+if (window.localStorage.getItem('theme-mode') === 'dark' || window.matchMedia('(prefers-color-scheme:dark)').matches)
+ document.documentElement.setAttribute('theme-mode', 'dark')</script><style>@font-face {
+ font-family: BenderLight;
+ src: local('Bender'), url("/font/BenderLight.woff2") format('woff2');
+}
+@font-face {
+ font-family: 'JetBrains Mono';
+ src: local('JetBrains Mono'), url('/font/JetBrainsMono-Regular.woff2') format('woff2');
+}</style><style>:root {
+ --dark-background: url('https://ak.hypergryph.com/assets/index/images/ak/pc/bk.jpg');
+ --light-background: url('/img/bk.jpg');
+ --theme-encrypt-confirm: '确认'
+}</style><script defer src="/js/arknights.js"></script><script defer src="/js/search.js"></script><script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script><script async src="/js/gitalk.js"></script><script defer type="module">import mermaid from '//unpkg.com/mermaid@10.5.0/dist/mermaid.esm.mjs';
+window.mermaid = mermaid;
+code.paintMermaid();
+</script><script src="//cdnjs.cloudflare.com/ajax/libs/mathjax/2.6.1/MathJax.js"></script><script>MathJax.Hub.Config({
+  menuSettings: {
+    zoom: "None"
+  },
+  showMathMenu: false,
+  jax: ["input/TeX","output/CommonHTML"],
+  extensions: ["tex2jax.js"],
+  TeX: {
+    extensions: ["AMSmath.js","AMSsymbols.js"],
+    equationNumbers: {
+      autoNumber: "AMS"
+    }
+  },
+  tex2jax: {
+    inlineMath: [["\\(", "\\)"]],
+    displayMath: [["\\[", "\\]"]]
+  }
+});
+</script><script async src="//unpkg.com/lightgallery@2.7.1/lightgallery.min.js"></script><script async src="//unpkg.com/lightgallery@2.7.1/plugins/zoom/lg-zoom.min.js"></script><script async src="//unpkg.com/lightgallery@2.7.1/plugins/thumbnail/lg-thumbnail.min.js"></script><script async src="/lib/encrypt/hbe.js"></script><script async src="/js/pjax.js"></script><script class="pjax-js">reset= () => {gitalk = new Gitalk({
+ clientID: 'Ov23liB6qafwc0hDL1wu',
+ clientSecret: '840f621f418fcb18299616e781c7689ab10018d4',
+ repo: 'zdx-1.github.io',
+ owner: 'zdx-1',
+ admin: ['zdx-1'],
+ distractionFreeMode: false,
+ id: location.pathname
+});
+if (document.querySelector("#gitalk")) gitalk.render("gitalk");document.querySelector('.lg-container')?.remove()
+lightGallery(document.getElementById('post-bg'), {
+  plugins: [lgZoom,lgThumbnail],
+  selector: '.item-img'})}</script><script>window.addEventListener("load",() => {pjax = new Pjax({
+ cacheBust: false,
+ selectors: ['title','article','#aside-block','.pjax-js','data-pjax','.busuanzi'],
+ switches: {'article': Pjax.switches.sideBySide},
+ switchesOptions: {
+   'article': {
+     classNames: {
+       remove: "pjax-out",
+       add: "pjax-in"
+     }
+   }
+ }
+});
+document.addEventListener("pjax:complete", reset);document.addEventListener('pjax:success', _ => bszCaller.fetch(
+ "//busuanzi.ibruce.info/busuanzi?jsonpCallback=BusuanziCallback", a => {
+  bszTag.texts(a),
+  bszTag.shows()
+}));reset()})</script><script class="pjax-js">reset= () => {gitalk = new Gitalk({
+ clientID: 'Ov23liB6qafwc0hDL1wu',
+ clientSecret: '840f621f418fcb18299616e781c7689ab10018d4',
+ repo: 'zdx-1.github.io',
+ owner: 'zdx-1',
+ admin: ['zdx-1'],
+ distractionFreeMode: false,
+ id: location.pathname
+});
+if (document.querySelector("#gitalk")) gitalk.render("gitalk");document.querySelector('.lg-container')?.remove()
+lightGallery(document.getElementById('post-bg'), {
+  plugins: [lgZoom,lgThumbnail],
+  selector: '.item-img'})}</script><script>window.addEventListener("load",() => {pjax = new Pjax({
+ cacheBust: false,
+ selectors: ['title','article','#aside-block','.pjax-js'],
+ switches: {'article': Pjax.switches.sideBySide},
+ switchesOptions: {
+   'article': {
+     classNames: {
+       remove: "pjax-out",
+       add: "pjax-in"
+     }
+   }
+ }
+});
+document.addEventListener("pjax:complete", reset);reset()})</script><meta name="generator" content="Hexo 7.3.0"><style>mjx-container[jax="SVG"] {
+  direction: ltr;
+}
+
+mjx-container[jax="SVG"] > svg {
+  overflow: visible;
+}
+
+mjx-container[jax="SVG"][display="true"] {
+  display: block;
+  text-align: center;
+  margin: 1em 0;
+}
+
+mjx-container[jax="SVG"][justify="left"] {
+  text-align: left;
+}
+
+mjx-container[jax="SVG"][justify="right"] {
+  text-align: right;
+}
+
+g[data-mml-node="merror"] > g {
+  fill: red;
+  stroke: red;
+}
+
+g[data-mml-node="merror"] > rect[data-background] {
+  fill: yellow;
+  stroke: none;
+}
+
+g[data-mml-node="mtable"] > line[data-line] {
+  stroke-width: 70px;
+  fill: none;
+}
+
+g[data-mml-node="mtable"] > rect[data-frame] {
+  stroke-width: 70px;
+  fill: none;
+}
+
+g[data-mml-node="mtable"] > .mjx-dashed {
+  stroke-dasharray: 140;
+}
+
+g[data-mml-node="mtable"] > .mjx-dotted {
+  stroke-linecap: round;
+  stroke-dasharray: 0,140;
+}
+
+g[data-mml-node="mtable"] > svg {
+  overflow: visible;
+}
+
+[jax="SVG"] mjx-tool {
+  display: inline-block;
+  position: relative;
+  width: 0;
+  height: 0;
+}
+
+[jax="SVG"] mjx-tool > mjx-tip {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+mjx-tool > mjx-tip {
+  display: inline-block;
+  padding: .2em;
+  border: 1px solid #888;
+  font-size: 70%;
+  background-color: #F8F8F8;
+  color: black;
+  box-shadow: 2px 2px 5px #AAAAAA;
+}
+
+g[data-mml-node="maction"][data-toggle] {
+  cursor: pointer;
+}
+
+mjx-status {
+  display: block;
+  position: fixed;
+  left: 1em;
+  bottom: 1em;
+  min-width: 25%;
+  padding: .2em .4em;
+  border: 1px solid #888;
+  font-size: 90%;
+  background-color: #F8F8F8;
+  color: black;
+}
+
+foreignObject[data-mjx-xml] {
+  font-family: initial;
+  line-height: normal;
+  overflow: visible;
+}
+
+.MathJax path {
+  stroke-width: 3;
+}
+
+mjx-container[display="true"] {
+  overflow: auto hidden;
+}
+
+mjx-container[display="true"] + br {
+  display: none;
+}
+</style></head><body><div class="loading" style="opacity: 0;"><div class="loadingBar left"></div><div class="loadingBar right"></div></div><main><header class="closed"><div class="navBtn"><i class="navBtnIcon"><span class="navBtnIconBar"></span><span class="navBtnIconBar"></span><span class="navBtnIconBar"></span></i></div><nav><div class="navItem" id="search-header"><span class="navItemTitle"><input autocomplete="off" autocorrect="off" autocapitalize="none" placeholder="数据检索" spellcheck="false" maxlength="50" type="text" id="search-input"></span></div><div class="navItem" id="search-holder"></div><div class="search-popup" tabindex="0"><div id="search-result"></div></div><ol class="navContent"><li class="navItem"><a class="navBlock" href="/"><span class="navItemTitle">Home</span></a></li><li class="navItem" matchdata="categories,tags"><a class="navBlock" href="/archives/"><span class="navItemTitle">Archives</span></a></li><li class="navItem"><a class="navBlock" href="/about/"><span class="navItemTitle">About</span></a></li></ol></nav></header><article><div id="post-bg"><div id="post-title"><h1>【JavaScript】基础语法详解</h1></div><hr><div id="post-content"><h1 id="JavaScript-基础语法教程"><a href="#JavaScript-基础语法教程" class="headerlink" title="JavaScript 基础语法教程"></a>JavaScript 基础语法教程</h1><h2 id="1-JavaScript简介"><a href="#1-JavaScript简介" class="headerlink" title="1. JavaScript简介"></a>1. JavaScript简介</h2><p>JavaScript是一种具有函数优先特性的轻量级、解释型或即时编译型的编程语言。它是最广泛使用的Web脚本语言，可以为网页添加交互性和动态功能。</p>
+<h2 id="2-对象操作"><a href="#2-对象操作" class="headerlink" title="2. 对象操作"></a>2. 对象操作</h2><h3 id="2-1-对象的创建与基本操作"><a href="#2-1-对象的创建与基本操作" class="headerlink" title="2.1 对象的创建与基本操作"></a>2.1 对象的创建与基本操作</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><code class="hljs javascript"><span class="hljs-comment">// 创建对象</span><br><span class="hljs-keyword">let</span> user = {<br>    <span class="hljs-attr">name</span>: <span class="hljs-string">'张三'</span>,<br>    <span class="hljs-attr">age</span>: <span class="hljs-number">18</span>,<br>    <span class="hljs-attr">sex</span>: <span class="hljs-string">'男'</span><br>};<br><br><span class="hljs-comment">// 添加属性</span><br>user.<span class="hljs-property">address</span> = <span class="hljs-string">"北京"</span>;<br><span class="hljs-comment">// 或使用中括号语法</span><br>user[<span class="hljs-string">"email"</span>] = <span class="hljs-string">"zhangsan@example.com"</span>;<br><br><span class="hljs-comment">// 删除属性</span><br><span class="hljs-keyword">delete</span> user.<span class="hljs-property">age</span>;<br></code></pre></td></tr></table></figure>
+
+<h3 id="2-2-对象的拷贝"><a href="#2-2-对象的拷贝" class="headerlink" title="2.2 对象的拷贝"></a>2.2 对象的拷贝</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><code class="hljs javascript"><span class="hljs-comment">// 深拷贝方式1：Object.assign()</span><br><span class="hljs-keyword">let</span> teacher = {};<br><span class="hljs-title class_">Object</span>.<span class="hljs-title function_">assign</span>(teacher, user);<br><br><span class="hljs-comment">// 深拷贝方式2：JSON转换</span><br><span class="hljs-keyword">let</span> teacher1 = <span class="hljs-title class_">JSON</span>.<span class="hljs-title function_">parse</span>(<span class="hljs-title class_">JSON</span>.<span class="hljs-title function_">stringify</span>(user));<br><br><span class="hljs-comment">// 深拷贝方式3：Object.assign()的另一种写法</span><br><span class="hljs-keyword">let</span> teacher2 = <span class="hljs-title class_">Object</span>.<span class="hljs-title function_">assign</span>({}, user);<br><br><span class="hljs-comment">// 浅拷贝</span><br><span class="hljs-keyword">let</span> teacher3 = teacher2;  <span class="hljs-comment">// teacher3和teacher2指向同一个对象</span><br></code></pre></td></tr></table></figure>
+
+<h3 id="2-3-属性访问"><a href="#2-3-属性访问" class="headerlink" title="2.3 属性访问"></a>2.3 属性访问</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><code class="hljs javascript"><span class="hljs-keyword">let</span> user = {<br>    <span class="hljs-attr">name</span>: <span class="hljs-string">'张三'</span>,<br>    <span class="hljs-attr">age</span>: <span class="hljs-number">18</span><br>};<br><br><span class="hljs-comment">// 方式1：点语法</span><br><span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(user.<span class="hljs-property">name</span>);<br><br><span class="hljs-comment">// 方式2：中括号语法</span><br><span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(user[<span class="hljs-string">"name"</span>]);<br><br><span class="hljs-comment">// 方式3：解构语法</span><br><span class="hljs-keyword">let</span> { name, age } = user;<br></code></pre></td></tr></table></figure>
+
+<h3 id="2-4-空值处理"><a href="#2-4-空值处理" class="headerlink" title="2.4 空值处理"></a>2.4 空值处理</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><code class="hljs javascript"><span class="hljs-comment">// 可选链操作符 ?.</span><br><span class="hljs-keyword">let</span> a = <span class="hljs-literal">null</span>;<br><span class="hljs-keyword">let</span> b = a?.<span class="hljs-property">x</span>;  <span class="hljs-comment">// 安全地访问可能为null的对象</span><br><br><span class="hljs-comment">// 空值合并操作符 ??</span><br><span class="hljs-keyword">let</span> d = <span class="hljs-literal">null</span>;<br><span class="hljs-keyword">let</span> e = <span class="hljs-number">1</span>;<br><span class="hljs-keyword">let</span> f = d ?? e;  <span class="hljs-comment">// 如果d为null或undefined，则使用e</span><br><br><span class="hljs-comment">// 空值赋值操作符 ??=</span><br><span class="hljs-keyword">let</span> x = <span class="hljs-literal">null</span>;<br><span class="hljs-keyword">let</span> y = <span class="hljs-number">5</span>;<br>x ??= y;  <span class="hljs-comment">// 如果x为null或undefined，则赋值为y</span><br></code></pre></td></tr></table></figure>
+
+<h2 id="3-数组操作"><a href="#3-数组操作" class="headerlink" title="3. 数组操作"></a>3. 数组操作</h2><h3 id="3-1-数组的创建与基本操作"><a href="#3-1-数组的创建与基本操作" class="headerlink" title="3.1 数组的创建与基本操作"></a>3.1 数组的创建与基本操作</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><code class="hljs javascript"><span class="hljs-comment">// 创建数组</span><br><span class="hljs-keyword">let</span> arr = <span class="hljs-keyword">new</span> <span class="hljs-title class_">Array</span>();<br><span class="hljs-keyword">let</span> arr1 = [<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>, <span class="hljs-number">4</span>, <span class="hljs-number">5</span>];<br><br><span class="hljs-comment">// 添加元素</span><br>arr1.<span class="hljs-title function_">push</span>(<span class="hljs-number">6</span>);        <span class="hljs-comment">// 尾部添加</span><br>arr1.<span class="hljs-title function_">unshift</span>(<span class="hljs-number">0</span>);     <span class="hljs-comment">// 头部添加</span><br><br><span class="hljs-comment">// 删除元素</span><br>arr1.<span class="hljs-title function_">pop</span>();          <span class="hljs-comment">// 尾部删除</span><br>arr1.<span class="hljs-title function_">shift</span>();        <span class="hljs-comment">// 头部删除</span><br>arr1.<span class="hljs-title function_">splice</span>(<span class="hljs-number">1</span>, <span class="hljs-number">2</span>);   <span class="hljs-comment">// 删除指定位置元素</span><br></code></pre></td></tr></table></figure>
+
+<h3 id="3-2-数组方法"><a href="#3-2-数组方法" class="headerlink" title="3.2 数组方法"></a>3.2 数组方法</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><code class="hljs javascript"><span class="hljs-comment">// 切片</span><br><span class="hljs-keyword">let</span> arr = [<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>, <span class="hljs-number">4</span>, <span class="hljs-number">5</span>];<br><span class="hljs-keyword">let</span> sliced = arr.<span class="hljs-title function_">slice</span>(<span class="hljs-number">0</span>, <span class="hljs-number">2</span>);  <span class="hljs-comment">// [1, 2]</span><br><br><span class="hljs-comment">// 合并数组</span><br><span class="hljs-keyword">let</span> arr1 = [<span class="hljs-number">1</span>, <span class="hljs-number">2</span>];<br><span class="hljs-keyword">let</span> arr2 = [<span class="hljs-number">3</span>, <span class="hljs-number">4</span>];<br><span class="hljs-keyword">let</span> combined = arr1.<span class="hljs-title function_">concat</span>(arr2);  <span class="hljs-comment">// [1, 2, 3, 4]</span><br><br><span class="hljs-comment">// 字符串转数组</span><br><span class="hljs-keyword">let</span> str = <span class="hljs-string">"1,2,3,4,5"</span>;<br><span class="hljs-keyword">let</span> arr3 = str.<span class="hljs-title function_">split</span>(<span class="hljs-string">","</span>);  <span class="hljs-comment">// ["1", "2", "3", "4", "5"]</span><br><br><span class="hljs-comment">// 数组转字符串</span><br><span class="hljs-keyword">let</span> arr4 = [<span class="hljs-string">"1"</span>, <span class="hljs-string">"2"</span>, <span class="hljs-string">"3"</span>];<br><span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(arr4.<span class="hljs-title function_">join</span>(<span class="hljs-string">","</span>));  <span class="hljs-comment">// "1,2,3"</span><br></code></pre></td></tr></table></figure>
+
+<h3 id="3-3-数组高级操作"><a href="#3-3-数组高级操作" class="headerlink" title="3.3 数组高级操作"></a>3.3 数组高级操作</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><code class="hljs javascript"><span class="hljs-comment">// 排序</span><br><span class="hljs-keyword">let</span> numbers = [<span class="hljs-number">1</span>, <span class="hljs-number">10</span>, <span class="hljs-number">2</span>, <span class="hljs-number">20</span>, <span class="hljs-number">3</span>];<br>numbers.<span class="hljs-title function_">sort</span>(<span class="hljs-function">(<span class="hljs-params">a, b</span>) =&gt;</span> a - b);  <span class="hljs-comment">// 升序</span><br>numbers.<span class="hljs-title function_">sort</span>(<span class="hljs-function">(<span class="hljs-params">a, b</span>) =&gt;</span> b - a);  <span class="hljs-comment">// 降序</span><br><br><span class="hljs-comment">// 查找元素</span><br><span class="hljs-keyword">let</span> users = [<br>    { <span class="hljs-attr">name</span>: <span class="hljs-string">"张三"</span>, <span class="hljs-attr">age</span>: <span class="hljs-number">18</span> }, <br>    { <span class="hljs-attr">name</span>: <span class="hljs-string">"李四"</span>, <span class="hljs-attr">age</span>: <span class="hljs-number">19</span> }<br>];<br><span class="hljs-keyword">let</span> found = users.<span class="hljs-title function_">find</span>(<span class="hljs-function"><span class="hljs-params">user</span> =&gt;</span> user.<span class="hljs-property">name</span> === <span class="hljs-string">"张三"</span>);<br><span class="hljs-keyword">let</span> index = users.<span class="hljs-title function_">findIndex</span>(<span class="hljs-function"><span class="hljs-params">user</span> =&gt;</span> user.<span class="hljs-property">name</span> === <span class="hljs-string">"张三"</span>);<br><br><span class="hljs-comment">// 过滤</span><br><span class="hljs-keyword">let</span> filtered = users.<span class="hljs-title function_">filter</span>(<span class="hljs-function"><span class="hljs-params">user</span> =&gt;</span> user.<span class="hljs-property">age</span> &gt; <span class="hljs-number">18</span>);<br><br><span class="hljs-comment">// 映射转换</span><br><span class="hljs-keyword">let</span> names = users.<span class="hljs-title function_">map</span>(<span class="hljs-function"><span class="hljs-params">user</span> =&gt;</span> user.<span class="hljs-property">name</span>);<br><br><span class="hljs-comment">// 归约计算</span><br><span class="hljs-keyword">let</span> sum = numbers.<span class="hljs-title function_">reduce</span>(<span class="hljs-function">(<span class="hljs-params">acc, cur</span>) =&gt;</span> acc + cur, <span class="hljs-number">0</span>);<br></code></pre></td></tr></table></figure>
+
+<h2 id="4-JSON操作"><a href="#4-JSON操作" class="headerlink" title="4. JSON操作"></a>4. JSON操作</h2><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><code class="hljs javascript"><span class="hljs-comment">// JSON对象</span><br><span class="hljs-keyword">let</span> person = {<br>    <span class="hljs-string">"name"</span>: <span class="hljs-string">"张三"</span>,<br>    <span class="hljs-string">"age"</span>: <span class="hljs-number">18</span>,<br>    <span class="hljs-string">"address"</span>: {<br>        <span class="hljs-string">"city"</span>: <span class="hljs-string">"北京"</span>,<br>        <span class="hljs-string">"district"</span>: <span class="hljs-string">"朝阳"</span><br>    },<br>    <span class="hljs-string">"hobbies"</span>: [<span class="hljs-string">"读书"</span>, <span class="hljs-string">"运动"</span>]<br>};<br><br><span class="hljs-comment">// JSON字符串转对象</span><br><span class="hljs-keyword">let</span> jsonStr = <span class="hljs-string">'{"name": "张三", "age": 18}'</span>;<br><span class="hljs-keyword">let</span> obj = <span class="hljs-title class_">JSON</span>.<span class="hljs-title function_">parse</span>(jsonStr);<br><br><span class="hljs-comment">// 对象转JSON字符串</span><br><span class="hljs-keyword">let</span> str = <span class="hljs-title class_">JSON</span>.<span class="hljs-title function_">stringify</span>(person);<br></code></pre></td></tr></table></figure>
+
+<h2 id="5-注意事项"><a href="#5-注意事项" class="headerlink" title="5. 注意事项"></a>5. 注意事项</h2><ol>
+<li>使用<code>===</code>而不是<code>==</code>进行比较</li>
+<li>避免使用全局变量</li>
+<li>使用<code>const</code>和<code>let</code>代替<code>var</code></li>
+<li>对象和数组的深浅拷贝要区分清楚</li>
+<li>注意处理null和undefined值</li>
+</ol>
+<h2 id="6-最佳实践"><a href="#6-最佳实践" class="headerlink" title="6. 最佳实践"></a>6. 最佳实践</h2><ol>
+<li>始终使用分号结束语句</li>
+<li>使用驼峰命名法命名变量和函数</li>
+<li>合理使用解构赋值</li>
+<li>优先使用箭头函数</li>
+<li>使用模板字符串代替字符串拼接</li>
+</ol>
+<hr>
+<p>本文档涵盖了JavaScript的核心基础语法，掌握这些内容可以开始进行JavaScript开发。</p>
+<div id="paginator"></div></div><div id="post-footer"><div id="pages"><div class="footer-link" style="width: 50%;text-align:right;border-right:1px #fe2 solid"><a href="/2024/05/06/DSA-DynamicProgrammingPlus/">← 下一篇 【蓝桥杯】进阶-线性动态规划问题&amp;背包问题进阶策略详解</a></div><div class="footer-link" style="width: 50%;right:1px;border-left:1px #fe2 solid"><a href="/2024/04/17/Vue-BaseStudy/">【Vue】基础语法详解 上一篇 →</a></div></div></div><details id="reward"><summary>打赏</summary><div><span>支付宝 | Alipay</span><br><img src="/img/Alipay.png"></div><div><span>微信 | Wechat</span><br><img src="/img/WeChat.png"></div></details><div id="comments"><div id="gitalk"></div></div></div><div class="bottom-btn"><div><a class="i-top" id="to-top" onClick="scrolls.scrolltop();" title="回到顶部" style="opacity: 0; display: none;">∧ </a><a class="i-index" id="to-index" href="#toc-div" title="文章目录">≡</a><a class="i-color" id="color-mode" onClick="colorMode.change()" title="切换主题"></a></div></div></article><aside><div id="about"><a href="/" id="logo"><img src="https://ak.hypergryph.com/assets/index/images/ak/pc/faction/1.png" alt="Logo"></a><h1 id="Dr"><a href="/">zdx</a></h1><div id="description"><p>记录学习的点点滴滴</p></div><div id="social-links"><a class="social" target="_blank" rel="noopener" href="https://github.com/zdx-1"><i class="fab fa-github" alt="GitHub"></i></a><a class="social" href="mailto:119546328912@163.com"><i class="fa fa-envelope" alt="E-Mail"></i></a><a class="social" target="_blank" rel="noopener" href="https://space.bilibili.com/0000000"><i class="fa-brands fa-bilibili" alt="BiliBili"></i></a><a class="social" target="_blank" rel="noopener" href="https://weibo.com/yourname"><i class="fab fa-weibo" alt="Weibo"></i></a><a class="social" target="_blank" rel="noopener" href="https://www.zhihu.com/people/yourname"><i class="fab fa-zhihu" alt="Zhihu"></i></a></div></div><div id="aside-block"><div id="toc-div"><h1>目录</h1><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#JavaScript-%E5%9F%BA%E7%A1%80%E8%AF%AD%E6%B3%95%E6%95%99%E7%A8%8B"><span class="toc-number">1.</span> <span class="toc-text">JavaScript 基础语法教程</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-JavaScript%E7%AE%80%E4%BB%8B"><span class="toc-number">1.1.</span> <span class="toc-text">1. JavaScript简介</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-%E5%AF%B9%E8%B1%A1%E6%93%8D%E4%BD%9C"><span class="toc-number">1.2.</span> <span class="toc-text">2. 对象操作</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#2-1-%E5%AF%B9%E8%B1%A1%E7%9A%84%E5%88%9B%E5%BB%BA%E4%B8%8E%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C"><span class="toc-number">1.2.1.</span> <span class="toc-text">2.1 对象的创建与基本操作</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-2-%E5%AF%B9%E8%B1%A1%E7%9A%84%E6%8B%B7%E8%B4%9D"><span class="toc-number">1.2.2.</span> <span class="toc-text">2.2 对象的拷贝</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-3-%E5%B1%9E%E6%80%A7%E8%AE%BF%E9%97%AE"><span class="toc-number">1.2.3.</span> <span class="toc-text">2.3 属性访问</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-4-%E7%A9%BA%E5%80%BC%E5%A4%84%E7%90%86"><span class="toc-number">1.2.4.</span> <span class="toc-text">2.4 空值处理</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-%E6%95%B0%E7%BB%84%E6%93%8D%E4%BD%9C"><span class="toc-number">1.3.</span> <span class="toc-text">3. 数组操作</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#3-1-%E6%95%B0%E7%BB%84%E7%9A%84%E5%88%9B%E5%BB%BA%E4%B8%8E%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C"><span class="toc-number">1.3.1.</span> <span class="toc-text">3.1 数组的创建与基本操作</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-2-%E6%95%B0%E7%BB%84%E6%96%B9%E6%B3%95"><span class="toc-number">1.3.2.</span> <span class="toc-text">3.2 数组方法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-3-%E6%95%B0%E7%BB%84%E9%AB%98%E7%BA%A7%E6%93%8D%E4%BD%9C"><span class="toc-number">1.3.3.</span> <span class="toc-text">3.3 数组高级操作</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-JSON%E6%93%8D%E4%BD%9C"><span class="toc-number">1.4.</span> <span class="toc-text">4. JSON操作</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#5-%E6%B3%A8%E6%84%8F%E4%BA%8B%E9%A1%B9"><span class="toc-number">1.5.</span> <span class="toc-text">5. 注意事项</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#6-%E6%9C%80%E4%BD%B3%E5%AE%9E%E8%B7%B5"><span class="toc-number">1.6.</span> <span class="toc-text">6. 最佳实践</span></a></li></ol></li></ol></div></div><footer><nobr>构建自 <a target="_blank" rel="noopener" href="http://hexo.io">Hexo</a></nobr><wbr><nobr> 使用主题 <a target="_blank" rel="noopener" href="https://github.com/Yue-plus/hexo-theme-arknights">Arknights</a></nobr><wbr><nobr> 主题作者 <a target="_blank" rel="noopener" href="https://github.com/Yue-plus">Yue_plus</a></nobr></footer></aside></main><canvas id="canvas-dust"></canvas></body></html>
