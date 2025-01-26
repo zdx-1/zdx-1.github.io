@@ -1,0 +1,479 @@
+<!DOCTYPE html><html lang="zh-cn" theme-mode="auto"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>WebRTC-developer-note | ZDX-1</title><link rel="icon" type="image/x-icon" href="/favicon.ico"><link rel="preload" as="font" crossorigin="anonymous" href="/font/Bender.ttf"><link rel="preload" as="font" crossorigin="anonymous" href="/font/BenderLight.ttf"><link rel="preload" as="font" crossorigin="anonymous" href="/font/JetBrainsMono-Regular.woff2"><link rel="stylesheet" href="/css/arknights.css"><style>@font-face {
+  font-family: Bender;
+  src: local('Bender'), url("/font/Bender.ttf"), url("/font/Bender.otf");
+}
+@font-face {
+  font-family: BenderLight;
+  src: local('BenderLight'), url("/font/BenderLight.ttf");
+}
+@font-face {
+  font-family: 'JetBrains Mono';
+  src: local('JetBrains Mono'), url('/font/JetBrainsMono-Regular.woff2') format('woff2');
+}
+</style><script>var config = {"root":"/","search":{"preload":true,"activeHolder":"键入以继续","blurHolder":"数据检索","noResult":"无 $0 相关数据"},"code":{"codeInfo":"$0 - $1 行","copy":"复制"}}</script><link type="text/css" rel="stylesheet" href="/lib/encrypt/hbe.style.css"><script src="/js/gitalk.js"></script><script src="//unpkg.com/mermaid@10.5.0/dist/mermaid.min.js"></script><script src="//cdnjs.cloudflare.com/ajax/libs/mathjax/2.6.1/MathJax.js"></script><script>MathJax.Hub.Config({
+ menuSettings: {
+   zoom: "None"
+ },
+ showMathMenu: false,
+ jax: ["input/TeX","output/CommonHTML"],
+ extensions: ["tex2jax.js"],
+ TeX: {
+   extensions: ["AMSmath.js","AMSsymbols.js"],
+   equationNumbers: {
+     autoNumber: "AMS"
+   }
+ },
+ tex2jax: {
+   inlineMath: [["\\(", "\\)"]],
+   displayMath: [["\\[", "\\]"]]
+ }
+});</script><link type="text/css" rel="stylesheet" href="//unpkg.com/lightgallery@2.7.1/css/lightgallery.css"><link type="text/css" rel="stylesheet" href="//unpkg.com/lightgallery@2.7.1/css/lg-zoom.css"><link type="text/css" rel="stylesheet" href="//unpkg.com/lightgallery@2.7.1/css/lg-thumbnail.css"><link type="text/css" rel="stylesheet" href="/lib/fontawesome/css/all.min.css"><script>if (window.localStorage.getItem('theme-mode') === 'light' || window.matchMedia('(prefers-color-scheme:light)').matches)
+ document.documentElement.setAttribute('theme-mode', 'light')
+if (window.localStorage.getItem('theme-mode') === 'dark' || window.matchMedia('(prefers-color-scheme:dark)').matches)
+ document.documentElement.setAttribute('theme-mode', 'dark')</script><style>@font-face {
+ font-family: BenderLight;
+ src: local('Bender'), url("/font/BenderLight.woff2") format('woff2');
+}
+@font-face {
+ font-family: 'JetBrains Mono';
+ src: local('JetBrains Mono'), url('/font/JetBrainsMono-Regular.woff2') format('woff2');
+}</style><style>:root {
+ --dark-background: url('https://ak.hypergryph.com/assets/index/images/ak/pc/bk.jpg');
+ --light-background: url('/img/bk.jpg');
+ --theme-encrypt-confirm: '确认'
+}</style><script defer src="/js/arknights.js"></script><script defer src="/js/search.js"></script><script async src="/js/gitalk.js"></script><script defer type="module">import mermaid from '//unpkg.com/mermaid@10.5.0/dist/mermaid.esm.mjs';
+window.mermaid = mermaid;
+code.paintMermaid();
+</script><script src="//cdnjs.cloudflare.com/ajax/libs/mathjax/2.6.1/MathJax.js"></script><script>MathJax.Hub.Config({
+  menuSettings: {
+    zoom: "None"
+  },
+  showMathMenu: false,
+  jax: ["input/TeX","output/CommonHTML"],
+  extensions: ["tex2jax.js"],
+  TeX: {
+    extensions: ["AMSmath.js","AMSsymbols.js"],
+    equationNumbers: {
+      autoNumber: "AMS"
+    }
+  },
+  tex2jax: {
+    inlineMath: [["\\(", "\\)"]],
+    displayMath: [["\\[", "\\]"]]
+  }
+});
+</script><script async src="//unpkg.com/lightgallery@2.7.1/lightgallery.min.js"></script><script async src="//unpkg.com/lightgallery@2.7.1/plugins/zoom/lg-zoom.min.js"></script><script async src="//unpkg.com/lightgallery@2.7.1/plugins/thumbnail/lg-thumbnail.min.js"></script><script async src="/lib/encrypt/hbe.js"></script><script async src="/js/pjax.js"></script><script class="pjax-js">reset= () => {gitalk = new Gitalk({
+ clientID: 'Ov23liB6qafwc0hDL1wu',
+ clientSecret: '840f621f418fcb18299616e781c7689ab10018d4',
+ repo: 'zdx-1.github.io',
+ owner: 'zdx-1',
+ admin: ['zdx-1'],
+ distractionFreeMode: false,
+ id: location.pathname
+});
+if (document.querySelector("#gitalk")) gitalk.render("gitalk");document.querySelector('.lg-container')?.remove()
+lightGallery(document.getElementById('post-bg'), {
+  plugins: [lgZoom,lgThumbnail],
+  selector: '.item-img'})}</script><script>window.addEventListener("load",() => {pjax = new Pjax({
+ cacheBust: false,
+ selectors: ['title','article','#aside-block','.pjax-js','data-pjax','.busuanzi'],
+ switches: {'article': Pjax.switches.sideBySide},
+ switchesOptions: {
+   'article': {
+     classNames: {
+       remove: "pjax-out",
+       add: "pjax-in"
+     }
+   }
+ }
+});
+document.addEventListener("pjax:complete", reset);reset()})</script><script class="pjax-js">reset= () => {gitalk = new Gitalk({
+ clientID: 'Ov23liB6qafwc0hDL1wu',
+ clientSecret: '840f621f418fcb18299616e781c7689ab10018d4',
+ repo: 'zdx-1.github.io',
+ owner: 'zdx-1',
+ admin: ['zdx-1'],
+ distractionFreeMode: false,
+ id: location.pathname
+});
+if (document.querySelector("#gitalk")) gitalk.render("gitalk");document.querySelector('.lg-container')?.remove()
+lightGallery(document.getElementById('post-bg'), {
+  plugins: [lgZoom,lgThumbnail],
+  selector: '.item-img'})}</script><script>window.addEventListener("load",() => {pjax = new Pjax({
+ cacheBust: false,
+ selectors: ['title','article','#aside-block','.pjax-js'],
+ switches: {'article': Pjax.switches.sideBySide},
+ switchesOptions: {
+   'article': {
+     classNames: {
+       remove: "pjax-out",
+       add: "pjax-in"
+     }
+   }
+ }
+});
+document.addEventListener("pjax:complete", reset);reset()})</script><meta name="generator" content="Hexo 7.3.0"><style>mjx-container[jax="SVG"] {
+  direction: ltr;
+}
+
+mjx-container[jax="SVG"] > svg {
+  overflow: visible;
+}
+
+mjx-container[jax="SVG"][display="true"] {
+  display: block;
+  text-align: center;
+  margin: 1em 0;
+}
+
+mjx-container[jax="SVG"][justify="left"] {
+  text-align: left;
+}
+
+mjx-container[jax="SVG"][justify="right"] {
+  text-align: right;
+}
+
+g[data-mml-node="merror"] > g {
+  fill: red;
+  stroke: red;
+}
+
+g[data-mml-node="merror"] > rect[data-background] {
+  fill: yellow;
+  stroke: none;
+}
+
+g[data-mml-node="mtable"] > line[data-line] {
+  stroke-width: 70px;
+  fill: none;
+}
+
+g[data-mml-node="mtable"] > rect[data-frame] {
+  stroke-width: 70px;
+  fill: none;
+}
+
+g[data-mml-node="mtable"] > .mjx-dashed {
+  stroke-dasharray: 140;
+}
+
+g[data-mml-node="mtable"] > .mjx-dotted {
+  stroke-linecap: round;
+  stroke-dasharray: 0,140;
+}
+
+g[data-mml-node="mtable"] > svg {
+  overflow: visible;
+}
+
+[jax="SVG"] mjx-tool {
+  display: inline-block;
+  position: relative;
+  width: 0;
+  height: 0;
+}
+
+[jax="SVG"] mjx-tool > mjx-tip {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+mjx-tool > mjx-tip {
+  display: inline-block;
+  padding: .2em;
+  border: 1px solid #888;
+  font-size: 70%;
+  background-color: #F8F8F8;
+  color: black;
+  box-shadow: 2px 2px 5px #AAAAAA;
+}
+
+g[data-mml-node="maction"][data-toggle] {
+  cursor: pointer;
+}
+
+mjx-status {
+  display: block;
+  position: fixed;
+  left: 1em;
+  bottom: 1em;
+  min-width: 25%;
+  padding: .2em .4em;
+  border: 1px solid #888;
+  font-size: 90%;
+  background-color: #F8F8F8;
+  color: black;
+}
+
+foreignObject[data-mjx-xml] {
+  font-family: initial;
+  line-height: normal;
+  overflow: visible;
+}
+
+.MathJax path {
+  stroke-width: 3;
+}
+
+mjx-container[display="true"] {
+  overflow: auto hidden;
+}
+
+mjx-container[display="true"] + br {
+  display: none;
+}
+</style></head><body><div class="loading" style="opacity: 0;"><div class="loadingBar left"></div><div class="loadingBar right"></div></div><main><header class="closed"><div class="navBtn"><i class="navBtnIcon"><span class="navBtnIconBar"></span><span class="navBtnIconBar"></span><span class="navBtnIconBar"></span></i></div><nav><div class="navItem" id="search-header"><span class="navItemTitle"><input autocomplete="off" autocorrect="off" autocapitalize="none" placeholder="数据检索" spellcheck="false" maxlength="50" type="text" id="search-input"></span></div><div class="navItem" id="search-holder"></div><div class="search-popup" tabindex="0"><div id="search-result"></div></div><ol class="navContent"><li class="navItem"><a class="navBlock" href="/"><span class="navItemTitle">Home</span></a></li><li class="navItem" matchdata="categories,tags"><a class="navBlock" href="/archives/"><span class="navItemTitle">Archives</span></a></li><li class="navItem"><a class="navBlock" href="/about/"><span class="navItemTitle">About</span></a></li></ol></nav></header><article><div id="post-bg"><div id="post-title"><h1>WebRTC-developer-note</h1></div><hr><div id="post-content"><h1 id="WebRTC音视频通话开发教程"><a href="#WebRTC音视频通话开发教程" class="headerlink" title="WebRTC音视频通话开发教程"></a>WebRTC音视频通话开发教程</h1><h2 id="1-WebRTC入门"><a href="#1-WebRTC入门" class="headerlink" title="1 WebRTC入门"></a>1 WebRTC入门</h2><p>本章内容：</p>
+<ul>
+<li><p>了解什么是WebRTC</p>
+</li>
+<li><p>掌握WebRTC通话原理</p>
+</li>
+</ul>
+<h3 id="1-1什么是WebRTC"><a href="#1-1什么是WebRTC" class="headerlink" title="1.1什么是WebRTC"></a>1.1什么是WebRTC</h3><p>  WebRTC (Web Real-Time Communication)是 Google于2010以6829万美元从 Global iP Solutions 公司购买，并于2011年将其开源，旨在建立一个互联网浏览器间的实时通信的平台，让 WebRTC技术成为 H5标准之一。我们看官网<br>  (<a target="_blank" rel="noopener" href="https://webrtc.orq)的介绍我们可以知道,webrtc是一个免费的开放项目,它通过简单的api为浏览器和移动应用程序提供实时通信(rtc)功能./">https://webrtc.orq)的介绍我们可以知道，WebRTC是一个免费的开放项目，它通过简单的API为浏览器和移动应用程序提供实时通信（RTC）功能。</a></p>
+<h3 id="1-2WebRTC框架"><a href="#1-2WebRTC框架" class="headerlink" title="1.2WebRTC框架"></a>1.2WebRTC框架</h3><p class='item-img' data-src='/./../images/WebRTC-developer-note/image-20250126212717188.png'><img src="/./../images/WebRTC-developer-note/image-20250126212717188.png" alt="image-20250126212717188"></p>
+<p>上图的框架对于不同的开发人员关注点不同：</p>
+<ol>
+<li>紫色部分是Web应用开发者API层</li>
+<li>蓝色实线部分是面向浏览器厂商的API层</li>
+<li>蓝色虚线部分浏览器厂商可以自定义实现</li>
+</ol>
+<p>特别是图中的 PeerConnection 为 Web 开发人员提供了一个抽象，从复杂的内部结构中抽象出来。我们只需要关注PeerConnection这个对象即可以开发音视频通话应用内。</p>
+<p>WebRTC架构组件介绍</p>
+<p><strong>Your Web App</strong></p>
+<p>Web开发者开发的程序，Web开发者可以基于集成WebRTC的浏览器提供的web API开发基于视频、音频的实时通信应用。</p>
+<p><strong>Web API</strong></p>
+<p>面向第三方开发者的WebRTC标准API（Javascript），使开发者能够容易地开发出类似于网络视频聊天的web应用，</p>
+<p>最新的标准化进程可以查看这里。</p>
+<p><strong>WebRTC Native C++ API</strong></p>
+<p>本地C++ API层，使浏览器厂商容易实现WebRTC标准的Web API，抽象地对数字信号过程进行处理。</p>
+<p><strong>Transport / Session</strong></p>
+<p>传输/会话层</p>
+<p>会话层组件采用了libjingle库的部分组件实现，无须使用xmpp/jingle协议</p>
+<p><strong>VoiceEngine</strong></p>
+<p>音频引擎是包含一系列音频多媒体处理的框架。</p>
+<p><strong>PS</strong>：VoiceEngine是WebRTC极具价值的技术之一，是Google收购GIPS公司后开源的。在VoIP上，技术业界领先。</p>
+<p><strong>Opus</strong>：支持从6 kbit/s到510 kbit/s的恒定和可变比特率编码，帧大小从2.5 ms到60 ms，各种采样率从8 kHz（4 kHz带宽）到48 kHz（20 kHz带宽，可复制人类听觉系统的整个听力范围）。由IETF RFC 6176定义。</p>
+<p><strong><em>NetEQ</em>模块</strong>是Webrtc语音引擎中的核心模块 ，一种动态抖动缓冲和错误隐藏算法，用于隐藏网络抖动和数据包丢失的负面影响。保持尽可能低的延迟，同时保持最高的语音质量。</p>
+<p><strong>VideoEngine</strong></p>
+<p>WebRTC视频处理引擎</p>
+<p>VideoEngine是包含一系列视频处理的整体框架，从摄像头采集视频到视频信息网络传输再到视频显示整个完整过程的解决方案。</p>
+<p><strong>VP8</strong> 视频图像编解码器，是WebRTC视频引擎的默认的编解码器</p>
+<p>VP8适合实时通信应用场景，因为它主要是针对低延时而设计的编解码器。</p>
+<h3 id="1-3-WebRTC发展前景"><a href="#1-3-WebRTC发展前景" class="headerlink" title="1.3 WebRTC发展前景"></a>1.3 WebRTC发展前景</h3><p>WebRTC虽然冠以“web”之名，但并不受限于传统互联网应用或浏览器的终端运行环境。实际上无论终端运行环境是<strong>浏览器、桌面应用、移动设备（Android或iOS）还是IoT设备****，只要IP连接可到达且</strong>符合WebRTC规范就可以互通**。</p>
+<p>这一点释放了大量智能终端（或运行在智能终端上的app）的实时通信能力，打开了许多对于实时交互性要求较高的应用场景的想象空间，譬如在线教育、视频会议、视频社交、远程协助、远程操控等等都是其合适的应用领域。</p>
+<p>全球领先的技术研究和咨询公司Technavio最近发布了题为“全球网络实时通讯（WebRTC）市场，2017­2021”的报告。报告显示，2017­2021年期间，全球网络实时通信（WebRTC）市场将以<strong>34.37****％的年均复合增长率增长</strong>，增长十分迅速。增长主要来自北美、欧洲及亚太地区。</p>
+<h3 id="1-4国内方案厂商"><a href="#1-4国内方案厂商" class="headerlink" title="1.4国内方案厂商"></a>1.4国内方案厂商</h3><p>声网、即构科技、环信、融云等公司都在基于WebRTC二次开发自己的音视频通话方案。<br>声网 <a target="_blank" rel="noopener" href="https://www.agora.io/cn/">https://www.agora.io/cn/</a><br>即构科技 <a target="_blank" rel="noopener" href="https://www.zego.im/">https://www.zego.im/</a></p>
+<h3 id="1-5-WebRTC通话原理"><a href="#1-5-WebRTC通话原理" class="headerlink" title="1.5 WebRTC通话原理"></a>1.5 WebRTC通话原理</h3><p>首先思考的问题：两个不同网络环境的（具备摄像头/麦克风多媒体设备的）浏览器，要实现点对点 的实时音视频对话，难点在哪里？</p>
+<ol>
+<li><strong>媒体协商</strong><br>彼此要了解对方支持的媒体格式</li>
+</ol>
+<p class='item-img' data-src='/./../images/WebRTC-developer-note/image-20250126213355650.png'><img src="/./../images/WebRTC-developer-note/image-20250126213355650.png" alt="image-20250126213355650"></p>
+<p>比如：Peer A端可支持VP8、H264多种编码格式，而Peer B端支持VP9、H264，要保证二端都正确的编解码，最简单的办法就是取它们的交集H264<br>注：有一个专门的协议，称为Session Description Protocol (SDP)，可用于描述上述这类信息，在WebRTC中，参与视频通讯的<strong>双方必须先交换SDP信息</strong>，这样双方才能知根知底，而交换SDP的过程，也称为”<strong>媒体协商</strong>“。</p>
+<ol start="2">
+<li><strong>网络协商</strong><br>彼此要了解对方的网络情况，这样才有可能找到一条相互通讯的链路<br>先说结论：(1)获取外网IP地址映射；（2）通过信令服务器（signal server）交换”网络信息”</li>
+</ol>
+<p>理想的网络情况是每个浏览器的电脑都是私有公网IP，可以直接进行点对点连接。</p>
+<p class='item-img' data-src='/./../images/WebRTC-developer-note/image-20250126213506049.png'><img src="/./../images/WebRTC-developer-note/image-20250126213506049.png" alt="image-20250126213506049"></p>
+<p>实际情况是：我们的电脑和电脑之前或大或小都是在某个局域网中，<strong>需要NAT（Network Address Translation，网络地址转换）</strong>，显示情况如下图：</p>
+<p class='item-img' data-src='/./../images/WebRTC-developer-note/image-20250126213535796.png'><img src="/./../images/WebRTC-developer-note/image-20250126213535796.png" alt="image-20250126213535796"></p>
+<p class='item-img' data-src='/./../images/WebRTC-developer-note/image-20250126213545309.png'><img src="/./../images/WebRTC-developer-note/image-20250126213545309.png" alt="image-20250126213545309"></p>
+<p>在解决WebRTC使用过程中的上述问题的时候，我们需要用到STUN和TURN。</p>
+<p><strong>STUN</strong></p>
+<p>STUN（Session Traversal Utilities for NAT，NAT会话穿越应用程序）是一种网络协议，它允许位于NAT（或多重NAT）后的客户端找出自己的公网地址，查出自己位于哪种类型的NAT之后以及NAT为某一个本地端口所绑定的Internet端端口。这些信息被用来在两个同时处于NAT路由器之后的主机之间创建UDP通信。该协议由RFC 5389定义。</p>
+<p>在遇到上述情况的时候，我们可以建立一个STUN服务器，这个服务器做什么用的呢？主要是给无法在公网环境下的视频通话设备分配公网IP用的。这样两台电脑就可以在公网IP中进行通话。</p>
+<p class='item-img' data-src='/./../images/WebRTC-developer-note/image-20250126214021366.png'><img src="/./../images/WebRTC-developer-note/image-20250126214021366.png" alt="image-20250126214021366"></p>
+<p>使用一句话说明STUN做的事情就是：告诉我你的公网IP地址+端口是什么。搭建STUN服务器很简单，媒体流传输是按照P2P的方式。</p>
+<p>那么问题来了，STUN并不是每次都能成功的为需要NAT的通话设备分配IP地址的，P2P在传输媒体流时，使用的本地带宽，在多人视频通话的过程中，通话质量的好坏往往需要根据使用者本地的带宽确定。那么怎么办？TURN可以很好的解决这个问题。</p>
+<p>在STUN分配公网IP失败后，可以通过TURN服务器请求公网IP地址作为中继地址。这种方式的带宽由服务器端承担，在多人视频聊天的时候，本地带宽压力较小，并且，根据Google的说明，TURN协议可以使用在所有的环境中。<br>（单向数据200kbps 一对一通话）<br>以上是WebRTC中经常用到的2个协议，STUN和TURN服务器我们使用coturn开源项目来搭建。<br>补充：ICE跟STUN和TURN不一样，ICE不是一种协议，而是一个框架（Framework），它整合了STUN和TURN。<br>coturn开源项目集成了STUN和TURN的功能。<br>在WebRTC中用来描述 网络信息的术语叫candidate。<br><strong>媒体协商 sdp</strong><br><strong>网络协商 candidate</strong></p>
+<ol start="3">
+<li><strong>媒体协商+网络协商数据的交换通道</strong></li>
+</ol>
+<p>从上面1/2点我们知道了2个客户端协商媒体信息和网络信息，那怎么去交换？是不是需要一个中间商去做交换？所以我们需要一个信令服务器（Signal server）转发彼此的媒体信息和网络信息。</p>
+<p class='item-img' data-src='/./../images/WebRTC-developer-note/image-20250126214230965.png'><img src="/./../images/WebRTC-developer-note/image-20250126214230965.png" alt="image-20250126214230965"></p>
+<p>如上图，我们在基于WebRTC API开发应用（APP）时，可以将彼此的APP连接到信令服务器（Signal Server，一般搭建在公网，或者两端都可以访问到的局域网），借助信令服务器，就可以实现上面提到的SDP媒体信息及Candidate网络信息交换。</p>
+<p><strong>信令服务器不只是交互 媒体信息sdp和网络信息candidate，比如：</strong><br><strong>（1）房间管理</strong><br><strong>（2）人员进出房间</strong></p>
+<p><strong>WebRTC APIs</strong></p>
+<ul>
+<li>MediaStream — MediaStream用来表示一个媒体数据流（通过getUserMedia接口获取），允许你访问输入设<br>备，如麦克风和 Web摄像机,该 API 允许从其中任意一个获取媒体流。</li>
+<li>RTCPeerConnection — RTCPeerConnection 对象允许用户在两个浏览器之间直接通讯 ，你可以通过网络将捕获的音频和视频流实时发送到另一个 WebRTC 端点。使用这些 Api，你可以在本地机器和远程对等点之间创建连接。它提供了连接到远程对等点、维护和监视连接以及在不再需要连接时关闭连接的方法</li>
+</ul>
+<ol start="4">
+<li><p><strong>一对一通话</strong></p>
+<p class='item-img' data-src='/./../images/WebRTC-developer-note/image-20250126214504838.png'><img src="/./../images/WebRTC-developer-note/image-20250126214504838.png" alt="image-20250126214504838"></p>
+</li>
+</ol>
+<p>在一对一通话场景中，每个 Peer均创建有一个 PeerConnection 对象，由一方主动发 Offer SDP，另一方则应答AnswerSDP，最后双方交换 ICE Candidate 从而完成通话链路的建立。但是在中国的网络环境中，据一些统计数据显示，至少1半的网络是无法直接穿透打通，这种情况下只能借助TURN服务器中转。</p>
+<ol start="5">
+<li><strong>NAT知识补充</strong></li>
+</ol>
+<p>具体NAT打洞的知识在本课程不做进一步的讲解，这里提供些链接给大家做参考：</p>
+<ul>
+<li>P2P技术详解(一)：NAT详解——详细原理、P2P简介 <a target="_blank" rel="noopener" href="https://www.cnblogs.com/mlgjb/p/8243646.htm">https://www.cnblogs.com/mlgjb/p/8243646.htm</a></li>
+<li>P2P技术详解(二)：P2P中的NAT穿越(打洞)方案详解 <a target="_blank" rel="noopener" href="https://www.jianshu.com/p/9bfbcbee0abb">https://www.jianshu.com/p/9bfbcbee0abb</a></li>
+<li>P2P技术详解(三)：P2P技术之STUN、TURN、ICE详解 <a target="_blank" rel="noopener" href="https://www.jianshu.com/p/258e7d8be2ba">https://www.jianshu.com/p/258e7d8be2ba</a></li>
+<li>详解P2P技术中的NAT穿透原理 <a target="_blank" rel="noopener" href="https://www.jianshu.com/p/f71707892eb2">https://www.jianshu.com/p/f71707892eb2</a></li>
+</ul>
+<h2 id="2-WebRTC开发环境"><a href="#2-WebRTC开发环境" class="headerlink" title="2 WebRTC开发环境"></a>2 WebRTC开发环境</h2><h3 id="2-1-安装vscode"><a href="#2-1-安装vscode" class="headerlink" title="2.1 安装vscode"></a>2.1 安装vscode</h3><p><strong>下载和安装vscode</strong><br>vscode官网：<a target="_blank" rel="noopener" href="https://code.visualstudio.com/">https://code.visualstudio.com/</a><br>下载地址：<a target="_blank" rel="noopener" href="https://code.visualstudio.com/sha/download?build=stable&os=win32-x64-user">https://code.visualstudio.com/sha/download?build=stable&amp;os=win32-x64-user</a><br>下载完后按引导安装即可</p>
+<p><strong>配置vscode</strong><br><strong>安装插件</strong><br>Prettier Code Formatter 使用 Prettier 来统一代码风格，当保存 HTML/CSS/JavaScript 文件时，它会自动调整代码格式。<br>Live Server：在本地开发环境中，实时重新加载(reload)页面。</p>
+<p><strong>第一个简单的HTML页面</strong></p>
+<p>HTML教程：<a target="_blank" rel="noopener" href="https://www.runoob.com/html/html">https://www.runoob.com/html/html</a> tutorial.html<br>范例first_html.html</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">html</span>&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">body</span>&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">h1</span>&gt;</span>标题1<span class="hljs-tag">&lt;/<span class="hljs-name">h1</span>&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>第一个段落.<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>我的第一个HTML页面<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span><br><span class="hljs-tag">&lt;/<span class="hljs-name">body</span>&gt;</span><br><span class="hljs-tag">&lt;/<span class="hljs-name">html</span>&gt;</span><br></code></pre></td></tr></table></figure>
+
+<p><strong>第一个js程序</strong><br>JavaScript教程：<a target="_blank" rel="noopener" href="https://www.runoob.com/js/js">https://www.runoob.com/js/js</a> tutorial.html<br>范例first_js.html<br>2.2 安装 nodejs<br>源码安装nodejs</p>
+<ol>
+<li>下载nodejs</li>
+<li>解压文件</li>
+</ol>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><code class="hljs html"><span class="hljs-meta">&lt;!DOCTYPE <span class="hljs-keyword">html</span>&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">html</span>&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">body</span>&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">h2</span>&gt;</span>Body 中的 JavaScript<span class="hljs-tag">&lt;/<span class="hljs-name">h2</span>&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">p</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"demo"</span>&gt;</span>一个段落。<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"button"</span> <span class="hljs-attr">onclick</span>=<span class="hljs-string">"myFunction()"</span>&gt;</span>试一试<span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">script</span>&gt;</span><span class="language-javascript"></span><br><span class="language-javascript"><span class="hljs-keyword">function</span> <span class="hljs-title function_">myFunction</span>(<span class="hljs-params"></span>) {</span><br><span class="language-javascript"><span class="hljs-variable language_">document</span>.<span class="hljs-title function_">getElementById</span>(<span class="hljs-string">"demo"</span>).<span class="hljs-property">innerHTML</span> = <span class="hljs-string">"段落已被更改。"</span>;</span><br><span class="language-javascript">}</span><br><span class="language-javascript"></span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span><br><span class="hljs-tag">&lt;/<span class="hljs-name">body</span>&gt;</span><br><span class="hljs-tag">&lt;/<span class="hljs-name">html</span>&gt;</span><br></code></pre></td></tr></table></figure>
+
+<h3 id="2-2-安装-nodejs"><a href="#2-2-安装-nodejs" class="headerlink" title="2.2 安装 nodejs"></a>2.2 安装 nodejs</h3><p><strong>源码安装nodejs</strong></p>
+<ol>
+<li><p>下载nodejs</p>
+<figure class="highlight properties"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs properties"><span class="hljs-attr">wget</span> <span class="hljs-string">https://nodejs.org/dist/v10.16.0/node‐v10.16.0‐linux‐x64.tar.xz</span><br></code></pre></td></tr></table></figure>
+</li>
+<li><p>解压文件</p>
+<figure class="highlight properties"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs properties"><span class="hljs-comment"># 解压</span><br><span class="hljs-attr">tar</span> <span class="hljs-string">‐xvf node‐v10.16.0‐linux‐x64.tar.xz</span><br><span class="hljs-comment"># 进入目录</span><br><span class="hljs-attr">cd</span> <span class="hljs-string">node‐v10.16.0‐linux‐x64/</span><br><span class="hljs-comment"># 查看当前的目录</span><br><span class="hljs-attr">pwd</span><br></code></pre></td></tr></table></figure></li>
+<li><p>链接执行文件</p>
+<figure class="highlight properties"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs properties"><span class="hljs-comment"># 确认一下nodejs下bin目录是否有node 和npm文件，如果有就可以执行软连接，比如</span><br><span class="hljs-attr">sudo</span> <span class="hljs-string">ln ‐s /home/lqf/webrtc/node‐v10.16.0‐linux‐x64/bin/npm /usr/local/bin/</span><br><span class="hljs-attr">sudo</span> <span class="hljs-string">ln ‐s /home/lqf/webrtc/node‐v10.16.0‐linux‐x64/bin/node /usr/local/bin/</span><br><span class="hljs-comment"># 看清楚，这个路径是你自己创建的路径，我的路径是/home/lqf/webrtc/node‐v10.16.0‐linux‐x64</span><br><span class="hljs-comment"># 查看是否安装，安装正常则打印版本号</span><br><span class="hljs-attr">node</span> <span class="hljs-string">‐v</span><br><span class="hljs-attr">npm</span> <span class="hljs-string">‐v</span><br></code></pre></td></tr></table></figure></li>
+</ol>
+<p><strong>第一个nodejs教程</strong></p>
+<p>nodejs教程：<a target="_blank" rel="noopener" href="https://www.runoob.com/nodejs/nodejs-tutorial.html">https://www.runoob.com/nodejs/nodejs-tutorial.html</a><br>在我们创建 Node.js 第一个 “Hello, World!” 应用前，让我们先了解下 Node.js 应用是由哪几部分组成的：</p>
+<ol>
+<li>引入 required 模块：我们可以使用 require 指令来载入 Node.js 模块。</li>
+<li>创建服务器：服务器可以监听客户端的请求，类似于 Apache 、Nginx 等 HTTP 服务器。</li>
+<li>接收请求与响应请求 服务器很容易创建，客户端可以使用浏览器或终端发送 HTTP 请求，服务器接收请求后返<br>回响应数据。</li>
+</ol>
+<p><strong>创建 Node.js 应用</strong></p>
+<p><strong>步骤一、引入 required 模块</strong></p>
+<p>我们使用 require 指令来载入 http 模块，并将实例化的 HTTP 赋值给变量 http，实例如下:</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs js"><span class="hljs-keyword">var</span> http = <span class="hljs-built_in">require</span>(<span class="hljs-string">"http"</span>);<br></code></pre></td></tr></table></figure>
+
+<p><strong>步骤二、创建服务器</strong></p>
+<p>接下来我们使用 http.createServer() 方法创建服务器，并使用 listen 方法绑定 8888 端口。 函数通过 request,response 参数来接收和响应数据。<br>实例如下，在你项目的根目录下创建一个叫 server.js 的文件，并写入以下代码：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><code class="hljs js"><span class="hljs-keyword">var</span> http = <span class="hljs-built_in">require</span>(<span class="hljs-string">'http'</span>);<br>http.<span class="hljs-title function_">createServer</span>(<span class="hljs-keyword">function</span> (<span class="hljs-params">request, response</span>) {<br>    <span class="hljs-comment">// 发送 HTTP 头部</span><br>    <span class="hljs-comment">// HTTP 状态值: 200 : OK</span><br>    <span class="hljs-comment">// 内容类型: text/html</span><br>    response.<span class="hljs-title function_">writeHead</span>(<span class="hljs-number">200</span>, {<span class="hljs-string">'Content-Type'</span>: <span class="hljs-string">'text/html'</span>});<br>    <span class="hljs-comment">// 发送响应数据 "Hello World"</span><br>    response.<span class="hljs-title function_">end</span>(<span class="hljs-string">'Hello World\n'</span>);<br>}).<span class="hljs-title function_">listen</span>(<span class="hljs-number">8888</span>);<br><span class="hljs-comment">// 终端打印如下信息</span><br><span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-string">'Server running at http://127.0.0.1:8888/'</span>);<br></code></pre></td></tr></table></figure>
+
+<p>以上代码我们完成了一个可以工作的 HTTP 服务器。<br>使用 node 命令执行以上的代码：</p>
+<figure class="highlight properties"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs properties"><span class="hljs-attr">node</span> <span class="hljs-string">server.js</span><br><span class="hljs-attr">Server</span> <span class="hljs-string">running at http://127.0.0.1:8888/</span><br></code></pre></td></tr></table></figure>
+
+<p>接下来，打开浏览器访问 <a target="_blank" rel="noopener" href="http://127.0.0.1:8888/%EF%BC%8C%E4%BD%A0%E4%BC%9A%E7%9C%8B%E5%88%B0%E4%B8%80%E4%B8%AA%E5%86%99%E7%9D%80">http://127.0.0.1:8888/，你会看到一个写着</a> “Hello World”的网页。</p>
+<p>分析Node.js 的 HTTP 服务器：</p>
+<ul>
+<li>第一行请求（require）Node.js 自带的 http 模块，并且把它赋值给 http 变量。</li>
+<li>接下来我们调用 http 模块提供的函数： createServer 。这个函数会返回 一个对象，这个对象有一个叫做 listen的方法，这个方法有一个数值参数， 指定这个 HTTP 服务器监听的端口号。</li>
+</ul>
+<h2 id="3-coturn穿透和转发服务器"><a href="#3-coturn穿透和转发服务器" class="headerlink" title="3 coturn穿透和转发服务器"></a>3 coturn穿透和转发服务器</h2><h3 id="3-1-安装依赖"><a href="#3-1-安装依赖" class="headerlink" title="3.1 安装依赖"></a>3.1 安装依赖</h3><h4 id="ubuntu系统"><a href="#ubuntu系统" class="headerlink" title="ubuntu系统"></a>ubuntu系统</h4><figure class="highlight properties"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs properties"><span class="hljs-attr">sudo</span> <span class="hljs-string">apt‐get install libssl‐dev</span><br><span class="hljs-attr">sudo</span> <span class="hljs-string">apt‐get install libevent‐dev</span><br></code></pre></td></tr></table></figure>
+
+<h4 id="centos系统"><a href="#centos系统" class="headerlink" title="centos系统"></a>centos系统</h4><figure class="highlight properties"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs properties"><span class="hljs-attr">sudo</span> <span class="hljs-string">yum install openssl‐devel</span><br><span class="hljs-attr">sudo</span> <span class="hljs-string">yum install libevent‐devel</span><br></code></pre></td></tr></table></figure>
+
+<h3 id="3-2-编译安装coturn"><a href="#3-2-编译安装coturn" class="headerlink" title="3.2 编译安装coturn"></a>3.2 编译安装coturn</h3><figure class="highlight properties"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs properties"><span class="hljs-attr">git</span> <span class="hljs-string">clone https://github.com/coturn/coturn</span><br><span class="hljs-attr">cd</span> <span class="hljs-string">coturn</span><br><span class="hljs-attr">./configure</span><br><span class="hljs-attr">make</span><br><span class="hljs-attr">sudo</span> <span class="hljs-string">make install</span><br></code></pre></td></tr></table></figure>
+
+<h3 id="3-3-查看是否安装成功"><a href="#3-3-查看是否安装成功" class="headerlink" title="3.3 查看是否安装成功"></a>3.3 查看是否安装成功</h3><figure class="highlight properties"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs properties"><span class="hljs-comment"># nohup是重定向命令，输出都将附加到当前目录的 nohup.out 文件中； 命令后加 &amp; ,后台执行起来后按 ctr+c,</span><br><span class="hljs-attr">不会停止</span><br><span class="hljs-attr">sudo</span> <span class="hljs-string">nohup turnserver ‐L 0.0.0.0 ‐a ‐u lqf:123456 ‐v ‐f ‐r nort.gov &amp;</span><br><span class="hljs-comment">#然后查看相应的端口号3478是否存在进程</span><br><span class="hljs-attr">sudo</span> <span class="hljs-string">lsof ‐i:3478</span><br></code></pre></td></tr></table></figure>
+
+<h3 id="3-4-测试地址，请分别测试stun和turn"><a href="#3-4-测试地址，请分别测试stun和turn" class="headerlink" title="3.4 测试地址，请分别测试stun和turn"></a>3.4 测试地址，请分别测试stun和turn</h3><p><strong>Coturn是集成了stun+turn协议</strong></p>
+<p>测试网址：<a target="_blank" rel="noopener" href="https://webrtc.github.io/samples/src/content/peerconnection/trickle-ice">https://webrtc.github.io/samples/src/content/peerconnection/trickle-ice</a><br>这里要注意下<a target="_blank" rel="noopener" href="https://webrtc.github.io/samples/src/content/peerconnection/trickle-ice/">trickle ice</a>中的 在PDF转换后变为全角 。</p>
+<p class='item-img' data-src='/./../images/WebRTC-developer-note/image-20250126220832090.png'><img src="/./../images/WebRTC-developer-note/image-20250126220832090.png" alt="image-20250126220832090"></p>
+<h2 id="4-音视频采集和播放"><a href="#4-音视频采集和播放" class="headerlink" title="4 音视频采集和播放"></a>4 音视频采集和播放</h2><p>有三个案例：</p>
+<ol>
+<li>打开摄像头并将画面显示到页面；</li>
+<li>打开麦克风并在页面播放捕获的声音;</li>
+<li>同时打开摄像头和麦克风，并在页面显示画面和播放捕获的声音</li>
+</ol>
+<h3 id="4-1-打开摄像头"><a href="#4-1-打开摄像头" class="headerlink" title="4.1 打开摄像头"></a>4.1 打开摄像头</h3><p>实战：打开摄像头并将画面显示到页面</p>
+<p><strong>效果展示</strong></p>
+<p class='item-img' data-src='/./../images/WebRTC-developer-note/image-20250126221523535.png'><img src="/./../images/WebRTC-developer-note/image-20250126221523535.png" alt="image-20250126221523535"></p>
+<p><strong>代码流程</strong></p>
+<ol>
+<li>初始化button、video控件</li>
+<li>绑定“打开摄像头”响应事件onOpenCamera</li>
+<li>如果要打开摄像头则点击 “打开摄像头”按钮，以触发onOpenCamera事件的调用</li>
+<li>当触发onOpenCamera调用时</li>
+</ol>
+<ul>
+<li>设置约束条件，即是getUserMedia函数的入参</li>
+<li>getUserMedia有两种情况，一种是正常打开摄像头，使用handleSuccess处理；一种是打开摄像头失败，使用handleError处理</li>
+<li>当正常打开摄像头时，则将getUserMedia返回的stream对象赋值给video控件的srcObject即可将视频显示出来</li>
+</ul>
+<p><strong>示例代码</strong></p>
+<p>video.html</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><code class="hljs html"><span class="hljs-meta">&lt;!DOCTYPE <span class="hljs-keyword">html</span>&gt;</span><br><span class="hljs-comment">&lt;!-- 版权：腾讯课堂 零声学院 https://0voice.ke.qq.com/?tuin=137bb271 --&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">html</span>&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">body</span>&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">video</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"local-video"</span> <span class="hljs-attr">autoplay</span> <span class="hljs-attr">playsinline</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">video</span>&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"showVideo"</span>&gt;</span>打开摄像头<span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>通过getUserMedia()获取视频<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span><br><span class="hljs-tag">&lt;/<span class="hljs-name">body</span>&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">script</span>&gt;</span><span class="language-javascript"></span><br><span class="language-javascript"><span class="hljs-keyword">const</span> constraints = {</span><br><span class="language-javascript">    <span class="hljs-attr">audio</span>: <span class="hljs-literal">false</span>,</span><br><span class="language-javascript">    <span class="hljs-attr">video</span>: <span class="hljs-literal">true</span></span><br><span class="language-javascript">};</span><br><span class="language-javascript"><span class="hljs-comment">// 处理打开摄像头成功</span></span><br><span class="language-javascript"><span class="hljs-keyword">function</span> <span class="hljs-title function_">handleSuccess</span>(<span class="hljs-params">stream</span>) {</span><br><span class="language-javascript">    <span class="hljs-keyword">const</span> video = <span class="hljs-variable language_">document</span>.<span class="hljs-title function_">querySelector</span>(<span class="hljs-string">"#local-video"</span>);</span><br><span class="language-javascript">    video.<span class="hljs-property">srcObject</span> = stream;</span><br><span class="language-javascript">}</span><br><span class="language-javascript"><span class="hljs-comment">// 异常处理</span></span><br><span class="language-javascript"><span class="hljs-keyword">function</span> <span class="hljs-title function_">handleError</span>(<span class="hljs-params">error</span>) {</span><br><span class="language-javascript">    <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">error</span>(<span class="hljs-string">"getUserMedia error: "</span> + error);</span><br><span class="language-javascript">}</span><br><span class="language-javascript"><span class="hljs-keyword">function</span> <span class="hljs-title function_">onOpenCamera</span>(<span class="hljs-params">e</span>) {</span><br><span class="language-javascript">    navigator.<span class="hljs-property">mediaDevices</span>.<span class="hljs-title function_">getUserMedia</span>(constraints).<span class="hljs-title function_">then</span>(handleSuccess).<span class="hljs-title function_">catch</span>(handleError);</span><br><span class="language-javascript">}</span><br><span class="language-javascript"><span class="hljs-variable language_">document</span>.<span class="hljs-title function_">querySelector</span>(<span class="hljs-string">"#showVideo"</span>).<span class="hljs-title function_">addEventListener</span>(<span class="hljs-string">"click"</span>, onOpenCamera);</span><br><span class="language-javascript"></span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span><br><span class="hljs-tag">&lt;/<span class="hljs-name">html</span>&gt;</span><br></code></pre></td></tr></table></figure>
+
+<h3 id="4-2-打开麦克风"><a href="#4-2-打开麦克风" class="headerlink" title="4.2 打开麦克风"></a>4.2 打开麦克风</h3><p>实战：打开麦克风并在页面播放捕获的声音</p>
+<p><strong>效果展示</strong></p>
+<p class='item-img' data-src='/./../images/WebRTC-developer-note/image-20250126221559527.png'><img src="/./../images/WebRTC-developer-note/image-20250126221559527.png" alt="image-20250126221559527"></p>
+<p><strong>代码流程</strong></p>
+<ol>
+<li>初始化button、audio控件</li>
+<li>绑定“打开麦克风”响应事件onOpenMicrophone</li>
+<li>如果要打开麦克风则点击 “打开麦克风”按钮，以触发onOpenMicrophone事件的调用</li>
+<li>当触发onOpenCamera调用时</li>
+</ol>
+<ul>
+<li>设置约束条件，即是getUserMedia函数的入参</li>
+<li>getUserMedia有两种情况，一种是正常打开麦克风，使用handleSuccess处理；一种是打开麦克风失败，使用handleError处理</li>
+<li>当正常打开麦克风时，则将getUserMedia返回的stream对象赋值给audio控件的srcObject即可将声音播放出来</li>
+</ul>
+<p><strong>示例代码</strong></p>
+<p>audio.html</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><code class="hljs html"><span class="hljs-meta">&lt;!DOCTYPE <span class="hljs-keyword">html</span>&gt;</span><br><span class="hljs-comment">&lt;!-- 版权：腾讯课堂 零声学院 https://0voice.ke.qq.com/?tuin=137bb271 --&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">html</span>&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">body</span>&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">audio</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"local-audio"</span> <span class="hljs-attr">autoplay</span> <span class="hljs-attr">controls</span>&gt;</span>播放麦克风捕获的声音<span class="hljs-tag">&lt;/<span class="hljs-name">audio</span>&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"playAudio"</span>&gt;</span>打开麦克风<span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>通过getUserMedia()获取音频<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span><br><span class="hljs-tag">&lt;/<span class="hljs-name">body</span>&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">script</span>&gt;</span><span class="language-javascript"></span><br><span class="language-javascript"><span class="hljs-comment">// 约束条件</span></span><br><span class="language-javascript"><span class="hljs-keyword">const</span> constraints = {</span><br><span class="language-javascript">    <span class="hljs-attr">audio</span>: <span class="hljs-literal">true</span>,</span><br><span class="language-javascript">    <span class="hljs-attr">video</span>: <span class="hljs-literal">false</span></span><br><span class="language-javascript">};</span><br><span class="language-javascript"><span class="hljs-comment">// 处理打开麦克风成功</span></span><br><span class="language-javascript"><span class="hljs-keyword">function</span> <span class="hljs-title function_">handleSuccess</span>(<span class="hljs-params">stream</span>) {</span><br><span class="language-javascript">    <span class="hljs-keyword">const</span> audio = <span class="hljs-variable language_">document</span>.<span class="hljs-title function_">querySelector</span>(<span class="hljs-string">"#local-audio"</span>);</span><br><span class="language-javascript">    audio.<span class="hljs-property">srcObject</span> = stream;</span><br><span class="language-javascript">}</span><br><span class="language-javascript"><span class="hljs-comment">// 异常处理</span></span><br><span class="language-javascript"><span class="hljs-keyword">function</span> <span class="hljs-title function_">handleError</span>(<span class="hljs-params">error</span>) {</span><br><span class="language-javascript">    <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">error</span>(<span class="hljs-string">"getUserMedia error: "</span> + error);</span><br><span class="language-javascript">}</span><br><span class="language-javascript"><span class="hljs-keyword">function</span> <span class="hljs-title function_">onOpenMicrophone</span>(<span class="hljs-params">e</span>) {</span><br><span class="language-javascript">    navigator.<span class="hljs-property">mediaDevices</span>.<span class="hljs-title function_">getUserMedia</span>(constraints).<span class="hljs-title function_">then</span>(handleSuccess).<span class="hljs-title function_">catch</span>(handleError);</span><br><span class="language-javascript">}</span><br><span class="language-javascript"><span class="hljs-variable language_">document</span>.<span class="hljs-title function_">querySelector</span>(<span class="hljs-string">"#playAudio"</span>).<span class="hljs-title function_">addEventListener</span>(<span class="hljs-string">"click"</span>, onOpenMicrophone);</span><br><span class="language-javascript"></span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span><br><span class="hljs-tag">&lt;/<span class="hljs-name">html</span>&gt;</span><br></code></pre></td></tr></table></figure>
+
+<p>webrtc获取音视频设备</p>
+<h3 id="4-3-打开摄像头和麦克风"><a href="#4-3-打开摄像头和麦克风" class="headerlink" title="4.3 打开摄像头和麦克风"></a>4.3 打开摄像头和麦克风</h3><p>同时打开摄像头和麦克风，范例可以参考4.1，只是在约束条件中把</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs js"><span class="hljs-keyword">const</span> constraints = {<br><span class="hljs-attr">audio</span>: <span class="hljs-literal">false</span>, <span class="hljs-comment">// 不打开麦克风</span><br><span class="hljs-attr">video</span>: <span class="hljs-literal">true</span><br>};<br><br></code></pre></td></tr></table></figure>
+
+<p>改为</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs js"><span class="hljs-keyword">const</span> constraints = {<br><span class="hljs-attr">audio</span>: <span class="hljs-literal">true</span>, <span class="hljs-comment">// 打开麦克风</span><br><span class="hljs-attr">video</span>: <span class="hljs-literal">true</span><br>};<br></code></pre></td></tr></table></figure>
+
+<p><strong>具体代码</strong></p>
+<p>video_audio.html</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br></pre></td><td class="code"><pre><code class="hljs html"><span class="hljs-meta">&lt;!DOCTYPE <span class="hljs-keyword">html</span>&gt;</span><br>&lt;!‐‐<br>* 版权：腾讯课堂 零声学院 https://0voice.ke.qq.com/?tuin=137bb271 .<br>*<br>* 文件名：video.html<br>* 功能：获取音视频并将其显示到页面和播放声音<br>‐‐&gt;<br><span class="hljs-tag">&lt;<span class="hljs-name">html</span>&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">body</span>&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">video</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"local‐video"</span> <span class="hljs-attr">autoplay</span> <span class="hljs-attr">playsinline</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">video</span>&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"showVideo"</span>&gt;</span>打开音视频<span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"errorMsg"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>通过 <span class="hljs-tag">&lt;<span class="hljs-name">code</span>&gt;</span>getUserMedia()<span class="hljs-tag">&lt;/<span class="hljs-name">code</span>&gt;</span> 获取音视频.<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">script</span>&gt;</span><span class="language-javascript"></span><br><span class="language-javascript"><span class="hljs-comment">// 设置约束条件, 同时打开音频流和视频流</span></span><br><span class="language-javascript"><span class="hljs-keyword">const</span> constraints = (<span class="hljs-variable language_">window</span>.<span class="hljs-property">constraints</span> = {</span><br><span class="language-javascript"><span class="hljs-attr">audio</span>: <span class="hljs-literal">true</span>,</span><br><span class="language-javascript"><span class="hljs-attr">video</span>: <span class="hljs-literal">true</span></span><br><span class="language-javascript">});</span><br><span class="language-javascript"><span class="hljs-comment">// 处理打开摄像头+麦克风成功</span></span><br><span class="language-javascript"><span class="hljs-keyword">function</span> <span class="hljs-title function_">handleSuccess</span>(<span class="hljs-params">stream</span>) {</span><br><span class="language-javascript"><span class="hljs-keyword">const</span> video = <span class="hljs-variable language_">document</span>.<span class="hljs-title function_">querySelector</span>(<span class="hljs-string">"#local‐video"</span>);</span><br><span class="language-javascript">video.<span class="hljs-property">srcObject</span> = stream;</span><br><span class="language-javascript">}</span><br><span class="language-javascript"><span class="hljs-comment">// 处理打开摄像头+麦克风失败</span></span><br><span class="language-javascript"><span class="hljs-keyword">function</span> <span class="hljs-title function_">handleError</span>(<span class="hljs-params">error</span>) {</span><br><span class="language-javascript"><span class="hljs-variable language_">console</span>.<span class="hljs-title function_">error</span>(<span class="hljs-string">"getUserMedia error: "</span> + error);</span><br><span class="language-javascript">}</span><br><span class="language-javascript"><span class="hljs-keyword">async</span> <span class="hljs-keyword">function</span> <span class="hljs-title function_">onOpenAV</span>(<span class="hljs-params">e</span>) {</span><br><span class="language-javascript">navigator.<span class="hljs-property">mediaDevices</span>.<span class="hljs-title function_">getUserMedia</span>(constraints).<span class="hljs-title function_">then</span>(handleSuccess).<span class="hljs-title function_">catch</span>(handleError);</span><br><span class="language-javascript">}</span><br><span class="language-javascript"><span class="hljs-variable language_">document</span></span><br><span class="language-javascript">.<span class="hljs-title function_">querySelector</span>(<span class="hljs-string">"#showVideo"</span>)</span><br><span class="language-javascript">.<span class="hljs-title function_">addEventListener</span>(<span class="hljs-string">"click"</span>, onOpenAV);</span><br><span class="language-javascript"></span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span><br><span class="hljs-tag">&lt;/<span class="hljs-name">body</span>&gt;</span><br><span class="hljs-tag">&lt;/<span class="hljs-name">html</span>&gt;</span><br></code></pre></td></tr></table></figure>
+<h3 id="4-4扩展"><a href="#4-4扩展" class="headerlink" title="4.4扩展"></a>4.4扩展</h3><p>. getUserMedia API参考：<a target="_blank" rel="noopener" href="https://developer.mozilla.org/zh">https://developer.mozilla.org/zh</a> CN/docs/Web/API/MediaDevices/getUserMedia<br>2. !=和!==区别<br>!= 在表达式两边的数据类型不一致时,会隐式转换为相同数据类型,然后对值进行比较. 比如 1 和 “1” , 1 != “1” 为false<br>!== 不会进行类型转换,在比较时除了对值进行比较以外,还比较两边的数据类型, 它是恒等运算符===的非形式， 1 != “1” 为true<br>3. video控件属性<br><video></video><br>The Video Embed element <a target="_blank" rel="noopener" href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/video">https://developer.mozilla.org/en-US/docs/Web/HTML/Element/video</a><br>HTML DOM Video 对象 <a target="_blank" rel="noopener" href="https://www.runoob.com/jsref/dom-obj-video.html">https://www.runoob.com/jsref/dom-obj-video.html</a></p>
+<h3 id="4-5补充"><a href="#4-5补充" class="headerlink" title="4.5补充"></a>4.5补充</h3><p><strong>getUserMedia API简介</strong><br>HTML5的getUserMedia API为用户提供访问硬件设备媒体（摄像头、视频、音频、地理位置等）的接口，基于该接口，开发者可以在不依赖任何浏览器插件的条件下访问硬件媒体设备。<br>getUserMedia API最初是navigator.getUserMedia，目前已被最新Web标准废除，变更为navigator.mediaDevices.getUserMedia（），但浏览器支持情况不如旧版API普及。<br>MediaDevices.getUserMedia（）方法提示用户允许使用一个视频和/或一个音频输入设备，例如相机或屏幕共享和/或麦克风。如果用户给予许可，就返回一个Promise对象，MediaStream对象作为此Promise对象的Resolved［成功］状态的回调函数参数，相应的，如果用户拒绝了许可，或者没有媒体可用的情况下PermissionDeniedError或者NotFoundError作为此Promise的Rejected［失败］状态的回调函数参数。注意，由于用户不会被要求必须作出允许或者拒绝的选择，所以返回的Promise对象可能既不会触发resolve也不会触发 reject。</p>
+<p><strong>浏览器兼容性</strong></p>
+<p class='item-img' data-src='/./../images/WebRTC-developer-note/image-20250126223332445.png'><img src="/./../images/WebRTC-developer-note/image-20250126223332445.png" alt="image-20250126223332445"></p>
+<p><strong>语法</strong></p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs js">navigator.<span class="hljs-property">mediaDevices</span>.<span class="hljs-title function_">getUserMedia</span>(constraints)<br>.<span class="hljs-title function_">then</span>(<span class="hljs-keyword">function</span>(<span class="hljs-params">mediaStream</span>) { ... })<br>.<span class="hljs-title function_">catch</span>(<span class="hljs-keyword">function</span>(<span class="hljs-params">error</span>) { ... })<br></code></pre></td></tr></table></figure>
+
+<p><strong>参数</strong></p>
+<p>containers：指定请求的媒体类型，主要包含video和audio，必须至少一个类型或者两个同时可以被指定。如果浏览器无法找到指定的媒体类型或者无法满足相对应的参数要求，那么返回的Promise对象就会处于rejected［失败］状态，NotFoundError作为rejected［失败］回调的参数。</p>
+<p>【例】同时请求不带任何参数的音频和视频：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs js">{ <span class="hljs-attr">audio</span>: <span class="hljs-literal">true</span>, <span class="hljs-attr">video</span>: <span class="hljs-literal">true</span> }<br></code></pre></td></tr></table></figure>
+
+<p>【例】使用1280x720的摄像头分辨率：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs js">{<br><span class="hljs-attr">audio</span>: <span class="hljs-literal">true</span>,<br><span class="hljs-attr">video</span>: { <span class="hljs-attr">width</span>: <span class="hljs-number">1280</span>, <span class="hljs-attr">height</span>: <span class="hljs-number">720</span> }<br>}<br></code></pre></td></tr></table></figure>
+
+<p>【例】要求获取最低为1280x720的分辨率：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs js">{<br><span class="hljs-attr">audio</span>: <span class="hljs-literal">true</span>,<br><span class="hljs-attr">video</span>: {<br><span class="hljs-attr">width</span>: { <span class="hljs-attr">min</span>: <span class="hljs-number">1024</span>, <span class="hljs-attr">ideal</span>: <span class="hljs-number">1280</span>, <span class="hljs-attr">max</span>: <span class="hljs-number">1920</span> },<br><span class="hljs-attr">height</span>: { <span class="hljs-attr">min</span>: <span class="hljs-number">776</span>, <span class="hljs-attr">ideal</span>: <span class="hljs-number">720</span>, <span class="hljs-attr">max</span>: <span class="hljs-number">1080</span> }<br>}<br>}<br></code></pre></td></tr></table></figure>
+
+<p>当请求包含一个ideal（应用最理想的）值时，这个值有着更高的权重，意味着浏览器会先尝试找到最接近指定的理想值的设定或者摄像头（如果设备拥有不止一个摄像头）。</p>
+<p>【例】优先使用前置摄像头（如果有的话）：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs js">{ <br>    <span class="hljs-attr">audio</span>: <span class="hljs-literal">true</span>, <br>    <span class="hljs-attr">video</span>: {<br>        <span class="hljs-attr">facingMode</span>: <span class="hljs-string">"user"</span> <br>    } <br>}<br></code></pre></td></tr></table></figure>
+
+<p>【例】强制使用后置摄像头：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><code class="hljs js">{ <br>    <span class="hljs-attr">audio</span>: <span class="hljs-literal">true</span>, <br>    <span class="hljs-attr">video</span>: { <br>        <span class="hljs-attr">facingMode</span>: { <br>            <span class="hljs-attr">exact</span>: <span class="hljs-string">"environment"</span> <br>        } <br>    } <br>}<br></code></pre></td></tr></table></figure>
+
+<p>成功回调函数seccessCallback的参数stream：stream是MediaStream的对象，表示媒体内容的数据流，可以通过URL.createObjectURL转换后设置为Video或Audio元素的src属性来使用，部分较新的浏览器也可以直接设置为srcObject属性来使用（Darren注：目前大部分浏览器都是使用srcObject）。</p>
+<hr>
+<p>失败回调函数errorCallback的参数error，可能的异常有：</p>
+<ul>
+<li>AbortError：硬件问题</li>
+<li>NotAllowedError：用户拒绝了当前的浏览器实例的访问请求；或者用户拒绝了当前会话的访问；或者用户在全局范围内拒绝了所有媒体访问请求。</li>
+<li>NotFoundError：找不到满足请求参数的媒体类型。</li>
+<li>NotReadableError：操作系统上某个硬件、浏览器或者网页层面发生的错误导致设备无法被访问。</li>
+<li>OverConstrainedError：指定的要求无法被设备满足。</li>
+<li>SecurityError：安全错误，在getUserMedia() 被调用的 Document上面，使用设备媒体被禁止。这个机制是否开启或者关闭取决于单个用户的偏好设置。</li>
+<li>TypeError：类型错误，constraints对象未设置［空］，或者都被设置为false。</li>
+</ul>
+<p><strong>示例：HTML 5调用媒体设备摄像头</strong></p>
+<p>这个例子中，请求访问用户硬件设备的摄像头，并把视频流通过Video元素显示出来。网页中提供一个”拍照”的按钮，通过Canvas将Video的画面截取并绘制，核心代码如下：</p>
+<p>video_canvas.html</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><code class="hljs html">&lt;!‐‐video用于显示媒体设备的视频流，自动播放‐‐&gt;<br>&lt;!‐‐ <span class="hljs-tag">&lt;<span class="hljs-name">video</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"video"</span> <span class="hljs-attr">autoplay</span> <span class="hljs-attr">style</span>=<span class="hljs-string">"width:640px; height:480px"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">video</span>&gt;</span> ‐‐&gt;<br><span class="hljs-tag">&lt;<span class="hljs-name">video</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"video"</span> <span class="hljs-attr">autoplay</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">video</span>&gt;</span><br>&lt;!‐‐拍照按钮‐‐&gt;<br><span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"capture"</span>&gt;</span>拍照<span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span><br><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span><br>&lt;!‐‐描绘video截图‐‐&gt;<br><span class="hljs-tag">&lt;<span class="hljs-name">canvas</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"canvas"</span> <span class="hljs-attr">width</span>=<span class="hljs-string">"640"</span> <span class="hljs-attr">height</span>=<span class="hljs-string">"480"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">canvas</span>&gt;</span><br></code></pre></td></tr></table></figure>
+
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br></pre></td><td class="code"><pre><code class="hljs js"><span class="hljs-comment">//访问用户媒体设备的兼容方法</span><br><span class="hljs-keyword">function</span> <span class="hljs-title function_">getUserMedia</span>(<span class="hljs-params">constrains, success, error</span>) {<br><span class="hljs-keyword">if</span> (navigator.<span class="hljs-property">mediaDevices</span>.<span class="hljs-property">getUserMedia</span>) {<br><span class="hljs-comment">//最新标准API</span><br>navigator.<span class="hljs-property">mediaDevices</span><br>.<span class="hljs-title function_">getUserMedia</span>(constrains)<br>.<span class="hljs-title function_">then</span>(success)<br>.<span class="hljs-title function_">catch</span>(error);<br>} <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (navigator.<span class="hljs-property">webkitGetUserMedia</span>) {<br><span class="hljs-comment">//webkit内核浏览器</span><br>navigator<br>.<span class="hljs-title function_">webkitGetUserMedia</span>(constrains)<br>.<span class="hljs-title function_">then</span>(success)<br>.<span class="hljs-title function_">catch</span>(error);<br>} <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (navigator.<span class="hljs-property">mozGetUserMedia</span>) {<br><span class="hljs-comment">//Firefox浏览器</span><br>navagator<br>.<span class="hljs-title function_">mozGetUserMedia</span>(constrains)<br>.<span class="hljs-title function_">then</span>(success)<br>.<span class="hljs-title function_">catch</span>(error);<br>} <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (navigator.<span class="hljs-property">getUserMedia</span>) {<br><span class="hljs-comment">//旧版API</span><br>navigator<br>.<span class="hljs-title function_">getUserMedia</span>(constrains)<br>.<span class="hljs-title function_">then</span>(success)<br>.<span class="hljs-title function_">catch</span>(error);<br>}<br>}<br><span class="hljs-keyword">var</span> video = <span class="hljs-variable language_">document</span>.<span class="hljs-title function_">getElementById</span>(<span class="hljs-string">"video"</span>);<br><span class="hljs-keyword">var</span> canvas = <span class="hljs-variable language_">document</span>.<span class="hljs-title function_">getElementById</span>(<span class="hljs-string">"canvas"</span>);<br><span class="hljs-keyword">var</span> context = canvas.<span class="hljs-title function_">getContext</span>(<span class="hljs-string">"2d"</span>);<br><span class="hljs-comment">//成功的回调函数</span><br><span class="hljs-keyword">function</span> <span class="hljs-title function_">success</span>(<span class="hljs-params">stream</span>) {<br><span class="hljs-comment">//兼容webkit内核浏览器</span><br><span class="hljs-keyword">var</span> <span class="hljs-title class_">CompatibleURL</span> = <span class="hljs-variable language_">window</span>.<span class="hljs-property">URL</span> || <span class="hljs-variable language_">window</span>.<span class="hljs-property">webkitURL</span>;<br><span class="hljs-comment">//将视频流设置为video元素的源</span><br><span class="hljs-keyword">try</span> {<br><span class="hljs-comment">// 已经废弃的方法</span><br>video.<span class="hljs-property">src</span> = <span class="hljs-title class_">CompatibleURL</span>.<span class="hljs-title function_">createObjectURL</span>(stream);<br>} <span class="hljs-keyword">catch</span> (e) {<br><span class="hljs-comment">// 新方法</span><br><span class="hljs-variable language_">console</span>.<span class="hljs-title function_">warn</span>(e);<br>video.<span class="hljs-property">srcObject</span> = stream;<br>}<br><span class="hljs-comment">//播放视频</span><br>video.<span class="hljs-title function_">play</span>();<br>}<br><span class="hljs-comment">//异常的回调函数</span><br><span class="hljs-keyword">function</span> <span class="hljs-title function_">error</span>(<span class="hljs-params">error</span>) {<br><span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-string">"访问用户媒体设备失败："</span>, error.<span class="hljs-property">name</span>, error.<span class="hljs-property">message</span>);<br>}<br><span class="hljs-keyword">if</span> (<br>navigator.<span class="hljs-property">mediaDevices</span>.<span class="hljs-property">getUserMedia</span> ||<br>navigator.<span class="hljs-property">getUserMedia</span> ||<br>navigator.<span class="hljs-property">webkitGetUserMedia</span> ||<br>navigator.<span class="hljs-property">mozGetUserMedia</span><br>) {<br><span class="hljs-comment">//调用用户媒体设备，访问摄像头</span><br><span class="hljs-keyword">const</span> constrains = {<br><span class="hljs-comment">// audio: true,</span><br><span class="hljs-attr">video</span>: {<span class="hljs-attr">width</span>: { <span class="hljs-attr">ideal</span>: <span class="hljs-number">640</span> },<br><span class="hljs-attr">height</span>: { <span class="hljs-attr">ideal</span>: <span class="hljs-number">480</span> },<br><span class="hljs-attr">frameRate</span>: {<br><span class="hljs-attr">ideal</span>: <span class="hljs-number">10</span>,<br><span class="hljs-attr">max</span>: <span class="hljs-number">15</span><br>},<br><span class="hljs-attr">facingMode</span>: <span class="hljs-string">"user"</span><br>}<br>};<br><span class="hljs-comment">//调用用户媒体设备，访问摄像头</span><br><span class="hljs-title function_">getUserMedia</span>(constrains, success, error);<br>} <span class="hljs-keyword">else</span> {<br><span class="hljs-title function_">alert</span>(<span class="hljs-string">"你的浏览器不支持访问用户媒体设备"</span>);<br>}<br><span class="hljs-comment">//注册拍照按钮的单击事件</span><br><span class="hljs-variable language_">document</span>.<span class="hljs-title function_">getElementById</span>(<span class="hljs-string">"capture"</span>).<span class="hljs-title function_">addEventListener</span>(<span class="hljs-string">"click"</span>, <span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) {<br><span class="hljs-comment">//绘制画面</span><br>context.<span class="hljs-title function_">drawImage</span>(video, <span class="hljs-number">0</span>, <span class="hljs-number">0</span>, <span class="hljs-number">480</span>, <span class="hljs-number">320</span>);<br>});<br></code></pre></td></tr></table></figure>
+
+<p><strong>完整代码如下：</strong></p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br></pre></td><td class="code"><pre><code class="hljs html"><span class="hljs-meta">&lt;!DOCTYPE <span class="hljs-keyword">html</span>&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">html</span>&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">head</span>&gt;</span><br>    <span class="hljs-tag">&lt;<span class="hljs-name">title</span>&gt;</span>摄像头拍照示例<span class="hljs-tag">&lt;/<span class="hljs-name">title</span>&gt;</span><br>    <span class="hljs-tag">&lt;<span class="hljs-name">style</span>&gt;</span><span class="language-css"></span><br><span class="language-css">        <span class="hljs-selector-tag">video</span>, <span class="hljs-selector-tag">canvas</span> {</span><br><span class="language-css">            <span class="hljs-attribute">width</span>: <span class="hljs-number">640px</span>;</span><br><span class="language-css">            <span class="hljs-attribute">height</span>: <span class="hljs-number">480px</span>;</span><br><span class="language-css">        }</span><br><span class="language-css">    </span><span class="hljs-tag">&lt;/<span class="hljs-name">style</span>&gt;</span><br><span class="hljs-tag">&lt;/<span class="hljs-name">head</span>&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">body</span>&gt;</span><br>    <span class="hljs-tag">&lt;<span class="hljs-name">video</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"video"</span> <span class="hljs-attr">autoplay</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">video</span>&gt;</span><br>    <span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span><br>        <span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"capture"</span>&gt;</span>拍照<span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span><br>    <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span><br>    <span class="hljs-tag">&lt;<span class="hljs-name">canvas</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"canvas"</span> <span class="hljs-attr">width</span>=<span class="hljs-string">"640"</span> <span class="hljs-attr">height</span>=<span class="hljs-string">"480"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">canvas</span>&gt;</span><br><br>    <span class="hljs-tag">&lt;<span class="hljs-name">script</span>&gt;</span><span class="language-javascript"></span><br><span class="language-javascript">        <span class="hljs-comment">// 访问用户媒体设备的兼容方法</span></span><br><span class="language-javascript">        <span class="hljs-keyword">function</span> <span class="hljs-title function_">getUserMedia</span>(<span class="hljs-params">constraints, success, error</span>) {</span><br><span class="language-javascript">            <span class="hljs-keyword">if</span> (navigator.<span class="hljs-property">mediaDevices</span>.<span class="hljs-property">getUserMedia</span>) {</span><br><span class="language-javascript">                <span class="hljs-comment">// 最新标准API</span></span><br><span class="language-javascript">                navigator.<span class="hljs-property">mediaDevices</span>.<span class="hljs-title function_">getUserMedia</span>(constraints).<span class="hljs-title function_">then</span>(success).<span class="hljs-title function_">catch</span>(error);</span><br><span class="language-javascript">            } <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (navigator.<span class="hljs-property">webkitGetUserMedia</span>) {</span><br><span class="language-javascript">                <span class="hljs-comment">// webkit内核浏览器</span></span><br><span class="language-javascript">                navigator.<span class="hljs-title function_">webkitGetUserMedia</span>(constraints, success, error);</span><br><span class="language-javascript">            } <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (navigator.<span class="hljs-property">mozGetUserMedia</span>) {</span><br><span class="language-javascript">                <span class="hljs-comment">// Firefox浏览器</span></span><br><span class="language-javascript">                navigator.<span class="hljs-title function_">mozGetUserMedia</span>(constraints, success, error);</span><br><span class="language-javascript">            } <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (navigator.<span class="hljs-property">getUserMedia</span>) {</span><br><span class="language-javascript">                <span class="hljs-comment">// 旧版API</span></span><br><span class="language-javascript">                navigator.<span class="hljs-title function_">getUserMedia</span>(constraints, success, error);</span><br><span class="language-javascript">            } <span class="hljs-keyword">else</span> {</span><br><span class="language-javascript">                <span class="hljs-title function_">error</span>(<span class="hljs-keyword">new</span> <span class="hljs-title class_">Error</span>(<span class="hljs-string">"你的浏览器不支持访问用户媒体设备"</span>));</span><br><span class="language-javascript">            }</span><br><span class="language-javascript">        }</span><br><span class="language-javascript"></span><br><span class="language-javascript">        <span class="hljs-keyword">var</span> video = <span class="hljs-variable language_">document</span>.<span class="hljs-title function_">getElementById</span>(<span class="hljs-string">"video"</span>);</span><br><span class="language-javascript">        <span class="hljs-keyword">var</span> canvas = <span class="hljs-variable language_">document</span>.<span class="hljs-title function_">getElementById</span>(<span class="hljs-string">"canvas"</span>);</span><br><span class="language-javascript">        <span class="hljs-keyword">var</span> context = canvas.<span class="hljs-title function_">getContext</span>(<span class="hljs-string">"2d"</span>);</span><br><span class="language-javascript"></span><br><span class="language-javascript">        <span class="hljs-comment">// 成功的回调函数</span></span><br><span class="language-javascript">        <span class="hljs-keyword">function</span> <span class="hljs-title function_">success</span>(<span class="hljs-params">stream</span>) {</span><br><span class="language-javascript">            <span class="hljs-comment">// 兼容webkit内核浏览器</span></span><br><span class="language-javascript">            <span class="hljs-keyword">var</span> <span class="hljs-title class_">CompatibleURL</span> = <span class="hljs-variable language_">window</span>.<span class="hljs-property">URL</span> || <span class="hljs-variable language_">window</span>.<span class="hljs-property">webkitURL</span>;</span><br><span class="language-javascript">            <span class="hljs-comment">// 将视频流设置为video元素的源</span></span><br><span class="language-javascript">            <span class="hljs-keyword">try</span> {</span><br><span class="language-javascript">                <span class="hljs-comment">// 已经废弃的方法</span></span><br><span class="language-javascript">                video.<span class="hljs-property">src</span> = <span class="hljs-title class_">CompatibleURL</span>.<span class="hljs-title function_">createObjectURL</span>(stream);</span><br><span class="language-javascript">            } <span class="hljs-keyword">catch</span> (e) {</span><br><span class="language-javascript">                <span class="hljs-comment">// 新方法</span></span><br><span class="language-javascript">                <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">warn</span>(e);</span><br><span class="language-javascript">                video.<span class="hljs-property">srcObject</span> = stream;</span><br><span class="language-javascript">            }</span><br><span class="language-javascript">            <span class="hljs-comment">// 播放视频</span></span><br><span class="language-javascript">            video.<span class="hljs-title function_">play</span>();</span><br><span class="language-javascript">        }</span><br><span class="language-javascript"></span><br><span class="language-javascript">        <span class="hljs-comment">// 异常的回调函数</span></span><br><span class="language-javascript">        <span class="hljs-keyword">function</span> <span class="hljs-title function_">error</span>(<span class="hljs-params">error</span>) {</span><br><span class="language-javascript">            <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-string">"访问用户媒体设备失败："</span>, error.<span class="hljs-property">name</span>, error.<span class="hljs-property">message</span>);</span><br><span class="language-javascript">            <span class="hljs-title function_">alert</span>(<span class="hljs-string">"访问用户媒体设备失败："</span> + error.<span class="hljs-property">message</span>);</span><br><span class="language-javascript">        }</span><br><span class="language-javascript"></span><br><span class="language-javascript">        <span class="hljs-comment">// 调用用户媒体设备，访问摄像头</span></span><br><span class="language-javascript">        <span class="hljs-keyword">const</span> constraints = {</span><br><span class="language-javascript">            <span class="hljs-attr">video</span>: {</span><br><span class="language-javascript">                <span class="hljs-attr">width</span>: { <span class="hljs-attr">ideal</span>: <span class="hljs-number">640</span> },</span><br><span class="language-javascript">                <span class="hljs-attr">height</span>: { <span class="hljs-attr">ideal</span>: <span class="hljs-number">480</span> },</span><br><span class="language-javascript">                <span class="hljs-attr">frameRate</span>: { <span class="hljs-attr">ideal</span>: <span class="hljs-number">10</span>, <span class="hljs-attr">max</span>: <span class="hljs-number">15</span> },</span><br><span class="language-javascript">                <span class="hljs-attr">facingMode</span>: <span class="hljs-string">"user"</span></span><br><span class="language-javascript">            }</span><br><span class="language-javascript">        };</span><br><span class="language-javascript"></span><br><span class="language-javascript">        <span class="hljs-comment">// 调用用户媒体设备，访问摄像头</span></span><br><span class="language-javascript">        <span class="hljs-title function_">getUserMedia</span>(constraints, success, error);</span><br><span class="language-javascript"></span><br><span class="language-javascript">        <span class="hljs-comment">// 注册拍照按钮的单击事件</span></span><br><span class="language-javascript">        <span class="hljs-variable language_">document</span>.<span class="hljs-title function_">getElementById</span>(<span class="hljs-string">"capture"</span>).<span class="hljs-title function_">addEventListener</span>(<span class="hljs-string">"click"</span>, <span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) {</span><br><span class="language-javascript">            <span class="hljs-comment">// 绘制画面</span></span><br><span class="language-javascript">            context.<span class="hljs-title function_">drawImage</span>(video, <span class="hljs-number">0</span>, <span class="hljs-number">0</span>, canvas.<span class="hljs-property">width</span>, canvas.<span class="hljs-property">height</span>);</span><br><span class="language-javascript">        });</span><br><span class="language-javascript">    </span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span><br><span class="hljs-tag">&lt;/<span class="hljs-name">body</span>&gt;</span><br><span class="hljs-tag">&lt;/<span class="hljs-name">html</span>&gt;</span><br></code></pre></td></tr></table></figure>
+
+<p><strong>WebRTC检测音视频设备</strong></p>
+<div id="paginator"></div></div><div id="post-footer"><div id="pages" style="justify-content: flex-end"><div class="footer-link" style="width: 50%;right:1px;border-left:1px #fe2 solid"><a href="/2024/11/29/WinForm-RuriCatPlan/">【WinForm】琉璃猫开发计划 上一篇 →</a></div></div></div><details id="reward"><summary>打赏</summary><div><span>支付宝 | Alipay</span><br><img src="/img/Alipay.png"></div><div><span>微信 | Wechat</span><br><img src="/img/WeChat.png"></div></details><div id="comments"><div id="gitalk"></div></div></div><div class="bottom-btn"><div><a class="i-top" id="to-top" onClick="scrolls.scrolltop();" title="回到顶部" style="opacity: 0; display: none;">∧ </a><a class="i-index" id="to-index" href="#toc-div" title="文章目录">≡</a><a class="i-color" id="color-mode" onClick="colorMode.change()" title="切换主题"></a></div></div></article><aside><div id="about"><a href="/" id="logo"><img src="https://ak.hypergryph.com/assets/index/images/ak/pc/faction/1.png" alt="Logo"></a><h1 id="Dr"><a href="/">zdx</a></h1><div id="description"><p>记录学习的点点滴滴</p></div><div id="social-links"><a class="social" target="_blank" rel="noopener" href="https://github.com/zdx-1"><i class="fab fa-github" alt="GitHub"></i></a><a class="social" href="mailto:19546328912@163.com"><i class="fa fa-envelope" alt="E-Mail"></i></a><a class="social" target="_blank" rel="noopener" href="https://space.bilibili.com/353147531?spm_id_from=333.1007.0.0"><i class="fa-brands fa-bilibili" alt="BiliBili"></i></a><a class="social" target="_blank" rel="noopener" href="https://m.weibo.cn/profile/7835377780"><i class="fab fa-weibo" alt="Weibo"></i></a><a class="social" target="_blank" rel="noopener" href="https://www.zhihu.com/people/98-81-46-1"><i class="fab fa-zhihu" alt="Zhihu"></i></a></div></div><div id="aside-block"><div id="toc-div"><h1>目录</h1><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#WebRTC%E9%9F%B3%E8%A7%86%E9%A2%91%E9%80%9A%E8%AF%9D%E5%BC%80%E5%8F%91%E6%95%99%E7%A8%8B"><span class="toc-number">1.</span> <span class="toc-text">WebRTC音视频通话开发教程</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-WebRTC%E5%85%A5%E9%97%A8"><span class="toc-number">1.1.</span> <span class="toc-text">1 WebRTC入门</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-1%E4%BB%80%E4%B9%88%E6%98%AFWebRTC"><span class="toc-number">1.1.1.</span> <span class="toc-text">1.1什么是WebRTC</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1-2WebRTC%E6%A1%86%E6%9E%B6"><span class="toc-number">1.1.2.</span> <span class="toc-text">1.2WebRTC框架</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1-3-WebRTC%E5%8F%91%E5%B1%95%E5%89%8D%E6%99%AF"><span class="toc-number">1.1.3.</span> <span class="toc-text">1.3 WebRTC发展前景</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1-4%E5%9B%BD%E5%86%85%E6%96%B9%E6%A1%88%E5%8E%82%E5%95%86"><span class="toc-number">1.1.4.</span> <span class="toc-text">1.4国内方案厂商</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1-5-WebRTC%E9%80%9A%E8%AF%9D%E5%8E%9F%E7%90%86"><span class="toc-number">1.1.5.</span> <span class="toc-text">1.5 WebRTC通话原理</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-WebRTC%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83"><span class="toc-number">1.2.</span> <span class="toc-text">2 WebRTC开发环境</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#2-1-%E5%AE%89%E8%A3%85vscode"><span class="toc-number">1.2.1.</span> <span class="toc-text">2.1 安装vscode</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-2-%E5%AE%89%E8%A3%85-nodejs"><span class="toc-number">1.2.2.</span> <span class="toc-text">2.2 安装 nodejs</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-coturn%E7%A9%BF%E9%80%8F%E5%92%8C%E8%BD%AC%E5%8F%91%E6%9C%8D%E5%8A%A1%E5%99%A8"><span class="toc-number">1.3.</span> <span class="toc-text">3 coturn穿透和转发服务器</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#3-1-%E5%AE%89%E8%A3%85%E4%BE%9D%E8%B5%96"><span class="toc-number">1.3.1.</span> <span class="toc-text">3.1 安装依赖</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#ubuntu%E7%B3%BB%E7%BB%9F"><span class="toc-number">1.3.1.1.</span> <span class="toc-text">ubuntu系统</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#centos%E7%B3%BB%E7%BB%9F"><span class="toc-number">1.3.1.2.</span> <span class="toc-text">centos系统</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-2-%E7%BC%96%E8%AF%91%E5%AE%89%E8%A3%85coturn"><span class="toc-number">1.3.2.</span> <span class="toc-text">3.2 编译安装coturn</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-3-%E6%9F%A5%E7%9C%8B%E6%98%AF%E5%90%A6%E5%AE%89%E8%A3%85%E6%88%90%E5%8A%9F"><span class="toc-number">1.3.3.</span> <span class="toc-text">3.3 查看是否安装成功</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-4-%E6%B5%8B%E8%AF%95%E5%9C%B0%E5%9D%80%EF%BC%8C%E8%AF%B7%E5%88%86%E5%88%AB%E6%B5%8B%E8%AF%95stun%E5%92%8Cturn"><span class="toc-number">1.3.4.</span> <span class="toc-text">3.4 测试地址，请分别测试stun和turn</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-%E9%9F%B3%E8%A7%86%E9%A2%91%E9%87%87%E9%9B%86%E5%92%8C%E6%92%AD%E6%94%BE"><span class="toc-number">1.4.</span> <span class="toc-text">4 音视频采集和播放</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#4-1-%E6%89%93%E5%BC%80%E6%91%84%E5%83%8F%E5%A4%B4"><span class="toc-number">1.4.1.</span> <span class="toc-text">4.1 打开摄像头</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-2-%E6%89%93%E5%BC%80%E9%BA%A6%E5%85%8B%E9%A3%8E"><span class="toc-number">1.4.2.</span> <span class="toc-text">4.2 打开麦克风</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-3-%E6%89%93%E5%BC%80%E6%91%84%E5%83%8F%E5%A4%B4%E5%92%8C%E9%BA%A6%E5%85%8B%E9%A3%8E"><span class="toc-number">1.4.3.</span> <span class="toc-text">4.3 打开摄像头和麦克风</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-4%E6%89%A9%E5%B1%95"><span class="toc-number">1.4.4.</span> <span class="toc-text">4.4扩展</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-5%E8%A1%A5%E5%85%85"><span class="toc-number">1.4.5.</span> <span class="toc-text">4.5补充</span></a></li></ol></li></ol></li></ol></div></div><footer><nobr>构建自 <a target="_blank" rel="noopener" href="http://hexo.io">Hexo</a></nobr><wbr><nobr> 使用主题 <a target="_blank" rel="noopener" href="https://github.com/Yue-plus/hexo-theme-arknights">Arknights</a></nobr><wbr><nobr> 主题作者 <a target="_blank" rel="noopener" href="https://github.com/Yue-plus">Yue_plus</a></nobr></footer></aside></main><canvas id="canvas-dust"></canvas></body></html>
